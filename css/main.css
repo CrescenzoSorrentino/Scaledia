@@ -1,6 +1,6 @@
 
 /* ---------------------------------- */
-/* SCALLEDIA - STILE PER ARTICOLI */
+/* SCALLEDIA STILE GLOBALE */
 /* ---------------------------------- */
 
 /* RESET E BASE */
@@ -52,7 +52,7 @@ nav a:hover {
   color: #1db954;
 }
 
-/* HEADER */
+/* BLOCCO PRINCIPALE */
 #header {
   background-color: #0a2540;
   color: white;
@@ -87,8 +87,8 @@ nav a:hover {
   background-color: #159e46;
 }
 
-/* SEZIONI CONTENUTO */
-section, article, #content {
+/* SEZIONI */
+section {
   background-color: white;
   padding: 40px 20px;
   margin: 20px 0;
@@ -96,7 +96,6 @@ section, article, #content {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* TITOLI E TESTO */
 h2 {
   font-size: 1.8em;
   color: #0a2540;
@@ -107,39 +106,69 @@ p {
   margin-bottom: 20px;
 }
 
-/* LISTE SEMPLICI SENZA GRAFICA */
 ul {
   list-style-type: disc;
   padding-left: 25px;
-  background: none;
-  border: none;
 }
 
 li {
   margin-bottom: 10px;
-  background: none;
+}
+
+/* POST LIST (posts.html) */
+#posts {
+  background-color: white;
+  padding: 40px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#posts ul {
+  list-style: none;
   padding: 0;
-  border: none;
-  color: inherit;
+}
+
+#posts li {
+  background-color: #eaf0f6;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #1db954;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#posts li:hover {
+  background-color: #dbe7f2;
+}
+
+#posts li a {
+  text-decoration: none;
+  color: #1db954;
+  font-weight: bold;
+}
+
+#posts li a:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
-#footer {
+footer {
   background-color: #0a2540;
   color: white;
   padding: 30px 20px;
   margin-top: 40px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 11.20px;
 }
 
-#footer a {
+footer a {
   color: #1db954;
   text-decoration: none;
   font-weight: bold;
 }
 
-#footer a:hover {
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -163,7 +192,6 @@ li {
     font-size: 1.5em;
   }
 
-  section, article, #content {
+  section {
     padding: 20px;
   }
-}
