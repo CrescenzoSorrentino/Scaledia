@@ -186,81 +186,70 @@ li {
   background-color: #159e46;
 }
 
-
-
-/* RESPONSIVE */
+/* -------------------- */
+/* MEDIA QUERY MOBILE */
+/* -------------------- */
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  header img {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   nav a {
-    margin: 10px 0 0 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
   }
 
-  #header h1 {
-    font-size: 2em;
+  h1 {
+    font-size: 1.8em;
+    line-height: 1.3;
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
+    margin-bottom: 10px;
   }
 
-  section, article, #content {
+  p {
+    font-size: 1em;
+  }
+
+  .main-content,
+  #posts,
+  #about,
+  #what-we-do,
+  #Audience,
+  #footer {
     padding: 20px;
   }
-}
 
-/* SEZIONE NEWSLETTER */
-#newsletter {
-  background-color: #f9f9f9;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 60px;
-  border-radius: 8px;
-}
+  #footer input[type="email"],
+  #footer input[type="submit"] {
+    width: 100%;
+    margin: 5px 0;
+  }
 
-#newsletter h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #1a1a1a;
-}
-
-#newsletter p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-/* FORM MAILCHIMP */
-#mc_embed_signup {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-#mc_embed_signup input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-}
-
-#mc_embed_signup input[type="submit"] {
-  background-color: #1db954; /* verde accento Scaledia */
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#mc_embed_signup input[type="submit"]:hover {
-  background-color: #17a247;
+  .form-row {
+    flex-direction: column;
+  }
 }
