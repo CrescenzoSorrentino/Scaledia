@@ -131,21 +131,62 @@ li {
 #footer {
   background-color: #0a2540;
   color: white;
-  padding: 30px 20px;
-  margin-top: 40px;
+  padding: 40px 20px;
+  margin-top: 60px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
-#footer a {
-  color: #1db954;
-  text-decoration: none;
+#footer h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+#footer p {
+  margin-bottom: 20px;
+}
+
+#footer .newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#footer label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+#footer .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#footer input[type="email"] {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  min-width: 220px;
+}
+
+#footer input[type="submit"] {
+  padding: 12px 25px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-#footer a:hover {
-  text-decoration: underline;
+#footer input[type="submit"]:hover {
+  background-color: #159e46;
 }
+
+
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
@@ -170,4 +211,56 @@ li {
   section, article, #content {
     padding: 20px;
   }
+}
+
+/* SEZIONE NEWSLETTER */
+#newsletter {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 8px;
+}
+
+#newsletter h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+#newsletter p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* FORM MAILCHIMP */
+#mc_embed_signup {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#mc_embed_signup input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+#mc_embed_signup input[type="submit"] {
+  background-color: #1db954; /* verde accento Scaledia */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#mc_embed_signup input[type="submit"]:hover {
+  background-color: #17a247;
 }

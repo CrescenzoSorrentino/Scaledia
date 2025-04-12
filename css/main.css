@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f7fa;
@@ -112,6 +116,12 @@ h2 {
   margin-bottom: 15px;
 }
 
+h3 {
+  font-size: 1.8em;
+  color: white;
+  margin-bottom: 15px;
+}
+
 p {
   margin-bottom: 20px;
 }
@@ -163,45 +173,60 @@ li {
 }
 
 /* FOOTER */
-footer {
+#footer {
   background-color: #0a2540;
   color: white;
-  padding: 30px 20px;
-  margin-top: 40px;
+  padding: 40px 20px;
+  margin-top: 60px;
   text-align: center;
-  border-radius: 11.20px;
+  border-radius: 10px 10px 0 0;
 }
 
-footer a {
-  color: #1db954;
-  text-decoration: none;
+#footer h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+#footer p {
+  margin-bottom: 20px;
+}
+
+#footer .newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#footer label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+#footer .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#footer input[type="email"] {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  min-width: 220px;
+}
+
+#footer input[type="submit"] {
+  padding: 12px 25px;
+  background-color: #1db954;
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-footer a:hover {
-  text-decoration: underline;
+#footer input[type="submit"]:hover {
+  background-color: #159e46;
 }
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 10px 0 0 0;
-    font-size: 1.2em;
-  }
-
-  #header h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  section {
-    padding: 20px;
-  }
