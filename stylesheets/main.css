@@ -112,12 +112,15 @@ header {
 }
 
 .hero {
-  background-color: #0f2a45;
-  color: white;
-  text-align: center;
+  background-color: var(--blue-dark);
+  color: var(--white);
   padding: 60px 20px;
+  text-align: center;
+  margin-top: 60px;
   border-radius: 12px;
-  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
@@ -129,6 +132,23 @@ header {
 .hero-subtitle {
   font-size: 1rem;
   opacity: 0.85;
+}
+
+.btn-green {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+  background-color: var(--primary-dark);
 }
 
 /* === Contenuti generali === */
@@ -350,35 +370,6 @@ footer {
   font-size: 0.9rem;
   color: #666;
   margin-top: 8px;
-
-}
-
-/* Distanza tra paragrafi */
-p {
-  margin-bottom: 1.2em;
-  line-height: 1.6;
-}
-
-/* Spaziatura per i titoli */
-h2, h3 {
-  margin-top: 2em;
-  margin-bottom: 0.6em;
-}
-
-/* Spaziatura per liste */
-ul, ol {
-  margin-top: 1em;
-  margin-bottom: 1.5em;
-  padding-left: 20px;
-}
-
-/* Spaziatura per blocchi citazione o esempi */
-blockquote {
-  margin: 1.5em 0;
-  padding-left: 1em;
-  border-left: 4px solid #ccc;
-  color: #444;
-  font-style: italic;
 }
 
 /* === Responsive migliorato === */
@@ -449,3 +440,32 @@ blockquote {
   font-style: italic;
   color: #333;
 }
+
+/* Distanza tra paragrafi */
+p {
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+}
+
+/* Spaziatura per i titoli */
+h2, h3 {
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+/* Spaziatura per liste */
+ul, ol {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  padding-left: 20px;
+}
+
+/* Spaziatura per blocchi citazione o esempi */
+blockquote {
+  margin: 1.5em 0;
+  padding-left: 1em;
+  border-left: 4px solid #ccc;
+  color: #444;
+  font-style: italic;
+}
+
