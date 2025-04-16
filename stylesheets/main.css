@@ -58,7 +58,12 @@ header {
 }
 
 .nav-links a:hover {
-  color: #0077cc;
+  color: #00a86b;
+}
+
+.nav-links a.active {
+  color: #00a86b;
+  font-weight: 800;
 }
 
 /* === Responsive Navbar === */
