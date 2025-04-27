@@ -179,6 +179,13 @@ function switchLanguage(lang) {
   localStorage.setItem('preferredLang', lang);
 }
 
+if (typeof bootstrap !== 'undefined') {
+    bootstrap.Icon?.refresh();
+  }
+
+  localStorage.setItem('preferredLang', lang);
+
+
 document.querySelectorAll(".language-option").forEach(option => {
   option.addEventListener("click", (e) => {
     e.preventDefault();
