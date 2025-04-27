@@ -32,40 +32,38 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${article.title}</h5>
                             <p class="card-text flex-grow-1">${article.description}</p>
-                            <a href="${article.link}" class="btn btn-gradient mt-auto">${translations[lang].readMore}</a>
+                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations[lang].readMore}</a>
                         </div>
                     </div>
                 </div>
             `;
         });
 
-        setupPagination(lang);
+        setupPagination(filteredArticles.length);
     }
 
     function setupFilters(lang) {
         const filters = document.getElementById('categoryFilters');
         filters.innerHTML = `
-            <button class="btn btn-gradient m-1" onclick="filterArticles('all')">${translations[lang].categories.all}</button>
-            <button class="btn btn-gradient m-1" onclick="filterArticles('Marketing')">${translations[lang].categories.marketing}</button>
-            <button class="btn btn-gradient m-1" onclick="filterArticles('Growth Hacking')">${translations[lang].categories.growth}</button>
-            <button class="btn btn-gradient m-1" onclick="filterArticles('Finance')">${translations[lang].categories.finance}</button>
+            <button class="btn btn-primary m-1" onclick="filterArticles('all')">${translations[lang].categories.all}</button>
+            <button class="btn btn-primary m-1" onclick="filterArticles('Marketing')">${translations[lang].categories.marketing}</button>
+            <button class="btn btn-primary m-1" onclick="filterArticles('Growth Hacking')">${translations[lang].categories.growth}</button>
+            <button class="btn btn-primary m-1" onclick="filterArticles('Finance')">${translations[lang].categories.finance}</button>
         `;
     }
 
-    function setupPagination(lang) {
+    function setupPagination(totalArticles) {
         const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
 
-        const filteredArticles = selectedCategory === "all" ? articles : articles.filter(a => a.category === selectedCategory);
-        const pageCount = Math.ceil(filteredArticles.length / articlesPerPage);
-
+        const pageCount = Math.ceil(totalArticles / articlesPerPage);
         for (let i = 1; i <= pageCount; i++) {
             const button = document.createElement('button');
             button.textContent = i;
-            button.className = 'btn btn-outline-primary m-1' + (i === currentPage ? ' active' : '');
+            button.className = 'btn' + (i === currentPage ? ' active' : '');
             button.onclick = function() {
                 currentPage = i;
-                renderArticles(lang);
+                renderArticles(localStorage.getItem('preferredLang') || 'en');
             };
             pagination.appendChild(button);
         }
