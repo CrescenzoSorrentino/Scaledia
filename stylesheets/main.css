@@ -4,20 +4,21 @@
   overflow: hidden;
   background: linear-gradient(135deg, #007bff, #6610f2);
   color: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Ombra 3D sotto */
 }
 
-/* Effetto 3D sul Titolo */
-.hero-title {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+/* Effetti rilievo su titolo e bottone */
+.hero-title,
+.form-title {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.hero a.btn,
+.form button.btn {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effetto 3D sul Sottotitolo */
-.hero-subtitle {
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Animazioni base */
+/* Animazioni */
 @keyframes float {
   0%, 100% { transform: translateY(0) translateZ(30px); }
   50% { transform: translateY(-20px) translateZ(30px); }
@@ -37,12 +38,9 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Effetti rilievo su bottone nella hero */
-.hero a.btn {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero a.btn:hover {
+
+.hero a.btn:hover,
+.form button:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
