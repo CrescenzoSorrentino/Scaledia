@@ -1,40 +1,33 @@
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0) translateZ(30px); }
-  50% { transform: translateY(-20px) translateZ(30px); }
-}
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Hero Shadow */
+/* Hero Section con ombra 3D */
 .hero {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #007bff, #6610f2);
   color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Card 3D Hover */
+/* Effetto 3D sul Titolo */
+.hero-title {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Effetto 3D sul Sottotitolo */
+.hero-subtitle {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Animazioni base */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateZ(30px); }
+  50% { transform: translateY(-20px) translateZ(30px); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Hover effetto 3D */
 .card-3d {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: perspective(1000px) rotateX(0) rotateY(0);
@@ -43,6 +36,13 @@
   transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
-.card-3d:hover .card-body {
-  transform: translateZ(20px);
+
+/* Effetti rilievo su bottone nella hero */
+.hero a.btn {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hero a.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
