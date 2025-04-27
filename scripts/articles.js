@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${article.title}</h5>
                             <p class="card-text flex-grow-1">${article.description}</p>
-                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations[lang].readMore}</a>
+                            <a href="${article.link}" class="btn btn-gradient mt-auto">${translations[lang].readMore}</a>
                         </div>
                     </div>
                 </div>
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupFilters(lang) {
         const filters = document.getElementById('categoryFilters');
         filters.innerHTML = `
-            <button class="btn btn-outline-light m-1" onclick="filterArticles('all')">${translations[lang].categories.all}</button>
-            <button class="btn btn-outline-light m-1" onclick="filterArticles('Marketing')">${translations[lang].categories.marketing}</button>
-            <button class="btn btn-outline-light m-1" onclick="filterArticles('Growth Hacking')">${translations[lang].categories.growth}</button>
-            <button class="btn btn-outline-light m-1" onclick="filterArticles('Finance')">${translations[lang].categories.finance}</button>
+            <button class="btn btn-gradient m-1" onclick="filterArticles('all')">${translations[lang].categories.all}</button>
+            <button class="btn btn-gradient m-1" onclick="filterArticles('Marketing')">${translations[lang].categories.marketing}</button>
+            <button class="btn btn-gradient m-1" onclick="filterArticles('Growth Hacking')">${translations[lang].categories.growth}</button>
+            <button class="btn btn-gradient m-1" onclick="filterArticles('Finance')">${translations[lang].categories.finance}</button>
         `;
     }
 

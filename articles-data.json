@@ -1,23 +1,44 @@
 [
   {
-    "title": "Digital Marketing Strategies",
-    "description": "Discover the latest trends in digital marketing.",
+    "title": "Digital Marketing Trends 2025",
+    "description": "Explore the latest digital marketing strategies that will dominate in 2025.",
     "category": "Marketing",
     "image": "images/marketing1.jpg",
-    "link": "articles/marketing-strategies.html"
+    "link": "articles/digital-marketing-2025.html"
   },
   {
-    "title": "Growth Hacking for Startups",
-    "description": "Techniques to boost your startup's growth rapidly.",
+    "title": "Growth Hacking Tactics for Startups",
+    "description": "Learn the secret growth hacking techniques used by successful startups.",
     "category": "Growth Hacking",
     "image": "images/growth1.jpg",
-    "link": "articles/growth-hacking-startup.html"
+    "link": "articles/growth-hacking-startups.html"
   },
   {
-    "title": "Personal Finance Tips",
-    "description": "Manage your finances like a pro.",
+    "title": "Personal Finance Tips for 2025",
+    "description": "Top financial habits to master in 2025 for financial freedom.",
     "category": "Finance",
     "image": "images/finance1.jpg",
-    "link": "articles/personal-finance.html"
+    "link": "articles/personal-finance-2025.html"
+  },
+  {
+    "title": "Mastering Email Marketing",
+    "description": "How to craft email campaigns that actually convert and engage.",
+    "category": "Marketing",
+    "image": "images/marketing2.jpg",
+    "link": "articles/email-marketing.html"
+  },
+  {
+    "title": "Boost Your Startup Growth",
+    "description": "10 proven strategies to accelerate your startup's success.",
+    "category": "Growth Hacking",
+    "image": "images/growth2.jpg",
+    "link": "articles/startup-boost.html"
+  },
+  {
+    "title": "Smart Investment Strategies",
+    "description": "Learn how to invest smartly to build wealth and security.",
+    "category": "Finance",
+    "image": "images/finance2.jpg",
+    "link": "articles/smart-investing.html"
   }
 ]
