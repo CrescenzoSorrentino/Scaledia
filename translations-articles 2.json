@@ -1,0 +1,15 @@
+{
+  "en": {
+    "articlesHeroTitle": "Discover Our Articles",
+    "articlesHeroSubtitle": "Insights on Marketing, Growth Hacking, and Finance",
+    "previous": "Previous",
+    "next": "Next",
+    "readMore": "Read More",
+    "categories": {
+      "all": "All",
+      "marketing": "Marketing",
+      "growth": "Growth Hacking",
+      "finance": "Finance"
+    }
+  }
+}

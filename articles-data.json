@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Digital Marketing Strategies",
+    "description": "Discover the latest trends in digital marketing.",
+    "category": "Marketing",
+    "image": "images/marketing1.jpg",
+    "link": "articles/marketing-strategies.html"
+  },
+  {
+    "title": "Growth Hacking for Startups",
+    "description": "Techniques to boost your startup's growth rapidly.",
+    "category": "Growth Hacking",
+    "image": "images/growth1.jpg",
+    "link": "articles/growth-hacking-startup.html"
+  },
+  {
+    "title": "Personal Finance Tips",
+    "description": "Manage your finances like a pro.",
+    "category": "Finance",
+    "image": "images/finance1.jpg",
+    "link": "articles/personal-finance.html"
+  }
+]
