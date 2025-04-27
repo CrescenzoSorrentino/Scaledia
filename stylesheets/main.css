@@ -1,22 +1,42 @@
-/* Hero background uniformato */
-.hero {
+/* Hero e Footer con gradiente */
+.hero, footer {
     background: linear-gradient(135deg, #007bff, #6610f2);
     color: white;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Effetti rilievo su titolo e bottoni */
+/* Titoli con rilievo */
 .hero-title, .form-title {
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-.hero a.btn, .form a.btn, #subscribeButton {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+/* Bottoni Gradient */
+.btn-gradient {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.hero a.btn:hover, .form a.btn:hover, #subscribeButton:hover {
+.btn-gradient:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Effetti 3D su bottoni */
+.hero a.btn, .form a.btn, .btn-gradient {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Animazioni */
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateZ(30px); }
+    50% { transform: translateY(-20px) translateZ(30px); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Card Hover effetto 3D */
@@ -29,7 +49,7 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Cards altezza fissa */
+/* Altezza fissa Cards */
 .card {
     min-height: 450px;
     display: flex;
@@ -40,20 +60,25 @@
     flex-direction: column;
 }
 
-/* Bottoni gradient identici alla hero */
-.btn-gradient {
+/* Pagination style */
+#pagination button {
+    background: white;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 50%;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+#pagination button.active, #pagination button:hover {
     background: linear-gradient(135deg, #007bff, #6610f2);
     color: white;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-gradient:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-/* Stile per pagination */
-#pagination button.active {
-    background-color: #0073e6;
-    color: white;
+/* Fix icone */
+.bi {
+    vertical-align: -.125em;
 }
