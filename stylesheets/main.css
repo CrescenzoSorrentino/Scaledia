@@ -1,12 +1,12 @@
-/* Hero section background */
+/* Hero background uniformato */
 .hero {
-    background: linear-gradient(90deg, #0073e6 0%, #0a2a43 100%);
+    background: linear-gradient(135deg, #007bff, #6610f2);
     color: white;
     position: relative;
     overflow: hidden;
 }
 
-/* Effetti rilievo su titolo e bottone */
+/* Effetti rilievo su titolo e bottoni */
 .hero-title, .form-title {
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
@@ -19,7 +19,7 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Card 3D Hover */
+/* Card Hover effetto 3D */
 .card-3d {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: perspective(1000px) rotateX(0) rotateY(0);
@@ -29,7 +29,7 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Altezza uguale per tutte le card */
+/* Cards altezza fissa */
 .card {
     min-height: 450px;
     display: flex;
@@ -40,7 +40,19 @@
     flex-direction: column;
 }
 
-/* Pagination style */
+/* Bottoni gradient identici alla hero */
+.btn-gradient {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Stile per pagination */
 #pagination button.active {
     background-color: #0073e6;
     color: white;
