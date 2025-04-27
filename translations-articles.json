@@ -4,47 +4,12 @@
     "articlesHeroSubtitle": "Insights on Marketing, Growth Hacking, and Finance",
     "previous": "Previous",
     "next": "Next",
+    "readMore": "Read More",
     "categories": {
+      "all": "All",
       "marketing": "Marketing",
       "growth": "Growth Hacking",
       "finance": "Finance"
-    },
-    "readMore": "Read More"
-  },
-  "it": {
-    "articlesHeroTitle": "Scopri i Nostri Articoli",
-    "articlesHeroSubtitle": "Approfondimenti su Marketing, Growth Hacking e Finanza",
-    "previous": "Precedente",
-    "next": "Successivo",
-    "categories": {
-      "marketing": "Marketing",
-      "growth": "Growth Hacking",
-      "finance": "Finanza"
-    },
-    "readMore": "Leggi di più"
-  },
-  "es": {
-    "articlesHeroTitle": "Descubre Nuestros Artículos",
-    "articlesHeroSubtitle": "Perspectivas sobre Marketing, Growth Hacking y Finanzas",
-    "previous": "Anterior",
-    "next": "Siguiente",
-    "categories": {
-      "marketing": "Marketing",
-      "growth": "Growth Hacking",
-      "finance": "Finanzas"
-    },
-    "readMore": "Leer más"
-  },
-  "zh": {
-    "articlesHeroTitle": "探索我们的文章",
-    "articlesHeroSubtitle": "关于营销、增长黑客和金融的见解",
-    "previous": "上一页",
-    "next": "下一页",
-    "categories": {
-      "marketing": "营销",
-      "growth": "增长黑客",
-      "finance": "金融"
-    },
-    "readMore": "阅读更多"
+    }
   }
 }

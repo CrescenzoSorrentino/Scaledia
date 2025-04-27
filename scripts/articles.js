@@ -3,13 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     let translations = {};
     let currentPage = 1;
     const articlesPerPage = 6;
+    let selectedCategory = "all";
 
     Promise.all([
         fetch('articles-data.json').then(res => res.json()),
         fetch('translations-articles.json').then(res => res.json())
     ]).then(([articlesData, translationsData]) => {
         articles = articlesData;
-        translations = translationsData.en;
+        translations = translationsData;
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        switchLanguage(savedLang);
         renderArticles();
         setupFilters();
         setupPagination();
@@ -18,22 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderArticles() {
         const container = document.getElementById('articlesContainer');
         container.innerHTML = '';
+        const filteredArticles = selectedCategory === "all" ? articles : articles.filter(a => a.category === selectedCategory);
         const start = (currentPage - 1) * articlesPerPage;
-        const paginatedArticles = articles.slice(start, start + articlesPerPage);
+        const paginatedArticles = filteredArticles.slice(start, start + articlesPerPage);
+
         paginatedArticles.forEach(article => {
             container.innerHTML += `
                 <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="${article.image}" class="card-img-top" alt="${article.title}">
-                        <div class="card-body">
+                    <div class="card shadow-sm card-3d h-100">
+                        <img src="${article.image}" class="card-img-top" alt="${article.title}" style="object-fit:cover;height:200px;">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${article.title}</h5>
-                            <p class="card-text">${article.description}</p>
-                            <a href="${article.link}" class="btn btn-primary">${translations.readMore}</a>
+                            <p class="card-text flex-grow-1">${article.description}</p>
+                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations.readMore}</a>
                         </div>
                     </div>
                 </div>
             `;
         });
+
+        setupPagination();
     }
 
     function setupFilters() {
@@ -47,36 +54,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setupPagination() {
-        document.getElementById('prevPage').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+
+        const filteredArticles = selectedCategory === "all" ? articles : articles.filter(a => a.category === selectedCategory);
+        const pageCount = Math.ceil(filteredArticles.length / articlesPerPage);
+
+        for (let i = 1; i <= pageCount; i++) {
+            const button = document.createElement('button');
+            button.textContent = i;
+            button.className = 'btn btn-outline-primary m-1' + (i === currentPage ? ' active' : '');
+            button.onclick = function() {
+                currentPage = i;
                 renderArticles();
-            }
-        });
-        document.getElementById('nextPage').addEventListener('click', () => {
-            if (currentPage * articlesPerPage < articles.length) {
-                currentPage++;
-                renderArticles();
-            }
-        });
+            };
+            pagination.appendChild(button);
+        }
     }
 
     window.filterArticles = function(category) {
+        selectedCategory = category;
         currentPage = 1;
-        if (category === 'all') {
-            Promise.all([
-                fetch('articles-data.json').then(res => res.json())
-            ]).then(([data]) => {
-                articles = data;
-                renderArticles();
-            });
-        } else {
-            Promise.all([
-                fetch('articles-data.json').then(res => res.json())
-            ]).then(([data]) => {
-                articles = data.filter(article => article.category === category);
-                renderArticles();
-            });
-        }
+        renderArticles();
     };
+
+    function switchLanguage(lang) {
+        const trans = translations[lang] || translations['en'];
+        document.querySelector('[data-lang-key="articlesHeroTitle"]').textContent = trans.articlesHeroTitle;
+        document.querySelector('[data-lang-key="articlesHeroSubtitle"]').textContent = trans.articlesHeroSubtitle;
+        document.querySelector('[data-lang-key="footerTitle"]').textContent = trans.footerTitle;
+        document.querySelector('[data-lang-key="footerText"]').textContent = trans.footerText;
+        document.querySelector('[data-lang-key="subscribe"]').textContent = trans.subscribe;
+        document.querySelector('[data-lang-key="placeholderEmail"]').setAttribute('placeholder', trans.placeholderEmail);
+    }
 });
