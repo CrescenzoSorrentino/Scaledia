@@ -26,6 +26,21 @@
   }
 }
 
+
+/* Hero Shadow */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: white;
+  border-radius: 50% / 100%;
+  z-index: 1;
+}
+
+
 /* Card 3D */
 .card-3d {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
