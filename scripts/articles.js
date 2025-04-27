@@ -13,12 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
         translations = translationsData;
         const savedLang = localStorage.getItem('preferredLang') || 'en';
         switchLanguage(savedLang);
-        renderArticles();
-        setupFilters();
-        setupPagination();
+        setupFilters(savedLang);
+        renderArticles(savedLang);
     });
 
-    function renderArticles() {
+    function renderArticles(lang) {
         const container = document.getElementById('articlesContainer');
         container.innerHTML = '';
         const filteredArticles = selectedCategory === "all" ? articles : articles.filter(a => a.category === selectedCategory);
@@ -33,27 +32,27 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${article.title}</h5>
                             <p class="card-text flex-grow-1">${article.description}</p>
-                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations.readMore}</a>
+                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations[lang].readMore}</a>
                         </div>
                     </div>
                 </div>
             `;
         });
 
-        setupPagination();
+        setupPagination(lang);
     }
 
-    function setupFilters() {
+    function setupFilters(lang) {
         const filters = document.getElementById('categoryFilters');
         filters.innerHTML = `
-            <button class="btn btn-outline-primary m-1" onclick="filterArticles('all')">${translations.categories.all}</button>
-            <button class="btn btn-outline-primary m-1" onclick="filterArticles('Marketing')">${translations.categories.marketing}</button>
-            <button class="btn btn-outline-primary m-1" onclick="filterArticles('Growth Hacking')">${translations.categories.growth}</button>
-            <button class="btn btn-outline-primary m-1" onclick="filterArticles('Finance')">${translations.categories.finance}</button>
+            <button class="btn btn-outline-light m-1" onclick="filterArticles('all')">${translations[lang].categories.all}</button>
+            <button class="btn btn-outline-light m-1" onclick="filterArticles('Marketing')">${translations[lang].categories.marketing}</button>
+            <button class="btn btn-outline-light m-1" onclick="filterArticles('Growth Hacking')">${translations[lang].categories.growth}</button>
+            <button class="btn btn-outline-light m-1" onclick="filterArticles('Finance')">${translations[lang].categories.finance}</button>
         `;
     }
 
-    function setupPagination() {
+    function setupPagination(lang) {
         const pagination = document.getElementById('pagination');
         pagination.innerHTML = '';
 
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.className = 'btn btn-outline-primary m-1' + (i === currentPage ? ' active' : '');
             button.onclick = function() {
                 currentPage = i;
-                renderArticles();
+                renderArticles(lang);
             };
             pagination.appendChild(button);
         }
@@ -75,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.filterArticles = function(category) {
         selectedCategory = category;
         currentPage = 1;
-        renderArticles();
+        const lang = localStorage.getItem('preferredLang') || 'en';
+        renderArticles(lang);
     };
 
     function switchLanguage(lang) {
@@ -86,5 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('[data-lang-key="footerText"]').textContent = trans.footerText;
         document.querySelector('[data-lang-key="subscribe"]').textContent = trans.subscribe;
         document.querySelector('[data-lang-key="placeholderEmail"]').setAttribute('placeholder', trans.placeholderEmail);
+        setupFilters(lang);
+        renderArticles(lang);
     }
+
+    document.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            localStorage.setItem('preferredLang', lang);
+            switchLanguage(lang);
+        });
+    });
 });

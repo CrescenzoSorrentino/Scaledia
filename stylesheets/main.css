@@ -1,3 +1,11 @@
+/* Hero section background */
+.hero {
+    background: linear-gradient(90deg, #0073e6 0%, #0a2a43 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
 /* Effetti rilievo su titolo e bottone */
 .hero-title, .form-title {
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -9,16 +17,6 @@
 .hero a.btn:hover, .form a.btn:hover, #subscribeButton:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Animazioni */
-@keyframes float {
-    0%, 100% { transform: translateY(0) translateZ(30px); }
-    50% { transform: translateY(-20px) translateZ(30px); }
-}
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Card 3D Hover */
@@ -33,11 +31,17 @@
 
 /* Altezza uguale per tutte le card */
 .card {
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
 }
 .card-body {
     display: flex;
     flex-direction: column;
+}
+
+/* Pagination style */
+#pagination button.active {
+    background-color: #0073e6;
+    color: white;
 }
