@@ -16,7 +16,7 @@
     "footerText": "Join the Scaledia community and get weekly insights on marketing, money, and mindset",
     "subscribe": "Subscribe",
     "placeholderEmail": "Enter your email",
-    "getStarted": "<i class=\\\"bi bi-rocket me-2\\\"></i>Get Started"
+    "getStarted": "Get Started"
   },
   "it": {
     "heroTitle": "Marketing. Growth Hacking. Finanza",
@@ -35,7 +35,7 @@
     "footerText": "Unisciti alla community di Scaledia e ricevi ogni settimana idee su marketing, soldi e mindset",
     "subscribe": "Iscriviti",
     "placeholderEmail": "Inserisci la tua email",
-    "getStarted": "<i class=\\\"bi bi-rocket me-2\\\"></i>Inizia"
+    "getStarted": "Inizia"
   },
   "es": {
     "heroTitle": "Marketing. Growth Hacking. Finanzas",
@@ -54,7 +54,7 @@
     "footerText": "Únete a la comunidad de Scaledia y recibe cada semana ideas sobre marketing, dinero y mentalidad",
     "subscribe": "Suscribirse",
     "placeholderEmail": "Introduce tu correo electrónico",
-    "getStarted": "<i class=\\\"bi bi-rocket me-2\\\"></i>Empezar"
+    "getStarted": "Empezar"
   },
   "zh": {
     "heroTitle": "营销. 增长黑客. 财务",
@@ -73,6 +73,6 @@
     "footerText": "加入 Scaledia 社区，每周获取关于营销、金钱和思维方式的洞察",
     "subscribe": "订阅",
     "placeholderEmail": "输入你的邮箱",
-    "getStarted": "<i class=\\\"bi bi-rocket me-2\\\"></i>立即开始"
+    "getStarted": "立即开始"
   }
 }
