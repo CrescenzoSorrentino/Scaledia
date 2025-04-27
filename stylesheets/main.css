@@ -26,6 +26,14 @@
   }
 }
 
+/* Hero Shadow */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: white;
+}
+
 /* Card 3D Hover */
 .card-3d {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
