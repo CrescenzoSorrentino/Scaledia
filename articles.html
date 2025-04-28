@@ -204,18 +204,17 @@
 <!-- SCRIPT DI TRADUZIONE DINAMICA -->
 <!-- ============================== -->
 <script>
-
 // Variabili Globali
-let translationsData = {}; // Oggetto che conterrà tutte le traduzioni
-const translationFile = 'translations-articles.json'; // Percorso del file JSON di traduzioni
-const defaultLang = 'en'; // Lingua predefinita
+let translationsData = {}; 
+const translationFile = 'translations-articles.json'; 
+const defaultLang = 'en'; 
 
 // Caricamento File Traduzioni
 fetch(translationFile)
   .then(response => response.json())
   .then(data => {
     translationsData = data;
-    const savedLang = localStorage.getItem('preferredLang') || defaultLang; // Correzione: mancava 
+    const savedLang = localStorage.getItem('preferredLang') || defaultLang; // CORRETTO: aggiunto 
     switchLanguage(savedLang);
   })
   .catch(error => console.error('Errore durante il caricamento delle traduzioni:', error));
@@ -234,7 +233,7 @@ function switchLanguage(lang) {
       }
     }
   });
-  localStorage.setItem('preferredLang', lang); // Salva la lingua selezionata
+  localStorage.setItem('preferredLang', lang);
 }
 
 // Event Listener per Cambio Lingua
@@ -245,82 +244,57 @@ document.querySelectorAll(".language-option").forEach(option => {
     switchLanguage(selectedLang);
   });
 });
-
 </script>
 
 <!-- ============================== -->
 <!-- SCRIPT DI FILTRAGGIO + PAGINAZIONE ARTICOLI -->
 <!-- ============================== -->
-
-<script src="scripts/articles.js"></script>
-
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const itemsPerPage = 3;
+  let currentPage = 1;
+  let currentFilter = 'all';
 
-// Variabili Globali per Paginazione e Filtraggio
-const itemsPerPage = 3; // Numero di articoli per pagina
-let currentPage = 1;
-let currentFilter = 'all';
+  const listItems = document.querySelectorAll('#articlesContainer li');
+  const pagination = document.getElementById('pagination');
 
-const listItems = document.querySelectorAll('#articlesList li');
-const pagination = document.getElementById('pagination');
-
-// Funzione di Aggiornamento Lista Articoli
-function updateList() {
-  let visibleItems = Array.from(listItems).filter(item => {
-    return currentFilter === 'all' || item.getAttribute('data-category') === currentFilter; // Correzione: mancava 
-  });
-
-  const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
-
-  // Nascondi tutti gli articoli
-  listItems.forEach(item => item.style.display = 'none');
-
-  // Mostra solo gli articoli della pagina corrente
-  const start = (currentPage - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  visibleItems.slice(start, end).forEach(item => {
-    item.style.display = 'block';
-  });
-
-  // Costruisci la paginazione dinamica
-  pagination.innerHTML = '';
-  for (let i = 1; i <= totalPages; i++) {
-    const pageButton = document.createElement('li');
-    pageButton.className = 'page-item' + (i === currentPage ? ' active' : '');
-    pageButton.innerHTML = <button class="page-link">${i}</button>; // Correzione: mancavano gli apici
-    pageButton.querySelector('button').addEventListener('click', () => {
-      currentPage = i;
-      updateList();
+  function updateList() {
+    let visibleItems = Array.from(listItems).filter(item => {
+      return currentFilter === 'all' || item.getAttribute('data-category') === currentFilter;
     });
-    pagination.appendChild(pageButton);
+
+    const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
+
+    listItems.forEach(item => item.style.display = 'none');
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    visibleItems.slice(start, end).forEach(item => {
+      item.style.display = 'block';
+    });
+
+    pagination.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      const pageButton = document.createElement('li');
+      pageButton.className = 'page-item' + (i === currentPage ? ' active' : '');
+      pageButton.innerHTML = <button class="page-link">${i}</button>; // CORRETTO con backticks
+      pageButton.querySelector('button').addEventListener('click', () => {
+        currentPage = i;
+        updateList();
+      });
+      pagination.appendChild(pageButton);
+    }
   }
-}
 
-// Event Listener sui Filtri Categoria
-document.querySelectorAll('.filter-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    currentFilter = button.getAttribute('data-filter');
-    currentPage = 1; // Reset pagina su 1
-    updateList();
-  });
-});
-
-// Primo rendering della lista
-updateList();
-
-//
+  // Event Listener sui Filtri Categoria
   document.querySelectorAll('[data-filter]').forEach(button => {
     button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      document.querySelectorAll('[data-category]').forEach(article => {
-        if (filter === 'All' || article.getAttribute('data-category') === filter) {
-          article.style.display = 'block';
-        } else {
-          article.style.display = 'none';
-        }
-      });
+      currentFilter = button.getAttribute('data-filter');
+      currentPage = 1;
+      updateList();
     });
   });
 
-
+  updateList(); // Primo rendering della lista
+});
 </script>
