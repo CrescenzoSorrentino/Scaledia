@@ -82,15 +82,15 @@
     <div class="container">
   
       <!-- Filter Buttons -->
-      <div class="mb-4 text-center">
-        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="all" data-lang-key="filterAll">All</button>
-        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="marketing" data-lang-key="filterMarketing">Marketing</button>
-        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="finance" data-lang-key="filterFinance">Finance</button>
-        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="growth" data-lang-key="filterGrowth">Growth Hacking</button>
+      <div id="categoryFilter" class="mb-4 text-center">
+        <button class="btn btn-outline-primary me-2 " data-filter="all" data-lang-key="filterAll">All</button>
+        <button class="btn btn-outline-primary me-2 " data-filter="marketing" data-lang-key="filterMarketing">Marketing</button>
+        <button class="btn btn-outline-primary me-2 " data-filter="finance" data-lang-key="filterFinance">Finance</button>
+        <button class="btn btn-outline-primary me-2 " data-filter="growth" data-lang-key="filterGrowth">Growth Hacking</button>
       </div>
   
-      <!-- Articles List -->
-      <ul class="list-group list-group-flush" id="articlesList">
+      <!-- Articles Container -->
+      <ul class="list-group list-group-flush" id="articlesContainer">
   
         <!-- Article 1 -->
         <li class="list-group-item" data-category="growth">
@@ -251,6 +251,9 @@ document.querySelectorAll(".language-option").forEach(option => {
 <!-- ============================== -->
 <!-- SCRIPT DI FILTRAGGIO + PAGINAZIONE ARTICOLI -->
 <!-- ============================== -->
+
+<script src="scripts/articles.js"></script>
+
 <script>
 
 // Variabili Globali per Paginazione e Filtraggio
@@ -304,5 +307,20 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 // Primo rendering della lista
 updateList();
+
+//
+  document.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      document.querySelectorAll('[data-category]').forEach(article => {
+        if (filter === 'All' || article.getAttribute('data-category') === filter) {
+          article.style.display = 'block';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
+  });
+
 
 </script>

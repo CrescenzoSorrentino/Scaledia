@@ -15,7 +15,7 @@ body {
   
   /* ========== HERO SECTION ========== */
   .hero {
-    background: linear-gradient(135deg, #003366, #0059b3); /* Blu oltremare */
+    background: linear-gradient(135deg, #0073e6, #0a2a43); /* Blu acceso Scaledia */
     color: #ffffff;
     padding: 80px 0;
     text-align: center;
@@ -47,7 +47,7 @@ body {
   
   /* ========== BOTTONI ========== */
   .btn-primary {
-    background-color: #0059b3;
+    background-color: #0073e6;
     border: none;
     border-radius: 30px;
     padding: 8px 24px;
@@ -56,14 +56,13 @@ body {
   }
   
   .btn-primary:hover {
-    background-color: #003366;
+    background-color: #005bb5;
     transform: translateY(-3px);
   }
   
-  /* Bottoni nel Footer */
   .btn-light {
     background-color: #ffffff;
-    color: #003366;
+    color: #0073e6;
     border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -71,13 +70,13 @@ body {
   
   .btn-light:hover {
     background-color: #e0e0e0;
-    color: #003366;
+    color: #005bb5;
     transform: translateY(-3px);
   }
   
   /* ========== FOOTER ========== */
   .footer {
-    background: linear-gradient(135deg, #001f4d, #004080); /* Footer blu profondo */
+    background: linear-gradient(135deg, #0a2a43, #003366); /* Footer blu notte */
     color: #ffffff;
     padding: 60px 0;
     text-align: center;
@@ -96,8 +95,8 @@ body {
   /* ========== PAGINATION ========== */
   #pagination button {
     background-color: #ffffff;
-    color: #003366;
-    border: 1px solid #003366;
+    color: #0073e6;
+    border: 1px solid #0073e6;
     margin: 0 5px;
     padding: 8px 16px;
     border-radius: 30px;
@@ -105,7 +104,7 @@ body {
   }
   
   #pagination button:hover {
-    background-color: #003366;
+    background-color: #0073e6;
     color: #ffffff;
     transform: translateY(-2px);
   }
