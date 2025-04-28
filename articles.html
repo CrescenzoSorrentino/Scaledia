@@ -68,12 +68,12 @@
 
 
 <!-- Hero Section -->
-<section class="hero py-5 mt-5 text-center position-relative overflow-hidden">
-  <div class="container position-relative z-2">
-    <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="heroTitle"></h1>
-    <p class="hero-subtitle lead mb-4" data-lang-key="heroSubtitle"></p>
-  </div>
-</section>
+<section class="hero py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative z-2">
+      <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="articlesHeroTitle">Explore Scaledia Articles</h1>
+      <p class="hero-subtitle lead mb-4" data-lang-key="articlesHeroSubtitle">Insights, tips and strategies for your growth.</p>
+    </div>
+  </section>
 
 
 
@@ -96,42 +96,42 @@
         <li class="list-group-item" data-category="growth">
           <h5 data-lang-key="articleTitleGrowthHacking">Mastering Growth Hacking</h5>
           <p class="small" data-lang-key="articleDescGrowthHacking">Learn the strategies behind explosive startup growth.</p>
-          <a href="articles/growth-hacking.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/growth-hacking.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
         <!-- Article 2 -->
         <li class="list-group-item" data-category="finance">
           <h5 data-lang-key="articleTitleBudgeting">Smart Budgeting Tips</h5>
           <p class="small" data-lang-key="articleDescBudgeting">Discover practical budgeting techniques to manage your finances better.</p>
-          <a href="articles/budgeting.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/budgeting.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
         <!-- Article 3 -->
         <li class="list-group-item" data-category="finance">
           <h5 data-lang-key="articleTitleCreditCards">Credit Cards: Friend or Foe?</h5>
           <p class="small" data-lang-key="articleDescCreditCards">Uncover the secrets behind credit cards and how to use them wisely.</p>
-          <a href="articles/credit-cards.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/credit-cards.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
         <!-- Article 4 -->
         <li class="list-group-item" data-category="marketing">
           <h5 data-lang-key="articleTitleMarketingTrends">Top 10 Marketing Trends for 2025</h5>
           <p class="small" data-lang-key="articleDescMarketingTrends">Stay ahead of the curve with the hottest marketing trends.</p>
-          <a href="articles/marketing-trends.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/marketing-trends.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
         <!-- Article 5 -->
         <li class="list-group-item" data-category="marketing">
           <h5 data-lang-key="articleTitleSEO">SEO for Beginners</h5>
           <p class="small" data-lang-key="articleDescSEO">Boost your site's visibility on search engines.</p>
-          <a href="articles/seo-beginners.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/seo-beginners.html" class=class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
         <!-- Article 6 -->
         <li class="list-group-item" data-category="growth">
           <h5 data-lang-key="articleTitleViralLoops">Building Viral Loops</h5>
           <p class="small" data-lang-key="articleDescViralLoops">Create systems that drive exponential growth.</p>
-          <a href="articles/viral-loops.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+          <a href="articles/viral-loops.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
         </li>
   
       </ul>
@@ -150,7 +150,7 @@
 
 
 <!-- Footer -->
-<footer class="footer text-center py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #007bff, #6610f2); color: white;">
+<footer class="footer text-center py-5 position-relative overflow-hidden">
   <div class="container position-relative z-2">
   <div class="row align-items-center">
   <!-- Colonna Sinistra: Logo, Social, Link, Copyright -->
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= totalPages; i++) {
       const pageButton = document.createElement('li');
       pageButton.className = 'page-item' + (i === currentPage ? ' active' : '');
-      pageButton.innerHTML = <button class="page-link">${i}</button>; // CORRETTO con backticks
+      pageButton.innerHTML = `<button class="page-link">${i}</button>`;
       pageButton.querySelector('button').addEventListener('click', () => {
         currentPage = i;
         updateList();
