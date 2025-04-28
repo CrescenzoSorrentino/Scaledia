@@ -170,9 +170,9 @@
   </div>
   <!-- Footer Links -->
   <div class="mb-2">
-  <a class="text-white text-decoration-none me-2" href="#">Privacy Policy</a> |
-            <a class="text-white text-decoration-none mx-2" href="#">Terms</a> |
-            <a class="text-white text-decoration-none ms-2" href="#">Contact</a>
+    <a class="text-white text-decoration-none me-2" href="#" data-lang-key="privacyPolicy">Privacy Policy</a> |
+    <a class="text-white text-decoration-none mx-2" href="#" data-lang-key="terms">Terms</a> |
+    <a class="text-white text-decoration-none ms-2" href="#" data-lang-key="contact">Contact</a>
   </div>
   <!-- Copyright -->
   <div class="small mt-2">
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= totalPages; i++) {
       const pageButton = document.createElement('li');
       pageButton.className = 'page-item' + (i === currentPage ? ' active' : '');
-      pageButton.innerHTML = `<button class="page-link">${i}</button>`;
+      pageButton.innerHTML = `<button class="btn btn-outline-primary me-2">${i}</button>`;
       pageButton.querySelector('button').addEventListener('click', () => {
         currentPage = i;
         updateList();
