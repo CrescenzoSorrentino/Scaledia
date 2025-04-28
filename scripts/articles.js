@@ -23,22 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const filteredArticles = selectedCategory === "all" ? articles : articles.filter(a => a.category === selectedCategory);
         const start = (currentPage - 1) * articlesPerPage;
         const paginatedArticles = filteredArticles.slice(start, start + articlesPerPage);
-
+    
         paginatedArticles.forEach(article => {
             container.innerHTML += `
-                <div class="col-md-4">
-                    <div class="card shadow-sm card-3d h-100">
-                        <img src="${article.image}" class="card-img-top" alt="${article.title}" style="object-fit:cover;height:200px;">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">${article.title}</h5>
-                            <p class="card-text flex-grow-1">${article.description}</p>
-                            <a href="${article.link}" class="btn btn-primary mt-auto">${translations[lang].readMore}</a>
-                        </div>
-                    </div>
+                <div class="list-article mb-4 p-3 shadow-sm">
+                    <h4>${article.title}</h4>
+                    <p>${article.description}</p>
+                    <a href="${article.link}" class="btn btn-primary">${translations[lang].readMore}</a>
                 </div>
             `;
         });
-
+    
         setupPagination(filteredArticles.length);
     }
 
