@@ -44,16 +44,14 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero py-5 text-center">
-  <div class="container">
+<section class="hero py-5 text-center position-relative z-2">
+  <div class="container position-relative z-2">
     <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="articlesHeroTitle">Explore Scaledia Articles</h1>
     <p class="hero-subtitle lead mb-4" data-lang-key="articlesHeroSubtitle">Insights, tips and strategies for your growth.</p>
   </div>
 </section>
 
-<!-- Filters and Articles -->
-<section class="articles-list py-5">
+<section class="articles py-5">
   <div class="container">
     <div id="categoryFilters" class="mb-4 text-center"></div>
     <div id="articlesContainer"></div>
@@ -85,7 +83,47 @@
   </div>
 </footer>
 
+<!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Traduzioni Articles -->
+<script>
+let translationsData = {};
+
+fetch('translations-articles.json')
+  .then(response => response.json())
+  .then(data => {
+    translationsData = data;
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    switchLanguage(savedLang);
+  });
+
+function switchLanguage(lang) {
+  document.querySelectorAll("[data-lang-key]").forEach(el => {
+    const key = el.getAttribute("data-lang-key");
+    if (translationsData[lang] && translationsData[lang][key]) {
+      if (el.tagName === "INPUT") {
+        el.placeholder = translationsData[lang][key];
+      } else if (el.getAttribute("data-lang-html") === "true") {
+        el.innerHTML = translationsData[lang][key];
+      } else {
+        el.textContent = translationsData[lang][key];
+      }
+    }
+  });
+  localStorage.setItem('preferredLang', lang);
+}
+
+document.querySelectorAll(".language-option").forEach(option => {
+  option.addEventListener("click", e => {
+    e.preventDefault();
+    const lang = e.target.getAttribute("data-lang");
+    switchLanguage(lang);
+  });
+});
+</script>
+
+<!-- Script Articles -->
 <script src="scripts/articles.js"></script>
 
 </body>

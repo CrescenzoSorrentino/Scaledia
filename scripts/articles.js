@@ -22,6 +22,31 @@ const articlesData = [
     }
   ];
   
+  function createArticleElement(article) {
+    const articleElement = document.createElement('div');
+    articleElement.className = 'list-group-item mb-4 p-4 rounded shadow-sm bg-white';
+  
+    const title = document.createElement('h3');
+    title.className = 'h5 mb-2';
+    title.textContent = article.title;
+  
+    const description = document.createElement('p');
+    description.className = 'mb-3';
+    description.textContent = article.description;
+  
+    const readMoreBtn = document.createElement('a');
+    readMoreBtn.className = 'btn btn-primary';
+    readMoreBtn.href = article.link;
+    readMoreBtn.target = '_blank';
+    readMoreBtn.textContent = 'Read More';
+  
+    articleElement.appendChild(title);
+    articleElement.appendChild(description);
+    articleElement.appendChild(readMoreBtn);
+  
+    return articleElement;
+  }
+
   let currentPage = 1;
   const articlesPerPage = 5;
   let selectedCategory = "all";
@@ -88,6 +113,8 @@ const articlesData = [
       paginationContainer.appendChild(btn);
     }
   }
+  
+
   
   // Inizializzazione
   renderFilters();

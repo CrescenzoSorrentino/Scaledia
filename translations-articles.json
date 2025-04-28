@@ -1,62 +1,14 @@
 {
   "en": {
     "articlesHeroTitle": "Explore Scaledia Articles",
-    "articlesHeroSubtitle": "Insights, tips and strategies for your growth.",
-    "categories": {
-      "all": "All",
-      "marketing": "Marketing",
-      "growth": "Growth Hacking",
-      "finance": "Finance"
-    },
-    "readMore": "Read More",
-    "footerTitle": "Let's Grow Together",
-    "footerText": "Join the Scaledia community and get weekly insights on marketing, money, and mindset.",
-    "subscribe": "Subscribe",
-    "placeholderEmail": "Enter your email"
+    "articlesHeroSubtitle": "Insights, tips and strategies for your growth."
   },
   "it": {
     "articlesHeroTitle": "Esplora gli Articoli di Scaledia",
-    "articlesHeroSubtitle": "Approfondimenti, consigli e strategie per la tua crescita.",
-    "categories": {
-      "all": "Tutti",
-      "marketing": "Marketing",
-      "growth": "Growth Hacking",
-      "finance": "Finanza"
-    },
-    "readMore": "Leggi di più",
-    "footerTitle": "Cresciamo Insieme",
-    "footerText": "Unisciti alla community di Scaledia e ricevi consigli settimanali su marketing, soldi e mentalità.",
-    "subscribe": "Iscriviti",
-    "placeholderEmail": "Inserisci la tua email"
-  },
-  "es": {
-    "articlesHeroTitle": "Explora los Artículos de Scaledia",
-    "articlesHeroSubtitle": "Ideas, consejos y estrategias para tu crecimiento.",
-    "categories": {
-      "all": "Todos",
-      "marketing": "Marketing",
-      "growth": "Growth Hacking",
-      "finance": "Finanzas"
-    },
-    "readMore": "Leer más",
-    "footerTitle": "Crezcamos Juntos",
-    "footerText": "Únete a la comunidad de Scaledia y recibe consejos semanales sobre marketing, dinero y mentalidad.",
-    "subscribe": "Suscribirse",
-    "placeholderEmail": "Introduce tu correo electrónico"
+    "articlesHeroSubtitle": "Approfondimenti, consigli e strategie per la tua crescita."
   },
   "zh": {
-    "articlesHeroTitle": "探索 Scaledia 文章",
-    "articlesHeroSubtitle": "为你的成长提供洞察、建议和策略。",
-    "categories": {
-      "all": "全部",
-      "marketing": "市场营销",
-      "growth": "增长黑客",
-      "finance": "金融"
-    },
-    "readMore": "阅读更多",
-    "footerTitle": "一起成长",
-    "footerText": "加入 Scaledia 社区，每周获取有关营销、理财和心态的洞察。",
-    "subscribe": "订阅",
-    "placeholderEmail": "输入你的电子邮件"
+    "articlesHeroTitle": "探索 Scaledia 的文章",
+    "articlesHeroSubtitle": "关于增长、市场营销和金融的见解与策略。"
   }
 }
