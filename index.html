@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Base -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Scaledia: Marketing, Growth Hacking e Finanza. Scopri strategie pratiche per far crescere il tuo progetto."/>
+  <meta name="description" content="Discover Scaledia: strategies, marketing, growth hacking and personal finance to grow your business and mindset.">
   <meta name="author" content="Crescenzo Sorrentino">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Scaledia - Marketing, Growth Hacking & Finance"/>
   <meta property="og:description" content="Scaledia: tutto quello che ti serve per far crescere il tuo progetto in modo smart e pratico."/>
   <meta property="og:image" content="https://crescenzosorrentino.github.io/Scaledia/images/share-previw.png"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://crescenzosorrentino.github.io/Scaledia/"/>
-  <link rel="icon" href="https://crescenzosorrentino.github.io/Scaledia/images/favicon.ico" type="image/x-icon">
+
+  
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Scaledia - Marketing, Growth Hacking & Finance"/>
   <meta name="twitter:description" content="Strategie pratiche di marketing, crescita e gestione finanziaria per il tuo progetto."/>
   <meta name="twitter:image" content="https://crescenzosorrentino.github.io/Scaledia/images/share-previw.png"/>
+
+   <!-- Lang -->
   <link rel="alternate" hreflang="en" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
   <link rel="alternate" hreflang="it" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
   <link rel="alternate" hreflang="es" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
   <link rel="alternate" hreflang="zh" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
+
+  <link rel="icon" href="https://crescenzosorrentino.github.io/Scaledia/images/favicon.ico" type="image/x-icon">
   <title>Scaledia - Marketing, Growth Hacking & Finance</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
   <link rel="stylesheet" href="stylesheets/main.css"/>
@@ -145,7 +156,7 @@
   </div>
   <!-- Footer Links -->
   <div class="mb-2">
-  <a class="text-white text-decoration-none me-2" href="#">Privacy Policy</a> |
+  <a class="text-white text-decoration-none me-2" href="#"> data-lang-key="privacyPolcy">Privacy Policy</a> |
             <a class="text-white text-decoration-none mx-2" href="#">Terms</a> |
             <a class="text-white text-decoration-none ms-2" href="#">Contact</a>
   </div>
@@ -169,21 +180,53 @@
   </div>
   </div>
 
+<!-- ============================== -->
+<!-- Bootstrap Bundle (necessario per dropdown e componenti Bootstrap) -->
+<!-- ============================== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ============================== -->
+<!-- SCRIPT DI TRADUZIONE DINAMICA -->
+<!-- ============================== -->
 <script>
-let translationsData = {};
-fetch('translations.json')
-  .then(response => response.json())
+
+// Variabili Globali
+
+let translationsData = {}; // Oggetto che conterrà tutte le traduzioni
+const translationFile = 'translations.json'; // Percorso del file JSON di traduzioni
+const defaultLang = 'en'; // Lingua predefinita
+const availableLanguages = ['en', 'it', 'es', 'zh']; // Lingue supportate (puoi modificarle)
+
+// Caricamento File Traduzioni
+fetch(translationFile)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Errore HTTP: ' + response.status);
+    }
+    return response.json();
+  })
   .then(data => {
     translationsData = data;
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    switchLanguage(savedLang);
-  });
+    const savedLang = localStorage.getItem('preferredLang') || defaultLang;
+    if (!availableLanguages.includes(savedLang)) {
+      console.warn(`Lingua salvata "${savedLang}" non supportata. Imposto lingua di default.`);
+      switchLanguage(defaultLang);
+    } else {
+      switchLanguage(savedLang);
+    }
+  })
+  .catch(error => console.error('Errore durante il caricamento delle traduzioni:', error));
 
+// Funzione per Cambiare Lingua
 function switchLanguage(lang) {
+  if (!translationsData[lang]) {
+    console.error(`La lingua "${lang}" non esiste nel file di traduzioni.`);
+    return;
+  }
+
   document.querySelectorAll("[data-lang-key]").forEach(el => {
     const key = el.getAttribute("data-lang-key");
-    if (translationsData[lang] && translationsData[lang][key]) {
+    if (translationsData[lang][key]) {
       if (el.tagName === "INPUT") {
         el.placeholder = translationsData[lang][key];
       } else if (el.getAttribute("data-lang-html") === "true") {
@@ -191,19 +234,25 @@ function switchLanguage(lang) {
       } else {
         el.textContent = translationsData[lang][key];
       }
+    } else {
+      console.warn(`Chiave di traduzione mancante: "${key}" nella lingua "${lang}"`);
     }
   });
-  localStorage.setItem('preferredLang', lang);
+
+  localStorage.setItem('preferredLang', lang); // Salva la lingua selezionata
 }
 
+// Event Listener per Cambio Lingua
 document.querySelectorAll(".language-option").forEach(option => {
   option.addEventListener("click", (e) => {
     e.preventDefault();
-    const lang = e.target.getAttribute("data-lang");
-    switchLanguage(lang);
+    const selectedLang = e.target.getAttribute("data-lang");
+    if (!availableLanguages.includes(selectedLang)) {
+      console.error(`Lingua selezionata "${selectedLang}" non supportata.`);
+      return;
+    }
+    switchLanguage(selectedLang);
   });
 });
-</script>
 
-</body>
-</html>
+</script>

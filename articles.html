@@ -21,36 +21,133 @@
   <meta name="twitter:description" content="Insights and strategies for growth, marketing and finance.">
   <meta name="twitter:image" content="https://crescenzosorrentino.github.io/Scaledia/images/share-preview.png">
 
+  <!-- Lang -->
+  <link rel="alternate" hreflang="en" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
+  <link rel="alternate" hreflang="it" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
+  <link rel="alternate" hreflang="zh" href="https://crescenzosorrentino.github.io/Scaledia/index.html"/>
+
   <link rel="icon" href="https://crescenzosorrentino.github.io/Scaledia/images/favicon.ico" type="image/x-icon">
   <title>Scaledia Articles</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="stylesheets/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="stylesheets/main.css"/>
 </head>
+
+
 
 <body>
 
+
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Scaledia</a>
+    <a class="navbar-brand fw-bold" href="https://crescenzosorrentino.github.io/Scaledia/index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="https://crescenzosorrentino.github.io/Scaledia/articles.html">Articles</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item language-option" data-lang="en" href="#">English</a></li>
+            <li><a class="dropdown-item language-option" data-lang="zh" href="#">中文</a></li>
+            <li><a class="dropdown-item language-option" data-lang="es" href="#">Español</a></li>
+            <li><a class="dropdown-item language-option" data-lang="it" href="#">Italiano</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
+
+
 <!-- Hero Section -->
-<section class="hero py-5 text-center position-relative z-2">
+<section class="hero py-5 mt-5 text-center position-relative overflow-hidden">
   <div class="container position-relative z-2">
-    <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="articlesHeroTitle">Explore Scaledia Articles</h1>
-    <p class="hero-subtitle lead mb-4" data-lang-key="articlesHeroSubtitle">Insights, tips and strategies for your growth.</p>
+    <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="heroTitle"></h1>
+    <p class="hero-subtitle lead mb-4" data-lang-key="heroSubtitle"></p>
   </div>
 </section>
 
-<!-- Articles Section -->
+
+
+<!-- List Section -->
 <section class="articles-list py-5">
-  <div class="container">
-    <div id="articlesContainer"></div>
-  </div>
-</section>
+    <div class="container">
+  
+      <!-- Filter Buttons -->
+      <div class="mb-4 text-center">
+        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="all" data-lang-key="filterAll">All</button>
+        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="marketing" data-lang-key="filterMarketing">Marketing</button>
+        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="finance" data-lang-key="filterFinance">Finance</button>
+        <button class="btn btn-outline-primary me-2 filter-btn" data-filter="growth" data-lang-key="filterGrowth">Growth Hacking</button>
+      </div>
+  
+      <!-- Articles List -->
+      <ul class="list-group list-group-flush" id="articlesList">
+  
+        <!-- Article 1 -->
+        <li class="list-group-item" data-category="growth">
+          <h5 data-lang-key="articleTitleGrowthHacking">Mastering Growth Hacking</h5>
+          <p class="small" data-lang-key="articleDescGrowthHacking">Learn the strategies behind explosive startup growth.</p>
+          <a href="articles/growth-hacking.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+        <!-- Article 2 -->
+        <li class="list-group-item" data-category="finance">
+          <h5 data-lang-key="articleTitleBudgeting">Smart Budgeting Tips</h5>
+          <p class="small" data-lang-key="articleDescBudgeting">Discover practical budgeting techniques to manage your finances better.</p>
+          <a href="articles/budgeting.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+        <!-- Article 3 -->
+        <li class="list-group-item" data-category="finance">
+          <h5 data-lang-key="articleTitleCreditCards">Credit Cards: Friend or Foe?</h5>
+          <p class="small" data-lang-key="articleDescCreditCards">Uncover the secrets behind credit cards and how to use them wisely.</p>
+          <a href="articles/credit-cards.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+        <!-- Article 4 -->
+        <li class="list-group-item" data-category="marketing">
+          <h5 data-lang-key="articleTitleMarketingTrends">Top 10 Marketing Trends for 2025</h5>
+          <p class="small" data-lang-key="articleDescMarketingTrends">Stay ahead of the curve with the hottest marketing trends.</p>
+          <a href="articles/marketing-trends.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+        <!-- Article 5 -->
+        <li class="list-group-item" data-category="marketing">
+          <h5 data-lang-key="articleTitleSEO">SEO for Beginners</h5>
+          <p class="small" data-lang-key="articleDescSEO">Boost your site's visibility on search engines.</p>
+          <a href="articles/seo-beginners.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+        <!-- Article 6 -->
+        <li class="list-group-item" data-category="growth">
+          <h5 data-lang-key="articleTitleViralLoops">Building Viral Loops</h5>
+          <p class="small" data-lang-key="articleDescViralLoops">Create systems that drive exponential growth.</p>
+          <a href="articles/viral-loops.html" class="btn btn-primary btn-sm" data-lang-key="readMore">Read More</a>
+        </li>
+  
+      </ul>
+  
+      <!-- Pagination -->
+      <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center" id="pagination">
+          <!-- Buttons generated by JS -->
+        </ul>
+      </nav>
+  
+    </div>
+  </section>
+
+
+
 
 <!-- Footer -->
 <footer class="footer text-center py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #007bff, #6610f2); color: white;">
@@ -96,10 +193,116 @@
   </div>
   </div>
   </div>
-  
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts/articles.js"></script>
+</footer>
 
-</body>
-</html>
+<!-- ============================== -->
+<!-- Bootstrap Bundle (necessario per dropdown e componenti Bootstrap) -->
+<!-- ============================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ============================== -->
+<!-- SCRIPT DI TRADUZIONE DINAMICA -->
+<!-- ============================== -->
+<script>
+
+// Variabili Globali
+let translationsData = {}; // Oggetto che conterrà tutte le traduzioni
+const translationFile = 'translations-articles.json'; // Percorso del file JSON di traduzioni
+const defaultLang = 'en'; // Lingua predefinita
+
+// Caricamento File Traduzioni
+fetch(translationFile)
+  .then(response => response.json())
+  .then(data => {
+    translationsData = data;
+    const savedLang = localStorage.getItem('preferredLang') || defaultLang; // Correzione: mancava 
+    switchLanguage(savedLang);
+  })
+  .catch(error => console.error('Errore durante il caricamento delle traduzioni:', error));
+
+// Funzione per Cambiare Lingua
+function switchLanguage(lang) {
+  document.querySelectorAll("[data-lang-key]").forEach(el => {
+    const key = el.getAttribute("data-lang-key");
+    if (translationsData[lang] && translationsData[lang][key]) {
+      if (el.tagName === "INPUT") {
+        el.placeholder = translationsData[lang][key];
+      } else if (el.getAttribute("data-lang-html") === "true") {
+        el.innerHTML = translationsData[lang][key];
+      } else {
+        el.textContent = translationsData[lang][key];
+      }
+    }
+  });
+  localStorage.setItem('preferredLang', lang); // Salva la lingua selezionata
+}
+
+// Event Listener per Cambio Lingua
+document.querySelectorAll(".language-option").forEach(option => {
+  option.addEventListener("click", (e) => {
+    e.preventDefault();
+    const selectedLang = e.target.getAttribute("data-lang");
+    switchLanguage(selectedLang);
+  });
+});
+
+</script>
+
+<!-- ============================== -->
+<!-- SCRIPT DI FILTRAGGIO + PAGINAZIONE ARTICOLI -->
+<!-- ============================== -->
+<script>
+
+// Variabili Globali per Paginazione e Filtraggio
+const itemsPerPage = 3; // Numero di articoli per pagina
+let currentPage = 1;
+let currentFilter = 'all';
+
+const listItems = document.querySelectorAll('#articlesList li');
+const pagination = document.getElementById('pagination');
+
+// Funzione di Aggiornamento Lista Articoli
+function updateList() {
+  let visibleItems = Array.from(listItems).filter(item => {
+    return currentFilter === 'all' || item.getAttribute('data-category') === currentFilter; // Correzione: mancava 
+  });
+
+  const totalPages = Math.ceil(visibleItems.length / itemsPerPage);
+
+  // Nascondi tutti gli articoli
+  listItems.forEach(item => item.style.display = 'none');
+
+  // Mostra solo gli articoli della pagina corrente
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  visibleItems.slice(start, end).forEach(item => {
+    item.style.display = 'block';
+  });
+
+  // Costruisci la paginazione dinamica
+  pagination.innerHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement('li');
+    pageButton.className = 'page-item' + (i === currentPage ? ' active' : '');
+    pageButton.innerHTML = <button class="page-link">${i}</button>; // Correzione: mancavano gli apici
+    pageButton.querySelector('button').addEventListener('click', () => {
+      currentPage = i;
+      updateList();
+    });
+    pagination.appendChild(pageButton);
+  }
+}
+
+// Event Listener sui Filtri Categoria
+document.querySelectorAll('.filter-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    currentFilter = button.getAttribute('data-filter');
+    currentPage = 1; // Reset pagina su 1
+    updateList();
+  });
+});
+
+// Primo rendering della lista
+updateList();
+
+</script>

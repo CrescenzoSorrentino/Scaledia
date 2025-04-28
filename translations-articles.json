@@ -1,14 +1,73 @@
 {
   "en": {
     "articlesHeroTitle": "Explore Scaledia Articles",
-    "articlesHeroSubtitle": "Insights, tips and strategies for your growth."
+    "articlesHeroSubtitle": "Insights, tips and strategies for your growth.",
+    "marketing": "Marketing",
+    "growthHacking": "Growth Hacking",
+    "finance": "Finance",
+    "all": "All",
+    "readMore": "Read More",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "footerTitle": "Let's Grow Together",
+    "footerText": "Join the Scaledia community and get weekly insights on marketing, money, and mindset",
+    "placeholderEmail": "Enter your email",
+    "subscribe": "Subscribe",
+    "copyright": "© 2025 Scaledia. All rights reserved."
   },
+
+"zh": {
+    "articlesHeroTitle": "探索Scaledia文章",
+    "articlesHeroSubtitle": "洞察、提示和增长策略。",
+    "marketing": "营销",
+    "growthHacking": "增长黑客",
+    "finance": "金融",
+    "all": "全部",
+    "readMore": "阅读更多",
+    "privacyPolicy": "隐私政策",
+    "terms": "条款",
+    "contact": "联系方式",
+    "footerTitle": "一起成长",
+    "footerText": "加入Scaledia社区，每周获取营销、金钱和心态方面的见解",
+    "placeholderEmail": "输入你的电子邮件",
+    "subscribe": "订阅",
+    "copyright": "© 2025 Scaledia. 版权所有。"
+  },
+
+"es": {
+    "articlesHeroTitle": "Explora los Artículos de Scaledia",
+    "articlesHeroSubtitle": "Ideas, consejos y estrategias para tu crecimiento.",
+    "marketing": "Marketing",
+    "growthHacking": "Growth Hacking",
+    "finance": "Finanzas",
+    "all": "Todos",
+    "readMore": "Leer más",
+    "privacyPolicy": "Política de Privacidad",
+    "terms": "Términos",
+    "contact": "Contacto",
+    "footerTitle": "Crezcamos Juntos",
+    "footerText": "Únete a la comunidad de Scaledia y recibe información semanal sobre marketing, dinero y mentalidad",
+    "placeholderEmail": "Introduce tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "copyright": "© 2025 Scaledia. Todos los derechos reservados."
+  },
+
   "it": {
     "articlesHeroTitle": "Esplora gli Articoli di Scaledia",
-    "articlesHeroSubtitle": "Approfondimenti, consigli e strategie per la tua crescita."
-  },
-  "zh": {
-    "articlesHeroTitle": "探索 Scaledia 的文章",
-    "articlesHeroSubtitle": "关于增长、市场营销和金融的见解与策略。"
+    "articlesHeroSubtitle": "Approfondimenti, consigli e strategie per la tua crescita.",
+    "marketing": "Marketing",
+    "growthHacking": "Growth Hacking",
+    "finance": "Finanza",
+    "all": "Tutti",
+    "readMore": "Leggi di più",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Termini",
+    "contact": "Contatto",
+    "footerTitle": "Cresciamo Insieme",
+    "footerText": "Unisciti alla community di Scaledia e ricevi approfondimenti settimanali su marketing, denaro e mindset",
+    "placeholderEmail": "Inserisci la tua email",
+    "subscribe": "Iscriviti",
+    "copyright": "© 2025 Scaledia. Tutti i diritti riservati."
   }
 }

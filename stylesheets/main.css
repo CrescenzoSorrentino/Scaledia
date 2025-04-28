@@ -1,98 +1,122 @@
-/* Hero */
-.hero {
-    position: relative;
-    background: linear-gradient(135deg, #007bff, #6610f2);
-    color: white;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Bottoni Hero e Footer */
-.hero a.btn, footer a.btn, .form button.btn {
-    border-radius: 50px;
-    padding: 10px 25px;
-    font-weight: 600;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
-}
-
-.hero a.btn:hover, footer a.btn:hover, .form button.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(135deg, #007bff, #6610f2);
-    color: white;
-}
-
-
-
-.list-group-item {
+/* ========== BASE STYLES ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7f9;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ========== NAVBAR ========== */
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* ========== HERO SECTION ========== */
+  .hero {
+    background: linear-gradient(135deg, #003366, #0059b3); /* Blu oltremare */
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  
+  /* ========== LISTA ARTICOLI ========== */
+  .list-group-item {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .list-group-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
-
-/* Lista Articoli */
-.list-article {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-}
-
-.list-article h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.list-article p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.list-article a.btn {
-    background-color: #007bff;
-    color: white;
+  
+  /* ========== BOTTONI ========== */
+  .btn-primary {
+    background-color: #0059b3;
     border: none;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    border-radius: 5px;
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-weight: 600;
     transition: all 0.3s ease;
-}
-
-.list-article a.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* Paginazione */
-#pagination button {
-    background: white;
-    border: 1px solid #007bff;
-    color: #007bff;
-    border-radius: 50px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #003366;
+    transform: translateY(-3px);
+  }
+  
+  /* Bottoni nel Footer */
+  .btn-light {
+    background-color: #ffffff;
+    color: #003366;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-light:hover {
+    background-color: #e0e0e0;
+    color: #003366;
+    transform: translateY(-3px);
+  }
+  
+  /* ========== FOOTER ========== */
+  .footer {
+    background: linear-gradient(135deg, #001f4d, #004080); /* Footer blu profondo */
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ========== PAGINATION ========== */
+  #pagination button {
+    background-color: #ffffff;
+    color: #003366;
+    border: 1px solid #003366;
     margin: 0 5px;
-    width: 40px;
-    height: 40px;
-    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 30px;
     transition: all 0.3s ease;
-}
-
-#pagination button.active, #pagination button:hover {
-    background-color: #007bff;
-    color: white;
-}
+  }
+  
+  #pagination button:hover {
+    background-color: #003366;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  
+  /* ========== RESPONSIVE FIXES ========== */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
