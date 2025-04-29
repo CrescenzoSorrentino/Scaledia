@@ -7,13 +7,13 @@
     height: 5rem;
     z-index: 1050;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #eaeaea;
   }
 
 /* Menu mobile quando aperto */
 .navbar-collapse {
   background-color: white;
   padding: 1rem;
-  margin-top: 5rem; /* stessa altezza della navbar */
   z-index: 998;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -29,7 +29,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 5rem;
-  background: linear-gradient(135deg, #0056b3, #003580);
+  background: linear-gradient(135deg, #0044a3, #002d66);
   color: white;
   padding-top: 5rem; /* aumentato per staccare dalla navbar */
   padding-bottom: 6rem;
