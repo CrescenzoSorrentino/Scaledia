@@ -60,7 +60,8 @@
 }
 
 .hero {
-  margin-top: 5rem;
+  position: relative;
+  padding-top: 8rem;
   background-color: linear-gradient(135deg, #0044a3, #002d66);
 }
 
