@@ -1,58 +1,7 @@
 
-/* Hero Section */
+/* ============================== */
+/* Padding per sistemare Hero sotto la Navbar */
+/* ============================== */
 .hero {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0056b3, #003580);
-  color: white;
-  padding-top: 8rem; /* aumentato per staccare dalla navbar */
-  padding-bottom: 6rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-
-/* Titolo nella Hero */
-.hero-title {
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-}
-
-/* Sottotitolo nella Hero */
-.hero-subtitle {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  font-weight: 400;
-}
-
-/* Bottoni Hero, Footer, Filtri, Articoli */
-.hero .btn, .footer .btn, .filter-btn, .article-btn, .pagination .btn {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Hover sui bottoni */
-.hero .btn:hover, .footer .btn:hover, .filter-btn:hover, .article-btn:hover, .pagination .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
-}
-
-/* Stile specifico dei bottoni di paginazione */
-.pagination .btn-outline-primary {
-  color: #0056b3;
-  border-color: #0056b3;
-}
-
-.pagination .btn-outline-primary:hover {
-  background-color: #0056b3;
-  color: white;
-}
-
-/* Footer */
-.footer {
-  background: linear-gradient(135deg, #003580, #00254d);
-  color: white;
-  padding: 3rem 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+    padding-top: 6rem; /* Spazio per far respirare la Hero sotto la navbar */
 }
