@@ -62,7 +62,11 @@
 .hero {
   position: relative;
   padding-top: 8rem;
+  padding-bottom: 6rem;
+  text-align: center;
   background-color: linear-gradient(135deg, #0044a3, #002d66);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 /* Titolo nella Hero */
