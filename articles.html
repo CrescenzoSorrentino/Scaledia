@@ -42,7 +42,7 @@
 
 
 <!-- Contenuto della navbar -->
-<div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+<div class="collapse navbar-collapse show justify-content-between" id="navbarContent">
   <ul class="navbar-nav mb-2 mb-lg-0">
     <!-- Link principali -->
     <li class="nav-item">
@@ -54,10 +54,8 @@
 
     <!-- Selettore lingua -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Language
-      </a>
-      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown">Language</a>
+      <ul class="dropdown-menu" aria-labelledby="languageDropdown">
         <li><a class="dropdown-item language-option" data-lang="en" href="#">English</a></li>
         <li><a class="dropdown-item language-option" data-lang="zh" href="#">中文</a></li>
         <li><a class="dropdown-item language-option" data-lang="es" href="#">Español</a></li>
@@ -300,3 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
   updateList(); // Primo rendering della lista
 });
 </script>
+
+
+
+</body>
+</html>
