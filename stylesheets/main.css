@@ -1,4 +1,4 @@
-/* Nav Bar */
+/* Navbar */
 .navbar {
   background-color: white;
   height: 5rem;
@@ -10,23 +10,51 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-.navbar .navbar-nav {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+/* Brand (Scaledia) */
+.navbar-brand {
+  color: #1a1a1a;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  overflow: hidden;
-  margin-top: 5rem;
-  background: linear-gradient(135deg, #0044a3, #002d66);
-  color: white;
-  padding-top: 5rem; /* aumentato per staccare dalla navbar */
-  padding-bottom: 6rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  text-align: center;
+.navbar-brand:hover {
+  color: #0056b3;
+}
+
+/* Voci di menu */
+.navbar-nav .nav-link {
+  color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0056b3;
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+}
+
+/* Dropdown menu (lingua) */
+.dropdown-menu {
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  background-color: white;
+}
+
+.dropdown-item {
+  color: #1a1a1a;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+/* Mobile fix: transizione apertura menu */
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
 }
 
 /* Titolo nella Hero */
