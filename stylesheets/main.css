@@ -71,15 +71,6 @@
   font-weight: 400;
 }
 
-/* Bottoni Hero, Footer, Filtri, Articoli */
-.hero .btn, .footer .btn, .filter-btn, .article-btn, .pagination .btn {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
 .btn-outline-primary {
     color: #0056b3;
     border: 2px solid #0056b3;
@@ -116,5 +107,4 @@
   background: linear-gradient(135deg, #003580, #00254d);
   color: white;
   padding: 3rem 0;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
 }
