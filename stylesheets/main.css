@@ -45,6 +45,13 @@
   z-index: 1050;
 }
 
+@media (min-width: 768px) {
+  .dropdown-menu {
+    margin-top: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
 .dropdown-item {
   color: #1a1a1a;
 }
@@ -52,11 +59,6 @@
 .dropdown-item:hover {
   background-color: #f1f1f1;
   color: #0056b3;
-}
-
-/* Mobile fix: transizione apertura menu */
-.navbar-collapse {
-  transition: all 0.3s ease-in-out;
 }
 
 .hero {
