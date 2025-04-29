@@ -11,6 +11,7 @@
 }
 
 .navbar-nav .nav-link {
+  margin-left: 0.75rem;
   padding: 0.5rem 1rem;
   color: #1a1a1a;
 }
@@ -24,6 +25,16 @@
 .navbar-brand {
   font-weight: bold;
   font-size: 1.25rem;
+}
+
+.dropdown-menu {
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
 }
 
 /* Menu mobile quando aperto */
