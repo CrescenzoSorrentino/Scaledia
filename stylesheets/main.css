@@ -10,11 +10,16 @@
     border-bottom: 1px solid #eaeaea;
   }
 
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 /* Menu mobile quando aperto */
 .navbar-collapse {
+  transition: all 0.3s ease-in-out;
   background-color: white;
   padding: 1rem;
-  z-index: 998;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -84,6 +89,12 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
+
+/* Filtri */
+#categoryFilter {
+  margin-bottom: 4rem; /* o quanto ti piace: 3rem, 5rem, ecc. */
+}
+
 
 /* Footer */
 .footer {
