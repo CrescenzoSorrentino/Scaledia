@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const supportedLangs = ["en", "it", "es", "zh"];
   const lang = supportedLangs.includes(userLang) ? userLang : "en";
 
-  fetch("articles-data/credit-cards.json")
+  fetch("articles-data/credit-cards-translations.json")
     .then(response => {
       if (!response.ok) {
         throw new Error("Failed to fetch credit-cards.json");

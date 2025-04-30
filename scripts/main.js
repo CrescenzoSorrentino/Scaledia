@@ -4,7 +4,7 @@
 
 let translationsData = {};
 const defaultLang = 'en';
-const translationFile = 'translations.json';
+const translationFile = 'articles-data/translations.json';
 
 fetch(translationFile)
   .then(response => response.json())
