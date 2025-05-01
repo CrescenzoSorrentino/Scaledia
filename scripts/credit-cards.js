@@ -1,62 +1,74 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const titleEl = document.getElementById("article-title");
-  const subtitleEl = document.getElementById("article-subtitle");
-  const contentEl = document.getElementById("article-content");
+  const defaultLang = 'en';
+  const translationFile = "../articles-data/credit-cards-translations.json";
+  let translationsData = {};
 
-  // Imposta lingua preferita in base al browser, default "en"
-  const userLang = navigator.language.slice(0, 2);
-  const supportedLangs = ["en", "it", "es", "zh"];
-  const lang = supportedLangs.includes(userLang) ? userLang : "en";
-
-  fetch("articles-data/credit-cards-translations.json")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch credit-cards.json");
-      }
-      return response.json();
-    })
+  // === 1. Caricamento file traduzioni ===
+  fetch(translationFile)
+    .then(res => res.json())
     .then(data => {
-      const article = data[lang];
-      if (!article) {
-        throw new Error(`No article found for language: ${lang}`);
-      }
-
-      titleEl.textContent = article.title;
-      subtitleEl.textContent = article.subtitle;
-      contentEl.innerHTML = article.content;
+      translationsData = data;
+      const savedLang = localStorage.getItem('preferredLang') || defaultLang;
+      switchLanguage(savedLang);
     })
-    .catch(error => {
-      console.error("Error loading article:", error);
-      titleEl.textContent = "Oops!";
-      subtitleEl.textContent = "";
-      contentEl.innerHTML = "<p>Sorry, the article could not be loaded. Please try again later.</p>";
-    });
-});
+    .catch(error => console.error("Errore caricamento traduzioni:", error));
 
-  // === Scroll Back to Top ===
-  const backTopBtn = document.querySelector('a[href="#top"]');
-  if (backTopBtn) {
-    backTopBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // === 2. Cambio lingua ===
+  function switchLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-lang-key]").forEach(el => {
+      const key = el.getAttribute("data-lang-key");
+      if (translationsData[lang] && translationsData[lang][key]) {
+        if (["INPUT", "TEXTAREA"].includes(el.tagName)) {
+          el.placeholder = translationsData[lang][key];
+        } else if (el.getAttribute("data-lang-html") === "true") {
+          el.innerHTML = translationsData[lang][key];
+        } else {
+          el.textContent = translationsData[lang][key];
+        }
+      }
     });
+
+    // === Caricamento contenuto dell’articolo ===
+    const articleContainer = document.getElementById("article-content");
+    if (articleContainer && translationsData[lang].content) {
+      articleContainer.innerHTML = translationsData[lang].content;
+    }
+
+    localStorage.setItem('preferredLang', lang);
   }
 
-  // === Articoli correlati (facoltativo) ===
+  // === 3. Eventi cambio lingua ===
+  document.querySelectorAll(".language-option").forEach(option => {
+    option.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedLang = e.target.dataset.lang;
+      switchLanguage(selectedLang);
+    });
+  });
+
+  // === 4. Articoli correlati dinamici ===
   const mainEl = document.querySelector("main");
   if (!mainEl) return;
 
   const category = mainEl.dataset.category;
   const title = mainEl.dataset.title;
 
-  fetch("../../articles.json")
+  fetch("../articles-data/articles.json")
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("recommended-articles");
-      const filtered = data.filter(article => article.category === category && article.title !== title);
+      if (!container) return;
+
+      const filtered = data.filter(article =>
+        article.category === category && article.title !== title
+      );
+
       filtered.slice(0, 3).forEach(article => {
         const col = document.createElement("div");
         col.className = "col-md-4";
+
         col.innerHTML = `
           <div class="card h-100 shadow-sm">
             <div class="card-body">
@@ -64,7 +76,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${article.link}" class="text-decoration-none">${article.title}</a>
               </h5>
             </div>
-          </div>`;
+          </div>
+        `;
+
         container.appendChild(col);
       });
+    })
+    .catch(error => console.error("Errore articoli correlati:", error));
+
+  // === 5. Scroll verso l'alto ===
+  const backTopBtn = document.querySelector('a[href="#top"]');
+  if (backTopBtn) {
+    backTopBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+});

@@ -27,7 +27,9 @@
     "subscribe": "Subscribe",
     "placeholderEmail": "Enter your email",
     "getStarted": "Get Started",
-    "copyright": "© 2025 Scaledia. All rights reserved."
+    "copyright": "© 2025 Scaledia. All rights reserved.",
+    "articleTitleCreditCards": "Credit Cards: Practical Guide to Use Them Smart",
+    "articleDescCreditCards": "Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances."
   },
   "zh": {
     "heroTitle": "营销. 增长黑客. 财务",
@@ -57,7 +59,9 @@
     "subscribe": "订阅",
     "placeholderEmail": "输入你的邮箱",
     "getStarted": "立即开始",
-    "copyright": "© 2025 Scaledia. 版权所有。"
+    "copyright": "© 2025 Scaledia. 版权所有。",
+    "articleTitleCreditCards": "信用卡：聪明使用的实用指南",
+    "articleDescCreditCards": "了解如何聪明使用信用卡：提示、风险和实用策略，掌控你的财务。"
   },
   "es": {
     "heroTitle": "Marketing. Growth Hacking. Finanzas",
@@ -87,7 +91,9 @@
     "subscribe": "Suscribirse",
     "placeholderEmail": "Introduce tu correo electrónico",
     "getStarted": "Empezar",
-    "copyright": "© 2025 Scaledia. Todos los derechos reservados."
+    "copyright": "© 2025 Scaledia. Todos los derechos reservados.",
+    "articleTitleCreditCards": "Tarjetas de Crédito: Guía Práctica para Usarlas con Inteligencia",
+    "articleDescCreditCards": "Aprende a usar las tarjetas de crédito con cabeza: consejos, riesgos y estrategias prácticas para tomar el control de tus finanzas."
   },
   "it": {
     "heroTitle": "Marketing. Growth Hacking. Finanza",
@@ -117,6 +123,8 @@
     "subscribe": "Iscriviti",
     "placeholderEmail": "Inserisci la tua email",
     "getStarted": "Inizia",
-    "copyright": "© 2025 Scaledia. Tutti i diritti riservati."
+    "copyright": "© 2025 Scaledia. Tutti i diritti riservati.",
+    "articleTitleCreditCards": "Carte di Credito: Guida Pratica per Usarle con Intelligenza",
+    "articleDescCreditCards": "Scopri come usare le carte di credito senza farti fregare: vantaggi, rischi e strategie pratiche per dominare le tue finanze."
   }
 }

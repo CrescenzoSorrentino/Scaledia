@@ -89,13 +89,9 @@
 
 <!-- Hero Section -->
 <section class="hero text-center">
-  <div class="container position-relative z-2">
-    <h1 class="hero-title display-4 fw-bold mb-3" data-lang-key="heroTitle"></h1>
-    <p class="hero-subtitle lead mb-4" data-lang-key="heroSubtitle"></p>
-    <a class="btn btn-light btn-lg shadow-lg" href="https://crescenzosorrentino.github.io/Scaledia/articles.html">
-      <i class="bi bi-rocket"></i>
-      <span data-lang-key="getStarted"></span>
-    </a>
+  <div class="container">
+    <h1 class="mb-4 display-4 fw-bold mb-3" data-lang-key="articlesHeroTitle">Explore Scaledia Articles</h1>
+    <p class="lead mb-4" data-lang-key="articlesHeroSubtitle">Insights, tips and strategies for your growth.</p>
   </div>
 </section>
 
@@ -107,58 +103,31 @@
   
       <!-- Filter Buttons -->
       <div id="categoryFilter" class="px-3 d-grid gap-2 d-md-flex justify-content-md-center">
-        <button class="btn btn-outline-primary me-2 w-100" data-filter="all" data-lang-key="filterAll">All</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-filter="marketing" data-lang-key="filterMarketing">Marketing</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-filter="finance" data-lang-key="filterFinance">Finance</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-filter="growth" data-lang-key="filterGrowth">Growth Hacking</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-category="all" data-lang-key="filterAll">All</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-category="marketing" data-lang-key="filterMarketing">Marketing</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-category="finance" data-lang-key="filterFinance">Finance</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-category="growth" data-lang-key="filterGrowth">Growth Hacking</button>
       </div>
   
       <!-- Articles Container -->
-      <ul class="list-group list-group-flush" id="articlesContainer">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="articlesContainer">
+
+        <!-- articolo 1 -->
+        <div class="col article-card" data-category="finance">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title" data-lang-key="articleTitleCreditCards">Credit Cards: Practical Guide to Use Them Smart</h5>
+              <p class="card-text small" data-lang-key="articleDescCreditCards">Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances.</p>
+              <a href="articles/credit-cards.html" class="btn btn-outline-primary btn-sm" data-lang-key="readMore">Read More</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- articolo 2 -->
+      
+      </div>
   
-        <!-- Article 1 -->
-        <li class="list-group-item" data-category="growth">
-          <h5 data-lang-key="articleTitleGrowthHacking">Mastering Growth Hacking</h5>
-          <p class="small" data-lang-key="articleDescGrowthHacking">Learn the strategies behind explosive startup growth.</p>
-          <a href="articles/growth-hacking.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-        <!-- Article 2 -->
-        <li class="list-group-item" data-category="finance">
-          <h5 data-lang-key="articleTitleBudgeting">Smart Budgeting Tips</h5>
-          <p class="small" data-lang-key="articleDescBudgeting">Discover practical budgeting techniques to manage your finances better.</p>
-          <a href="articles/budgeting.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-        <!-- Article 3 -->
-        <li class="list-group-item" data-category="finance">
-          <h5 data-lang-key="articleTitleCreditCards">Credit Cards: Friend or Foe?</h5>
-          <p class="small" data-lang-key="articleDescCreditCards">Uncover the secrets behind credit cards and how to use them wisely.</p>
-          <a href="articles/credit-cards.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-        <!-- Article 4 -->
-        <li class="list-group-item" data-category="marketing">
-          <h5 data-lang-key="articleTitleMarketingTrends">Top 10 Marketing Trends for 2025</h5>
-          <p class="small" data-lang-key="articleDescMarketingTrends">Stay ahead of the curve with the hottest marketing trends.</p>
-          <a href="articles/marketing-trends.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-        <!-- Article 5 -->
-        <li class="list-group-item" data-category="marketing">
-          <h5 data-lang-key="articleTitleSEO">SEO for Beginners</h5>
-          <p class="small" data-lang-key="articleDescSEO">Boost your site's visibility on search engines.</p>
-          <a href="articles/seo-beginners.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-        <!-- Article 6 -->
-        <li class="list-group-item" data-category="growth">
-          <h5 data-lang-key="articleTitleViralLoops">Building Viral Loops</h5>
-          <p class="small" data-lang-key="articleDescViralLoops">Create systems that drive exponential growth.</p>
-          <a href="articles/viral-loops.html" class="btn btn-outline-primary me-2 btn-sm" data-lang-key="readMore">Read More</a>
-        </li>
-  
-      </ul>
+    
   
       <!-- Pagination -->
       <nav aria-label="Page navigation" class="mt-4">
@@ -187,6 +156,10 @@
   
           <!-- FORM (visibile solo su mobile) -->
           <div class="d-block d-md-none w-100 mb-4" style="max-width: 400px;">
+            <div class="text-center mb-4">
+              <h2 data-lang-key="footerTitle">Let's Grow Together</h2>
+            <p data-lang-key="footerText">Join the Scaledia community and get weekly insights on marketing, money, and mindset</p>
+            </div>
             <form action="https://github.us3.list-manage.com/subscribe/post?u=b2dcdcbb6b2873df71c204ec9&amp;id=79d96d23ab"
                   class="validate d-flex flex-column align-items-center" method="post" target="_blank">
               <input class="form-control mb-3 text-center" data-lang-key="placeholderEmail" name="EMAIL" placeholder="Enter your email" required type="email">
@@ -215,10 +188,13 @@
   
         <!-- COLONNA DESTRA: FORM solo su DESKTOP -->
         <div class="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-center">
+          <div class="text-center mb-4">
+            <h2 data-lang-key="footerTitle">Let's Grow Together</h2>
+            <p data-lang-key="footerText">Join the Scaledia community and get weekly insights on marketing, money, and mindset</p>
+          </div>
           <form action="https://github.us3.list-manage.com/subscribe/post?u=b2dcdcbb6b2873df71c204ec9&amp;id=79d96d23ab"
                 class="validate w-100 d-flex flex-column align-items-center" method="post" target="_blank" style="max-width: 400px;">
-            <input class="form-control mb-3 text-center mx-auto" data-lang-key="placeholderEmail" name="EMAIL"
-                   placeholder="Enter your email" required type="email">
+            <input class="form-control mb-3 text-center mx-auto" data-lang-key="placeholderEmail" name="EMAIL" required type="email">
             <button class="btn btn-light btn-lg shadow-lg" data-lang-key="subscribe" type="submit">Subscribe</button>
           </form>
         </div>
