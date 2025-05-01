@@ -1,0 +1,46 @@
+[
+    {
+      "category": "finance",
+      "link": "articles/credit-cards.html",
+      "translations": {
+        "en": {
+          "title": "Credit Cards: Practical Guide to Use Them Smart",
+          "description": "Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances."
+        },
+        "it": {
+          "title": "Carte di Credito: Guida Pratica per Usarle con Intelligenza",
+          "description": "Scopri come usare le carte di credito senza farti fregare: vantaggi, rischi e strategie pratiche."
+        },
+        "es": {
+          "title": "Tarjetas de Crédito: Guía Práctica para Usarlas con Inteligencia",
+          "description": "Aprende a usar las tarjetas de crédito sin endeudarte."
+        },
+        "zh": {
+          "title": "信用卡：聪明使用的实用指南",
+          "description": "学习如何聪明地使用信用卡，避免债务陷阱。"
+        }
+      }
+    },
+    {
+      "category": "growth",
+      "link": "articles/duolingo.html",
+      "translations": {
+        "en": {
+          "title": "Duolingo: The Growth Hacker in Disguise",
+          "description": "How a green owl and smart design created one of the most addictive learning apps on the planet."
+        },
+        "it": {
+          "title": "Duolingo: Il Growth Hacker Travestito da Gufo",
+          "description": "Come un gufo verde e un design intelligente hanno creato una delle app più addictive al mondo."
+        },
+        "es": {
+          "title": "Duolingo: El Hacker del Crecimiento Disfrazado",
+          "description": "Cómo un búho verde y un diseño inteligente convirtieron a Duolingo en una app viral."
+        },
+        "zh": {
+          "title": "Duolingo：伪装的增长黑客",
+          "description": "一个绿色猫头鹰和巧妙设计如何创造出最上瘾的学习应用。"
+        }
+      }
+    }
+  ]
