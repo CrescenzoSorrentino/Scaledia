@@ -1,8 +1,21 @@
+
+/* ===============================
+   SCLEDIA - MAIN CSS CLEANED
+   =============================== */
+
+/* ---------- 1. BASE ---------- */
 html {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+body {
+  font-family: system-ui, sans-serif;
+  color: #1a1a1a;
+  background-color: #fff;
+  margin: 0;
+}
+
+/* ---------- 2. NAVBAR ---------- */
 .navbar {
   background-color: white;
   height: 5rem;
@@ -15,7 +28,6 @@ html {
   border-bottom: 1px solid #eaeaea;
 }
 
-/* Brand (Scaledia) */
 .navbar-brand {
   color: #1a1a1a;
   font-weight: bold;
@@ -27,7 +39,6 @@ html {
   color: #0056b3;
 }
 
-/* Voci di menu */
 .navbar-nav .nav-link {
   color: #1a1a1a;
   font-weight: 500;
@@ -41,209 +52,135 @@ html {
   border-radius: 4px;
 }
 
-/* Dropdown menu (lingua) */
-.dropdown-menu {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-  color: #1a1a1a;
-}
-
-.dropdown-item:hover {
-  background-color: #f1f1f1;
-  color: #0056b3;
-}
-
-.homepage-hero {
-  background: url('../images/hero-discord.png') no-repeat left center;
-  background-position: 0% center;
+/* ---------- 3. HERO ---------- */
+.hero-section {
+  background-position: center center;
   background-size: cover;
-  height: 100vh;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.hero-content {
-  animation: fadeUp 1s ease-in-out;
-  opacity: 0;
-}
-@keyframes fadeUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.hero-content h1,
-.hero-content p {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-}
-
-.hero-overlay {
-  background: linear-gradient(to right, rgba(10, 42, 67, 0.85), rgba(10, 42, 67, 0.6));
-  height: 100%;
-  width: 100%;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 80px 0;
   display: flex;
   align-items: center;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.homepage-hero {
+  height: 100vh;
+  padding: 0;
+  background: url('../images/hero-discord.png') no-repeat left center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  background: linear-gradient(to right, rgba(10, 42, 67, 0.85), rgba(10, 42, 67, 0.6));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
   max-width: 600px;
   text-align: left;
+  animation: fadeUp 1s ease-in-out;
+  opacity: 0;
 }
 
 .hero-content h1 {
   font-size: 2.8rem;
   font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .hero-content .btn {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-.scroll-indicator i {
-  font-size: 1.5rem;
-  display: block;
-  margin-top: 5px;
-}
-
-/* Hero Section - Articoli */
-.articles-hero {
-  margin-top: 70px;
-  background-color: #1d3a5c;
-  padding: 40px 20px 60px 20px;
-  color: white;
-}
-
-.articles-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.articles-hero p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-
-.about-section {
-  background-color: #e9eff4;
-  margin-top: -1px;
-  padding-top: 4rem;
-}
-
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 20px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-/* Hover sui bottoni */
-/* Hover generale su tutti i bottoni */
-.hero .btn:hover, 
-.footer .btn:hover, 
-.filter-btn:hover, 
-.article-btn:hover, 
-.pagination .btn:hover, 
-.btn-outline-primary:hover {
+.hero-content .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
-.btn-outline-light {
-  transition: all 0.3s ease;
-}
-.btn-outline-light:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-.hero-overlay .btn {
-  transition: transform 0.3s ease;
-}
-.hero-overlay .btn:hover {
-  transform: translateY(-2px);
+/* ---------- 4. ARTICLE HERO ---------- */
+.article-hero {
+  background-color: #0a2a43;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 5rem;
 }
 
-#next-section {
-  margin-top: -5rem;
+.article-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Hover Cards */
-.custom-card {
-  background-color: #ffffff;
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.04);
-  transition: trasform 0.3s ease, box-shadow 0.3s ease;
-  padding: 2rem;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s ease forwards;
-  will-change: transform;
-  max-width: 340px;
-  margin-left: auto;
-  margin-right: auto;
+.article-hero p {
+  font-size: 1.1rem;
+  color: #d2ebff;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+/* ---------- 5. ARTICLE BODY ---------- */
+.article-content {
+  max-width: 800px;
+  margin: 100px auto 60px auto;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-.custom-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+.article-content h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0a2a43;
+  border-left: 5px solid #0073e6;
+  padding-left: 0.75rem;
 }
 
-.col-md-6:nth-child(2),
-.col-lg-4:nth-child(2) {
-  animation-delay: 0.2s;
+.article-content h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #0073e6;
 }
 
-.col-md-6:nth-child(3),
-.col-lg-4:nth-child(3) {
-  animation-delay: 0.4s;
+.article-content p {
+  margin-bottom: 1.2rem;
+}
+
+.article-content strong {
+  font-weight: 700;
+  color: #0a2a43;
+}
+
+/* ---------- 6. CARDS (ARTICLES LIST) ---------- */
+.articles-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .card-body {
-  text-align: center;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
 }
 
-.card-body i {
-  margin-bottom: 1rem;
-  color: #0073e6;
+.card-body .btn {
+  margin-top: auto;
 }
 
 .card-title {
@@ -256,19 +193,7 @@ html {
   color: #333;
 }
 
-/* Card Header */
-.about-section {
-  background-color: #f5f7f9;
-  padding: 5rem 0;
-}
-
-/* Filtri */
-#categoryFilter {
-  margin-bottom: 4rem; /* o quanto ti piace: 3rem, 5rem, ecc. */
-}
-
-
-/* Footer */
+/* ---------- 7. FOOTER ---------- */
 .footer {
   background: #0a2a43;
   color: #ffffff;
@@ -276,13 +201,26 @@ html {
   text-align: center;
 }
 
+.footer .btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
 
+.footer .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
 
+/* ---------- 8. MEDIA QUERIES ---------- */
 @media (max-width: 768px) {
-  .hero-overlay {
-    justify-content: center;
-    text-align: center;
-    padding: 0 10%;
+  .hero-section {
+    padding: 60px 0;
   }
 
   .hero-content h1 {
@@ -293,33 +231,21 @@ html {
     font-size: 1rem;
   }
 
-/* Hero Section */
-  .hero-section {
-    background-position: 60% center;
-    background-size: cover;
-    height: 85vh;  
-  }
   .hero-overlay {
-    background: linear-gradient(to right, rgba(10, 42, 67, 0.95), rgba(10, 42, 67, 0.6));
+    padding: 0 10%;
+    justify-content: center;
+    text-align: center;
   }
-  .hero-overlay .container {
-    padding: 0 1rem;
-  }
-  .custom-card {
-    padding: 1.5rem;
-    height: auto;
-    transform: none;
-    opacity: 1;
-    animation: none;
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-.about-section {
-    padding: 3rem 0;
-  }
+}
 
-/* Hero Section - Articoli */
-  .articles-hero {
-    height: 70vh;
+/* ---------- 9. ANIMATIONS ---------- */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
