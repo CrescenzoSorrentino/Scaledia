@@ -1,38 +1,30 @@
 
-// scaledia.js - versione stabile ricostruita
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Scaledia.js inizializzato");
-  initLanguageSwitcher();
-  initCategoryFilters();
-  initArticleList();
-  initArticlePage();
-});
 
-// === 1. Gestione traduzioni globali (hero, footer, navbar, ecc.)
-function initLanguageSwitcher() {
-  const defaultLang = 'en';
-  const translationFile = 'articles-data/translations.json';
-  let translationsData = {};
+  // Path dinamico per traduzioni
+  const translationPath = location.pathname.includes("/articles/") ? "../articles-data/translations.json" : "articles-data/translations.json";
 
-  fetch(translationFile)
+  fetch(translationPath)
     .then(res => res.json())
     .then(data => {
-      translationsData = data;
-      const savedLang = localStorage.getItem('preferredLang') || defaultLang;
-      applyTranslations(savedLang, translationsData);
+      const lang = localStorage.getItem("preferredLang") || "en";
+      applyTranslations(lang, data);
+
+      document.querySelectorAll(".language-option").forEach(option => {
+        option.addEventListener("click", (e) => {
+          e.preventDefault();
+          const selectedLang = e.target.dataset.lang;
+          localStorage.setItem("preferredLang", selectedLang);
+          applyTranslations(selectedLang, data);
+        });
+      });
     })
     .catch(error => console.error("Errore durante il caricamento delle traduzioni:", error));
 
-  document.querySelectorAll(".language-option").forEach(option => {
-    option.addEventListener("click", (e) => {
-      e.preventDefault();
-      const selectedLang = e.target.dataset.lang;
-      localStorage.setItem("preferredLang", selectedLang);
-      applyTranslations(selectedLang, translationsData);
-    });
-  });
-}
+  initCategoryFilters();
+  initArticleList();
+});
 
 function applyTranslations(lang, data) {
   document.documentElement.lang = lang;
@@ -50,7 +42,7 @@ function applyTranslations(lang, data) {
   });
 }
 
-// === 2. Filtri categoria (solo su articles.html)
+// === Filtri categoria (solo su articles.html)
 function initCategoryFilters() {
   const filterButtons = document.querySelectorAll('#categoryFilter button');
   const articleCards = document.querySelectorAll('.article-card');
@@ -71,7 +63,7 @@ function initCategoryFilters() {
   });
 }
 
-// === 3. Lista articoli dinamica con traduzioni
+// === Lista articoli dinamica
 function initArticleList() {
   const container = document.getElementById("articlesContainer");
   const pagination = document.getElementById("pagination");
@@ -81,7 +73,6 @@ function initArticleList() {
   let allArticles = [];
   let currentPage = 1;
   let currentCategory = "all";
-  const lang = localStorage.getItem("preferredLang") || "en";
 
   fetch("articles-data/articles-list.json")
     .then(res => res.json())
@@ -102,15 +93,14 @@ function initArticleList() {
     const articlesToShow = filtered.slice(start, end);
 
     articlesToShow.forEach(article => {
-      const translation = (article.translations || {})[lang] || (article.translations || {}).en || {};
       const col = document.createElement("div");
-      col.className = "col article-card";
+      col.className = "col-12 col-md-4 mb-4 article-card";
       col.setAttribute("data-category", article.category);
       col.innerHTML = `
-        <div class="card h-100">
+        <div class="card h-100 p-4 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">${translation.title || ""}</h5>
-            <p class="card-text small">${translation.description || ""}</p>
+            <h5 class="card-title">${article.title}</h5>
+            <p class="card-text small">${article.description}</p>
             <a href="${article.link}" class="btn btn-outline-primary btn-sm">Read More</a>
           </div>
         </div>`;
@@ -152,81 +142,4 @@ function initArticleList() {
       button.classList.add("active");
     });
   });
-}
-
-// === 4. Pagina singolo articolo: contenuto + traduzioni + correlati
-function initArticlePage() {
-  const mainEl = document.querySelector("main");
-  if (!mainEl) return;
-
-  const translationFile = mainEl.dataset.json;
-  const category = mainEl.dataset.category || "";
-  const currentTitle = mainEl.dataset.title || "";
-  const defaultLang = "en";
-
-  fetch("../articles-data/translations.json")
-    .then(res => res.json())
-    .then(globalData => {
-      fetch(translationFile)
-        .then(res => res.json())
-        .then(articleData => {
-          const savedLang = localStorage.getItem("preferredLang") || defaultLang;
-          const combined = {
-            [savedLang]: {
-              ...globalData[savedLang],
-              ...articleData[savedLang]
-            }
-          };
-          applyArticleLanguage(savedLang, combined);
-        });
-    })
-    .catch(error => console.error("Errore caricamento traduzioni articolo:", error));
-
-  function applyArticleLanguage(lang, translationsData) {
-    document.documentElement.lang = lang;
-    document.querySelectorAll("[data-lang-key]").forEach(el => {
-      const key = el.getAttribute("data-lang-key");
-      if (translationsData[lang] && translationsData[lang][key]) {
-        if (["INPUT", "TEXTAREA"].includes(el.tagName)) {
-          el.placeholder = translationsData[lang][key];
-        } else if (el.getAttribute("data-lang-html") === "true") {
-          el.innerHTML = translationsData[lang][key];
-        } else {
-          el.textContent = translationsData[lang][key];
-        }
-      }
-    });
-
-    const articleContainer = document.getElementById("article-content");
-    if (articleContainer && translationsData[lang].content) {
-      articleContainer.innerHTML = translationsData[lang].content;
-    }
-  }
-
-  // Articoli correlati
-  fetch("../articles-data/articles.json")
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById("recommended-articles");
-      if (!container) return;
-
-      const filtered = data.filter(article =>
-        article.category === category && article.title !== currentTitle
-      );
-
-      filtered.slice(0, 3).forEach(article => {
-        const col = document.createElement("div");
-        col.className = "col-md-4";
-        col.innerHTML = `
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="${article.link}" class="text-decoration-none">${article.title}</a>
-              </h5>
-            </div>
-          </div>`;
-        container.appendChild(col);
-      });
-    })
-    .catch(error => console.error("Errore articoli correlati:", error));
 }

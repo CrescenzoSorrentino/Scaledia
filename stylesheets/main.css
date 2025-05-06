@@ -218,7 +218,7 @@ body {
 }
 
 /* ---------- 8. MEDIA QUERIES ---------- */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .hero-section {
     background: url('../images/hero-discord.png') no-repeat center center;
     background-size: cover;
