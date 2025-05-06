@@ -220,7 +220,16 @@ body {
 /* ---------- 8. MEDIA QUERIES ---------- */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 60px 0;
+    background: url('../images/hero-discord.png') no-repeat center center;
+    background-size: cover;
+    height: 85vh;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(to right, rgba(10, 42, 67, 0.9), rgba(10, 42, 67, 0.6));
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
   }
 
   .hero-content h1 {
@@ -230,14 +239,7 @@ body {
   .hero-content p {
     font-size: 1rem;
   }
-
-  .hero-overlay {
-    padding: 0 10%;
-    justify-content: center;
-    text-align: center;
-  }
 }
-
 /* ---------- 9. ANIMATIONS ---------- */
 @keyframes fadeUp {
   from {
