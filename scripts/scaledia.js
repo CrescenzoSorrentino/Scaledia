@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Scaledia.js inizializzato");
 
-  // Path dinamico per traduzioni
   const translationPath = location.pathname.includes("/articles/") ? "../articles-data/translations.json" : "articles-data/translations.json";
 
   fetch(translationPath)
@@ -30,14 +29,15 @@ function applyTranslations(lang, data) {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-lang-key]").forEach(el => {
     const key = el.getAttribute("data-lang-key");
-    if (data[lang] && data[lang][key]) {
-      if (["INPUT", "TEXTAREA"].includes(el.tagName)) {
-        el.placeholder = data[lang][key];
-      } else if (el.getAttribute("data-lang-html") === "true") {
-        el.innerHTML = data[lang][key];
-      } else {
-        el.textContent = data[lang][key];
-      }
+    const value = key.split('.').reduce((obj, part) => obj?.[part], data[lang]);
+    if (!value) return;
+
+    if (["INPUT", "TEXTAREA"].includes(el.tagName)) {
+      el.placeholder = value;
+    } else if (el.getAttribute("data-lang-html") === "true") {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value;
     }
   });
 }
@@ -101,7 +101,7 @@ function initArticleList() {
           <div class="card-body">
             <h5 class="card-title">${article.title}</h5>
             <p class="card-text small">${article.description}</p>
-            <a href="${article.link}" class="btn btn-outline-primary btn-sm">Read More</a>
+            <a href="${article.link}" class="btn btn-outline-primary btn-sm" data-lang-key="articlesCards.readMore">Read More</a>
           </div>
         </div>`;
       container.appendChild(col);

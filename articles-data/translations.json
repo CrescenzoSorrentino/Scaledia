@@ -29,7 +29,24 @@
     "articleHeroTitle1": "Credit Cards: Tool or Trap?",
     "articleHeroSubtitle1": "How to use them smart and never get burned.",
     "articleHeroTitle2": "Duolingo: Growth Hacking in Disguise",
-    "articleHeroSubtitle2": "What a green owl can teach you about viral growth."
+    "articleHeroSubtitle2": "What a green owl can teach you about viral growth.",
+    "articlesFilter": {
+      "all": "All",
+      "marketing": "Marketing",
+      "finance": "Finance",
+      "growth": "Growth Hacking"
+    },
+    "articlesCards": {
+      "creditCardTitle": "Credit Cards: Practical Guide to Use Them Smart",
+      "creditCardText": "Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances.",
+      "duolingoCaseStudyTitle": "Duolingo: Growth Hacker in Disguise",
+      "duolingoCaseStudyText": "A growth hack masterclass: how Duolingo made language learning addictive.",
+      "readMore": "Read More"
+    },
+    "articleButtons": {
+      "backToTop": "↑ Back to Top",
+      "backToArticles": "← Back to Articles"
+}
   },
   "it": {
     "heroBadge": "Nuovo su Scaledia?",
@@ -61,7 +78,24 @@
     "articleHeroTitle1": "Carte di credito: strumento o trappola?",
     "articleHeroSubtitle1": "Come usarle con intelligenza ed evitare brutte sorprese.",
     "articleHeroTitle2": "Duolingo: Growth Hacker travestito da gufo",
-    "articleHeroSubtitle2": "Cosa può insegnarti un gufo verde sulla crescita virale."
+    "articleHeroSubtitle2": "Cosa può insegnarti un gufo verde sulla crescita virale.",
+    "articlesFilter": {
+      "all": "Tutti",
+      "marketing": "Marketing",
+      "finance": "Finanza",
+      "growth": "Growth Hacking"
+    },
+    "articlesCards": {
+      "creditCardTitle": "Carte di Credito: Guida Pratica all’Uso Intelligente",
+      "creditCardText": "Scopri come usare le carte di credito con intelligenza: consigli, rischi e strategie pratiche per gestire le tue finanze.",
+      "duolingoCaseStudyTitle": "Duolingo: Il Growth Hacker Travestito",
+      "duolingoCaseStudyText": "Una masterclass di growth hacking: come Duolingo ha reso lo studio delle lingue un'abitudine irresistibile.",
+      "readMore": "Scopri di più"
+    },
+    "articleButtons": {
+      "backToTop": "↑ Torna su",
+      "backToArticles": "← Torna agli articoli"
+}
   },
   "es": {
     "heroBadge": "¿Nuevo en Scaledia?",
@@ -93,7 +127,24 @@
     "articleHeroTitle1": "¿Tarjetas de crédito: herramienta o trampa?",
     "articleHeroSubtitle1": "Aprende a usarlas bien y sin caer en deudas.",
     "articleHeroTitle2": "Duolingo: el hacker del crecimiento oculto",
-    "articleHeroSubtitle2": "Lo que un búho verde te puede enseñar sobre el crecimiento viral."
+    "articleHeroSubtitle2": "Lo que un búho verde te puede enseñar sobre el crecimiento viral.",
+    "articlesFilter": {
+      "all": "Todos",
+      "marketing": "Marketing",
+      "finance": "Finanzas",
+      "growth": "Growth Hacking"
+    },
+    "articlesCards": {
+      "creditCardTitle": "Tarjetas de Crédito: Guía Práctica para Usarlas Bien",
+      "creditCardText": "Aprende a usar bien las tarjetas de crédito: consejos, riesgos y estrategias prácticas para controlar tus finanzas.",
+      "duolingoCaseStudyTitle": "Duolingo: El Maestro del Growth Hacking",
+      "duolingoCaseStudyText": "Una lección de growth hacking: cómo Duolingo hizo que aprender idiomas fuera adictivo.",
+      "readMore": "Leer más"
+    },
+    "articleButtons": {
+      "backToTop": "↑ Volver arriba",
+      "backToArticles": "← Volver a los artículos"
+}
   },
   "zh": {
     "heroBadge": "初次来 Scaledia？",
@@ -125,6 +176,23 @@
     "articleHeroTitle1": "信用卡：工具还是陷阱？",
     "articleHeroSubtitle1": "学会聪明使用，避免债务风险。",
     "articleHeroTitle2": "Duolingo：伪装的增长黑客",
-    "articleHeroSubtitle2": "一只绿色猫头鹰如何教会你病毒式增长。"
- }
+    "articleHeroSubtitle2": "一只绿色猫头鹰如何教会你病毒式增长。",
+    "articlesFilter": {
+      "all": "全部",
+      "marketing": "市场营销",
+      "finance": "财务",
+      "growth": "增长黑客"
+    },
+    "articlesCards": {
+      "creditCardTitle": "信用卡：聪明使用的实用指南",
+      "creditCardText": "学习如何聪明地使用信用卡：技巧、风险和掌控财务的实用策略。",
+      "duolingoCaseStudyTitle": "多邻国：伪装的增长黑客",
+      "duolingoCaseStudyText": "增长黑客的教科书：多邻国如何让语言学习上瘾。",
+      "readMore": "阅读更多"
+    },
+    "articleButtons": {
+      "backToTop": "↑ 返回顶部",
+      "backToArticles": "← 返回文章列表"
+}
+  }
 }

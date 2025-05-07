@@ -101,10 +101,10 @@
   
       <!-- Filter Buttons -->
       <div id="categoryFilter" class="px-3 d-grid gap-2 d-md-flex justify-content-md-center mb-5">
-        <button class="btn btn-outline-primary me-2 w-100" data-category="all">All</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-category="marketing">Marketing</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-category="finance">Finance</button>
-        <button class="btn btn-outline-primary me-2 w-100" data-category="growth">Growth Hacking</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-lang-key="articlesFilter.all" data-category="all">All</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-lang-key="articlesFilter.marketing" data-category="marketing">Marketing</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-lang-key="articlesFilter.finance" data-category="finance">Finance</button>
+        <button class="btn btn-outline-primary me-2 w-100" data-lang-key="articlesFilter.growth" data-category="growth">Growth Hacking</button>
       </div>
   
       <!-- Articles Container -->
@@ -114,9 +114,9 @@
         <div class="col article-card" data-category="finance">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Credit Cards: Practical Guide to Use Them Smart</h5>
-              <p class="card-text small">Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances.</p>
-              <a href="articles/credit-cards.html" class="btn btn-outline-primary btn-sm">Read More</a>
+              <h5 class="card-title" data-lang-key="articlesCards.creditCardTitle">Credit Cards: Practical Guide to Use Them Smart</h5>
+              <p class="card-text small" data-lang-key="articlesCards.creditCardText">Learn how to use credit cards smartly: tips, risks, and practical strategies to take control of your finances.</p>
+              <a href="articles/credit-cards.html" data-lang-key="articlesCards.readMore" class="btn btn-outline-primary btn-sm">Read More</a>
             </div>
           </div>
         </div>
@@ -127,9 +127,9 @@
         <div class="col article-card" data-category="growth">
           <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Duolingo: Growth Hacker in Disguise</h5>
-              <p class="card-text small">A growth hack masterclass: how Duolingo made language learning addictive.</p>
-              <a href="articles/duolingo-growth-hacking-case-study.html" class="btn btn-outline-primary btn-sm">Read More</a>
+              <h5 class="card-title" data-lang-key="articlesCards.duolingoCaseStudyTitle">Duolingo: Growth Hacker in Disguise</h5>
+              <p class="card-text small" data-lang-key="articlesCards.duolingoCaseStudyText">A growth hack masterclass: how Duolingo made language learning addictive.</p>
+              <a href="articles/duolingo-growth-hacking-case-study.html"data-lang-key="articlesCards.readMore"  class="btn btn-outline-primary btn-sm">Read More</a>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@
             </div>
             <form action="https://github.us3.list-manage.com/subscribe/post?u=b2dcdcbb6b2873df71c204ec9&amp;id=79d96d23ab"
                   class="validate d-flex flex-column align-items-center" method="post" target="_blank">
-              <input class="form-control mb-3 text-center" data-lang-key="placeholderEmail" name="EMAIL" placeholder="Enter your email" required type="email">
+              <input class="form-control mb-3 text-center" data-lang-key="placeholderEmail" name="EMAIL" placeholder="Enter your email" required type="email" autocomplete="email">
               <button class="btn btn-light btn-lg shadow-lg" data-lang-key="subscribe" type="submit">Subscribe</button>
             </form>
           </div>
@@ -192,7 +192,7 @@
           </div>
           <form action="https://github.us3.list-manage.com/subscribe/post?u=b2dcdcbb6b2873df71c204ec9&amp;id=79d96d23ab"
                 class="validate w-100 d-flex flex-column align-items-center" method="post" target="_blank" style="max-width: 400px;">
-            <input class="form-control mb-3 text-center mx-auto" data-lang-key="placeholderEmail" name="EMAIL" required type="email">
+            <input class="form-control mb-3 text-center mx-auto" data-lang-key="placeholderEmail" name="EMAIL" required type="email" autocomplete="email" placeholder="Enter your email" style="width: 100%;">
             <button class="btn btn-outline-light mt-3" data-lang-key="subscribe" type="submit">Subscribe</button>
           </form>
         </div>
