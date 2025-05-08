@@ -43,22 +43,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../stylesheets/main.css"/>
   
+
+
+    <script>
+      // Legge la lingua corrente dal tag <html lang="...">
+      var lang = document.documentElement.lang || 'en';
+    
+      // Inizializza la configurazione Iubenda con la lingua attiva
+      window._iub = window._iub || [];
+      window._iub.csConfiguration = window._iub.csConfiguration || {};
+      window._iub.csConfiguration.lang = lang;
+    </script>
+
 <!-- Cookie Solution Iubenda -->
-<script type="text/javascript">
+
+
+
+
+
+<script>
+  // Recupera lingua salvata o usa 'en'
+  var lang = localStorage.getItem("preferredLang") || "en";
+  document.documentElement.lang = lang;
+
+  // Configurazione Iubenda
   var _iub = _iub || [];
   _iub.csConfiguration = {
-    "siteId": 4019868,
-    "cookiePolicyId": 16452539,
-    "storage": {"useSiteId": true}
+    siteId: 4019868,
+    cookiePolicyId: 16452539,
+    lang: lang,
+    storage: { useSiteId: true }
   };
   _iub.csLangConfiguration = {
-    "en": {"cookiePolicyId": 16452539},
-    "it": {"cookiePolicyId": 96756973},
-    "es": {"cookiePolicyId": 45918234}
+    en: { cookiePolicyId: 16452539 },
+    it: { cookiePolicyId: 96756973 },
+    es: { cookiePolicyId: 45918234 }
   };
+
+  // Caricamento script Iubenda SOLO dopo aver impostato lang
+  var iubJs = document.createElement("script");
+  iubJs.setAttribute("type", "text/javascript");
+  iubJs.setAttribute("src", "//cdn.iubenda.com/cs/iubenda_cs.js");
+  iubJs.setAttribute("charset", "UTF-8");
+  iubJs.setAttribute("async", true);
+  document.head.appendChild(iubJs);
+
+  var autoblock = document.createElement("script");
+  autoblock.setAttribute("type", "text/javascript");
+  autoblock.setAttribute("src", "https://cs.iubenda.com/autoblocking/4019868.js");
+  document.head.appendChild(autoblock);
 </script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4019868.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 
 </head>
   
@@ -219,11 +253,11 @@
 
         <!-- LINK -->
         
-<div class="mb-2">
-  <a class="text-white text-decoration-none me-2" href="https://www.iubenda.com/privacy-policy/16452539" title="Privacy Policy">Privacy Policy</a> |
-  <a class="text-white text-decoration-none mx-2" href="https://www.iubenda.com/privacy-policy/16452539/cookie-policy" title="Cookie Policy">Cookie Policy</a> |
-  <a class="text-white text-decoration-none ms-2" href="https://www.iubenda.com/terms-and-conditions/16452539" title="Terms and Conditions">Terms and Conditions</a>
-</div>
+        <div class="mb-2">
+          <a class="text-white text-decoration-none me-2" href="https://www.iubenda.com/privacy-policy/16452539" title="Privacy Policy" data-lang-key="privacyPolicy">Privacy Policy</a> |
+          <a class="text-white text-decoration-none mx-2" href="https://www.iubenda.com/privacy-policy/16452539/cookie-policy" title="Cookie Policy" data-lang-key="cookiePolicy">Cookie Policy</a> |
+          <a class="text-white text-decoration-none ms-2" href="https://www.iubenda.com/terms-and-conditions/16452539" title="Terms and Conditions" data-lang-key="TermsAndConditions">Terms and Conditions</a>
+        </div>
 
 
         <!-- COPYRIGHT -->

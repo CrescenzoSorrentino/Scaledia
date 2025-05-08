@@ -143,3 +143,19 @@ function initArticleList() {
     });
   });
 }
+
+
+// Gestione sincronizzazione lingua con Iubenda
+document.querySelectorAll('[data-lang]').forEach(button => {
+  button.addEventListener('click', function () {
+    const lang = this.getAttribute('data-lang') || 'en';
+    document.documentElement.lang = lang; // Imposta lang nel <html>
+    localStorage.setItem('preferredLang', lang); // Salva la preferenza
+    location.reload(); // Ricarica per aggiornare Iubenda
+  });
+});
+
+const savedLang = localStorage.getItem('preferredLang');
+if (savedLang) {
+  document.documentElement.lang = savedLang;
+}
