@@ -153,26 +153,25 @@
 </nav>
 
 
-  <!-- Hero Section -->
-  <div class="hero-section homepage-hero">
-    <div class="hero-overlay d-flex align-items-center">
-      <div class="container text-white">
-        <span class="badge bg-warning text-dark mb-3" data-lang-key="heroBadge">NEW to Scaledia?</span>
-        <h1 class="display-5 fw-bold" data-lang-key="heroTitle">Scaledia starts at home.</h1>
-        <p class="lead mb-4" data-lang-key="heroSubtitle">Learn, grow, and connect with creators like you in a space that feels truly yours.</p>
-        <a href="https://discord.gg/QxSZjxzp82" class="btn btn-outline-light mt-3">
-          <span data-lang-key="joinClub">Join the Club</span>
-          <small style="display:block; font-size: 0.75rem; opacity: 0.7;" data-lang-key="onDiscord">on Discord</small>
+<div class="hero-section homepage-hero">
+  <div class="hero-overlay d-flex align-items-center">
+    <div class="container text-white">
+      <div class="text-center hero-fade">
+        <span class="badge bg-warning text-dark mb-3">NEW to Scaledia?</span>
+        <h1 class="display-5 fw-bold">Scaledia starts at home.</h1>
+        <p class="lead mb-4">Learn, grow, and connect with creators like you in a space that feels truly yours.</p>
+        <a href="https://discord.gg/qZHZy7yj" class="btn btn-outline-light mt-3">Join the club</a>
+      </div>
+
+      <div class="scroll-indicator text-center mt-5">
+        <span class="text-white-50">Scroll</span>
+        <a href="#about">
+          <i class="bi bi-chevron-double-down text-white-50 fs-2 bounce-fix"></i>
         </a>
-        <div class="scroll-indicator text-center mt-5">
-          <span class="text-white-50">Scroll</span><br>
-          <a href="#about">
-            <i class="bi bi-chevron-double-down text-white-50 fs-2 bounce-fix"></i>
-          </a>
-        </div>
       </div>
     </div>
   </div>
+</div>
 
 
 
@@ -318,5 +317,24 @@
 <script src="scripts/scaledia.js" defer></script>
 
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector('.hero-fade');
+
+    if (!hero) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(hero);
+  });
+</script>
 </body>
 </html>
