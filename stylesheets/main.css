@@ -215,7 +215,29 @@ body {
   color: #333;
 }
 
-/* ---------- 7. FOOTER ---------- */
+/* ---------- 7. DONATE ---------- */
+#donate a.btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+}
+
+#donate {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+#donate h2{
+  padding-top: 1rem;
+  border-left: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------- 8. FOOTER ---------- */
 .footer {
   background: #0a2a43;
   color: #ffffff;
@@ -239,7 +261,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------- 8. MEDIA QUERIES ---------- */
+/* ---------- 9. MEDIA QUERIES ---------- */
 @media (max-width: 992px) {
   .hero-section {
     background: url('../images/hero-discord.png') no-repeat center center;
@@ -274,7 +296,7 @@ body {
     font-size: 1rem;
   }
 }
-/* ---------- 9. ANIMATIONS ---------- */
+/* ---------- 10. ANIMATIONS ---------- */
 @keyframes fadeUp {
   from {
     transform: translateY(20px);

@@ -50,7 +50,13 @@
     "articleButtons": {
       "backToTop": "↑ Back to Top",
       "backToArticles": "← Back to Articles"
-}
+    },
+    "donateSection": {
+      "title": "Support Scaledia",
+      "description": "A small gesture, a big push. Your support helps us write smarter content without selling out.",
+      "button": "Help us grow"
+    }
+
   },
   "it": {
     "heroBadge": "Nuovo su Scaledia?",
@@ -103,8 +109,14 @@
     "articleButtons": {
       "backToTop": "↑ Torna su",
       "backToArticles": "← Torna agli articoli"
-}
+    },
+      "donateSection": {
+      "title": "Supporta Scaledia",
+      "description": "Un piccolo gesto, una spinta enorme. Il tuo supporto ci aiuta a scrivere contenuti più intelligenti, senza svenderci.",
+      "button": "Aiutaci a crescere"
+    }
   },
+
   "es": {
     "heroBadge": "¿Nuevo en Scaledia?",
     "heroTitle": "Scaledia empieza en casa.",
@@ -156,7 +168,13 @@
     "articleButtons": {
       "backToTop": "↑ Volver arriba",
       "backToArticles": "← Volver a los artículos"
-}
+    },
+    "donateSection": {
+      "title": "Apoya a Scaledia",
+      "description": "Un pequeño gesto, un gran empujón. Tu apoyo nos ayuda a escribir contenido más inteligente sin vendernos.",
+      "button": "Ayúdanos a crecer"
+    }
+
   },
   "zh": {
     "heroBadge": "初次来 Scaledia？",
@@ -208,7 +226,13 @@
     },
     "articleButtons": {
       "backToTop": "↑ 返回顶部",
-      "backToArticles": "← 返回文章列表"
-}
+      "backToArticles": "← 返回文章列表",
+      "button": "支持 5 欧元"
+    },
+    "donateSection": {
+      "title": "支持 Scaledia",
+      "description": "一个小小的举动，却能带来巨大的推动力。你的支持帮助我们撰写更聪明的内容，而不必妥协。",
+      "button": "帮助我们成长"
+    }
   }
 }
