@@ -22,7 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Errore durante il caricamento delle traduzioni:", error));
 
   initCategoryFilters();
-  initArticleList();
+  // Forza animazione scroll-indicator
+const scrollIcon = document.querySelector('.scroll-indicator i');
+if (scrollIcon) {
+  scrollIcon.style.animation = "bounceCustom 2s infinite";
+}
+
 });
 
 function applyTranslations(lang, data) {
@@ -63,95 +68,13 @@ function initCategoryFilters() {
   });
 }
 
-// === Lista articoli dinamica
-function initArticleList() {
-  const container = document.getElementById("articlesContainer");
-  const pagination = document.getElementById("pagination");
-  if (!container || !pagination) return;
-
-  const articlesPerPage = 6;
-  let allArticles = [];
-  let currentPage = 1;
-  let currentCategory = "all";
-
-  fetch("articles-data/articles-list.json")
-    .then(res => res.json())
-    .then(data => {
-      allArticles = data;
-      renderArticles();
-      renderPagination();
-    })
-    .catch(err => console.error("Errore caricamento articoli:", err));
-
-  function renderArticles() {
-    container.innerHTML = "";
-    const filtered = allArticles.filter(article =>
-      currentCategory === "all" || article.category === currentCategory
-    );
-    const start = (currentPage - 1) * articlesPerPage;
-    const end = start + articlesPerPage;
-    const articlesToShow = filtered.slice(start, end);
-
-    articlesToShow.forEach(article => {
-      const col = document.createElement("div");
-      col.className = "col-12 col-md-4 mb-4 article-card";
-      col.setAttribute("data-category", article.category);
-      col.innerHTML = `
-        <div class="card h-100 p-4 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">${article.title}</h5>
-            <p class="card-text small">${article.description}</p>
-            <a href="${article.link}" class="btn btn-outline-primary btn-sm" data-lang-key="articlesCards.readMore">Read More</a>
-          </div>
-        </div>`;
-      container.appendChild(col);
-    });
-  }
-
-  function renderPagination() {
-    pagination.innerHTML = "";
-    const filtered = allArticles.filter(article =>
-      currentCategory === "all" || article.category === currentCategory
-    );
-    const totalPages = Math.ceil(filtered.length / articlesPerPage);
-
-    for (let i = 1; i <= totalPages; i++) {
-      const li = document.createElement("li");
-      li.className = "page-item" + (i === currentPage ? " active" : "");
-      const btn = document.createElement("button");
-      btn.className = "page-link";
-      btn.textContent = i;
-      btn.addEventListener("click", () => {
-        currentPage = i;
-        renderArticles();
-        renderPagination();
-      });
-      li.appendChild(btn);
-      pagination.appendChild(li);
-    }
-  }
-
-  const filterButtons = document.querySelectorAll('#categoryFilter button');
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      currentCategory = button.getAttribute("data-category");
-      currentPage = 1;
-      renderArticles();
-      renderPagination();
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-    });
-  });
-}
-
-
 // Gestione sincronizzazione lingua con Iubenda
 document.querySelectorAll('[data-lang]').forEach(button => {
   button.addEventListener('click', function () {
     const lang = this.getAttribute('data-lang') || 'en';
-    document.documentElement.lang = lang; // Imposta lang nel <html>
-    localStorage.setItem('preferredLang', lang); // Salva la preferenza
-    location.reload(); // Ricarica per aggiornare Iubenda
+    document.documentElement.lang = lang;
+    localStorage.setItem('preferredLang', lang);
+    location.reload();
   });
 });
 
