@@ -1,11 +1,12 @@
 /* ===============================
-   SCLEDIA - CSS ORDINATO E RESPONSIVE
+   SCLEDIA - MAIN CSS CLEANED
    =============================== */
 
 /* ---------- 1. BASE ---------- */
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: system-ui, sans-serif;
   color: #1a1a1a;
@@ -25,36 +26,51 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #eaeaea;
 }
+
 .navbar-brand {
   color: #1a1a1a;
   font-weight: bold;
   font-size: 1.25rem;
   text-decoration: none;
 }
+
 .navbar-brand:hover {
   color: #0056b3;
 }
+
 .navbar-nav .nav-link {
   color: #1a1a1a;
   font-weight: 500;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
+
 .navbar-nav .nav-link:hover {
   color: #0056b3;
   background-color: #f8f9fa;
   border-radius: 4px;
 }
 
-/* ---------- 3. HERO HOMEPAGE ---------- */
+/* ---------- 3. HERO ---------- */
+.hero-section {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+}
+
 .homepage-hero {
   height: 100vh;
+  padding: 0;
   background: url('../images/hero-discord.png') no-repeat left center;
   background-size: cover;
   overflow: hidden;
   color: white;
-  position: relative;
 }
+
 .hero-overlay {
   background: linear-gradient(to right, rgba(10, 42, 67, 0.85), rgba(10, 42, 67, 0.6));
   width: 100%;
@@ -62,38 +78,46 @@ body {
   display: flex;
   align-items: center;
 }
+
 .hero-content {
-  position: absolute;
-  left: 5vw;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: left;
   max-width: 600px;
+  text-align: left;
 }
+
+.hero-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-content h1 {
   font-size: 2.8rem;
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
+
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
+
 .hero-content .btn {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
   transition: transform 0.3s ease;
 }
+
 .hero-content .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
+
 .scroll-indicator {
   position: relative;
   z-index: 2;
   margin-top: 3rem;
 }
+
 .scroll-indicator i {
   animation: bounceCustom 2s infinite;
   color: #ffffff;
@@ -106,117 +130,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* ---------- 4. ARTICLE HERO ---------- */
-.article-hero {
-  background-color: #0a2a43;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  margin-top: 5rem;
-}
-.article-hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
-.article-hero p {
-  font-size: 1.1rem;
-  color: #d2ebff;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* ---------- 5. ARTICLE CONTENT ---------- */
-.article-content {
-  max-width: 800px;
-  margin: 100px auto 60px auto;
-  padding: 0 20px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-.article-content h2 {
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  color: #0a2a43;
-  border-left: 5px solid #0073e6;
-  padding-left: 0.75rem;
-}
-.article-content h3 {
-  font-size: 1.4rem;
-  margin-top: 2rem;
-  color: #0073e6;
-}
-.article-content p {
-  margin-bottom: 1.2rem;
-}
-.article-content strong {
-  font-weight: 700;
-  color: #0a2a43;
-}
-
-/* ---------- 6. ARTICLE NAVIGATION BUTTONS ---------- */
-.article-navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 2.5rem auto 3rem auto;
-}
-.article-navigation .btn {
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  border: 1px solid #0073e6;
-  background-color: #fff;
-  color: #0073e6;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-.article-navigation .btn:hover {
-  background-color: #0073e6;
-  color: #fff;
-}
-
-/* ---------- 7. DONATE ---------- */
-#donate {
-  text-align: center;
-  padding: 2.5rem 1rem 3rem;
-}
-#donate h2 {
-  font-weight: 600;
-  padding-top: 1rem;
-}
-#donate a.btn {
-  display: inline-block;
-  margin-top: 1.2rem;
-  font-weight: 600;
-  padding: 0.6rem 1.6rem;
-  border-radius: 8px;
-}
-
-/* ---------- 8. FOOTER ---------- */
-.footer {
-  background: #0a2a43;
-  color: #ffffff;
-  padding: 3rem 0;
-  text-align: center;
-}
-.footer .btn {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 4px;
-  background: transparent;
-  transition: all 0.3s ease;
-}
-.footer .btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
-}
-
-/* ---------- 9. ANIMATIONS ---------- */
+/* ---------- 3. BOUNCE ANIMATION ---------- */
 @keyframes bounceCustom {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -228,33 +142,200 @@ body {
     transform: translateY(-8px);
   }
 }
-@keyframes fadeUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+
+.bounce-fix {
+  animation: bounceCustom 2s infinite;
 }
 
-/* ---------- 10. RESPONSIVE ---------- */
+/* ---------- 4. ARTICLE HERO ---------- */
+.article-hero {
+  background-color: #0a2a43;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.article-hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-hero p {
+  font-size: 1.1rem;
+  color: #d2ebff;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- 5. ARTICLE BODY ---------- */
+.article-content {
+  max-width: 800px;
+  margin: 100px auto 60px auto;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.article-content h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0a2a43;
+  border-left: 5px solid #0073e6;
+  padding-left: 0.75rem;
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #0073e6;
+}
+
+.article-content p {
+  margin-bottom: 1.2rem;
+}
+
+.article-content strong {
+  font-weight: 700;
+  color: #0a2a43;
+}
+
+/* ---------- 6. CARDS (ARTICLES LIST) ---------- */
+.articles-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.card-body .btn {
+  margin-top: auto;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ---------- 7. DONATE ---------- */
+#donate a.btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+}
+
+#donate {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+#donate h2{
+  padding-top: 1rem;
+  border-left: none;
+  text-align: center;
+  font-weight: 600;
+}
 
 
-  .article-navigation {
-    flex-direction: column;
-    gap: 10px;
+.article-navigation {
+    margin-bottom: 2.5rem;
   }
 
-  .article-navigation .btn {
-    width: 100%;
-    max-width: 260px;
+/* ---------- 8. FOOTER ---------- */
+.footer {
+  background: #0a2a43;
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer .btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.footer .btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- 9. MEDIA QUERIES ---------- */
+
+  .hero-content {
+    max-width: 100%;
   }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+
+  .hero-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+/* ---------- 10. ANIMATIONS ---------- */
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.homepage-hero .hero-content {
+  position: absolute;
+  left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+}
 
 
 @media (max-width: 768px) {
   .homepage-hero {
-    background-position: center top;
-    background-size: contain;
+    background-position: center center;
+    background-size: cover;
     background-repeat: no-repeat;
+    height: 90vh;
   }
 
-  .hero-content {
+  .homepage-hero .hero-content {
     position: relative;
     top: auto;
     left: auto;
