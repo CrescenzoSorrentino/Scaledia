@@ -22,10 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Errore durante il caricamento delle traduzioni:", error));
 
   initCategoryFilters();
-  // Forza animazione scroll-indicator
+ // Forza animazione scroll-indicator
 const scrollIcon = document.querySelector('.scroll-indicator i');
 if (scrollIcon) {
   scrollIcon.style.animation = "bounceCustom 2s infinite";
+}
+
+// Scroll fluido per il tasto nella hero
+const scrollBtn = document.querySelector('.scroll-button');
+const scrollTarget = document.querySelector('#content');
+if (scrollBtn && scrollTarget) {
+  scrollBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    scrollTarget.scrollIntoView({ behavior: 'smooth' });
+  });
 }
 
 });
