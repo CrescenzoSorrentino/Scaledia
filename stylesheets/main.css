@@ -1,4 +1,3 @@
-
 /* ===============================
    SCLEDIA - CSS ORDINATO E RESPONSIVE
    =============================== */
@@ -235,7 +234,26 @@ body {
 }
 
 /* ---------- 10. RESPONSIVE ---------- */
+
+
+  .article-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .article-navigation .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+
 @media (max-width: 768px) {
+  .homepage-hero {
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   .hero-content {
     position: relative;
     top: auto;
