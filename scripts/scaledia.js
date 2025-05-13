@@ -2,14 +2,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const lang = localStorage.getItem("preferredLang") || "en";
 
-  // --- USER ID ANONIMO ---
-  if (!localStorage.getItem('user_id')) {
-    const randomId = 'anon_' + Math.random().toString(36).substring(2, 10);
-    localStorage.setItem('user_id', randomId);
-  }
-  const userId = localStorage.getItem('user_id');
-  gtag('set', 'user_id', userId);
-  // --- FINE USER ID ---
+// --- USER ID ANONIMO ---
+if (!localStorage.getItem('user_id')) {
+  var randomId = 'anon_' + Math.random().toString(36).substring(2, 10);
+  localStorage.setItem('user_id', randomId);
+}
+// --- FINE USER ID ---
 
   document.documentElement.lang = lang;
 
