@@ -51,6 +51,10 @@ body {
   border-radius: 4px;
 }
 
+.lang-option {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+
 /* ---------- 3. HERO ---------- */
 .hero-section {
   background-position: center center;
@@ -200,6 +204,15 @@ body {
 .article-content strong {
   font-weight: 700;
   color: #0a2a43;
+}
+
+.sigla a i {
+  font-size: 0.8em;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.sigla a i:hover {
+  opacity: 1;
 }
 
 /* ---------- 6. CARDS (ARTICLES LIST) ---------- */
