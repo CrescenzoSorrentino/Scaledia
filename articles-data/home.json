@@ -187,21 +187,18 @@
     "es": "No se encontraron artículos. Prueba con otra palabra o categoría.",
     "zh": "找不到相關文章，請嘗試其他關鍵字或分類。"
   },
-
   "readMore": {
     "en": "Read More",
     "it": "Leggi di più",
     "es": "Leer más",
     "zh": "閱讀更多"
   },
-
   "sectionTitle": {
     "en": "What You'll Learn at Scaledia",
     "it": "Cosa Imparerai su Scaledia",
     "es": "Qué Aprenderás en Scaledia",
     "zh": "你會在 Scaledia 學到什麼"
   },
-
   "suggestDiscord": {
     "en": "Suggest a Topic on Discord",
     "it": "Suggerisci un argomento su Discord",
@@ -271,5 +268,17 @@
         "zh": "了解 A/B 測試如何用幾個詞翻倍轉換率。"
       }
     }
+  },
+  "readTime": {
+    "en": "min read",
+    "it": "min di lettura",
+    "es": "min de lectura",
+    "zh": "分鐘閱讀"
+  },
+  "newBadge": {
+    "en": "NEW",
+    "it": "NUOVO",
+    "es": "NUEVO",
+    "zh": "新"
   }
 }

@@ -471,7 +471,112 @@ body {
 }
 
 .top-picks .btn {
+  margin-top: auto;
   margin-top: 0.5rem; {
   font-size: 0.85rem;
   padding: 0.4rem 1rem;
+}
+
+/* Badge NEW */
+.badge.bg-danger {
+  background-color: #ff5e5e !important;
+  font-size: 0.7rem;
+  padding: 0.25em 0.6em;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Tempo lettura */
+.article-item .text-muted.small,
+.top-picks .text-muted.small {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Filtri mobile */
+@media (max-width: 420px) {
+  #filterButtons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  #filterButtons .btn {
+    min-width: 140px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Forza visibilità tempo lettura */
+.article-item .text-muted.small,
+.top-picks .text-muted.small {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 1;
+  color: #666;
+}
+
+/* Tempo lettura visibile */
+.article-item .text-muted.small,
+.top-picks .text-muted.small {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 1;
+  color: #555;
+}
+
+/* Allineamento bottoni fondo */
+.top-picks .p-4,
+#articleList .article-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Altezza minima per paragrafo */
+.top-picks p,
+#articleList .article-item p {
+  min-height: 60px;
+}
+
+
+#what .border {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#what .btn {
+  margin-top: auto;
+}
+
+
+
+#what .shadow-sm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#what .shadow-sm .btn {
+  margin-top: auto;
+}
+
+
+
+/* Allineamento card "What You'll Learn" su tutte le dimensioni */
+#what .shadow-sm {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#what .shadow-sm .btn {
+  margin-top: auto;
 }
