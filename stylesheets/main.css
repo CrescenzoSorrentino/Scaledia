@@ -580,3 +580,17 @@ body {
 #what .shadow-sm .btn {
   margin-top: auto;
 }
+
+
+
+/* Forzatura finale per allineamento See Example */
+#what .shadow-sm {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#what .shadow-sm .btn {
+  margin-top: auto !important;
+}

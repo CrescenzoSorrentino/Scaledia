@@ -207,6 +207,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
       el.querySelector(".article-title").textContent = title;
+      const readMoreBtn = el.querySelector("[data-lang-key='readMore']");
+      if (readMoreBtn) {
+        readMoreBtn.textContent = translations?.readMore?.[lang] || 'Read More';
+      }
       container.appendChild(el);
     });
   }
@@ -222,7 +226,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const filtered = articles.filter(article => {
       const matchCategory = currentCategory === "all" || article.category === currentCategory;
-      const matchQuery = article.title.toLowerCase().includes(query) || article.text.toLowerCase().includes(query);
+      const translatedTitle = articlesTranslations[article.id]?.title?.[lang] || article.title;
+      const translatedText = articlesTranslations[article.id]?.text?.[lang] || article.text;
+      const matchQuery = translatedTitle.toLowerCase().includes(query) || translatedText.toLowerCase().includes(query);
       return matchCategory && matchQuery;
     });
 
@@ -256,6 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="${article.url}" class="btn btn-outline-primary" data-lang-key="readMore">Read More</a>
       `;
       el.querySelector(".article-title").textContent = title;
+      const readMoreBtn = el.querySelector("[data-lang-key='readMore']");
+      if (readMoreBtn) {
+        readMoreBtn.textContent = translations?.readMore?.[lang] || 'Read More';
+      }
       articleList.appendChild(el);
     });
 

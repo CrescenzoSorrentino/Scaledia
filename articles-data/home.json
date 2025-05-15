@@ -280,5 +280,11 @@
     "it": "NUOVO",
     "es": "NUEVO",
     "zh": "新"
+  },
+  "seeExample": {
+    "en": "See Example",
+    "it": "Vedi esempio",
+    "es": "Ver ejemplo",
+    "zh": "查看範例"
   }
 }
