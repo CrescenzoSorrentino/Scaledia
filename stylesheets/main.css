@@ -225,6 +225,7 @@ body {
 
 .card-body {
   display: flex;
+  padding: 1rem;
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -368,4 +369,109 @@ body {
     width: 100%;
     max-width: 260px;
   }
+}
+
+/* === WHAT YOU'LL LEARN SECTION === */
+#what h2 {
+  font-size: 2rem;
+}
+#what .border {
+  border-color: #eaeaea;
+}
+#what .shadow-sm:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* === BLOG SECTION === */
+#blog h2 {
+  font-size: 2rem;
+}
+#blog #filterButtons .btn {
+  min-width: 120px;
+}
+#blog #filterButtons .btn.active {
+  box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.3);
+  background-color: #0073e6;
+  color: #fff;
+  border-color: #0073e6;
+}
+#articleList .article-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+#articleList .article-item h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#articleList .article-item p {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+#articleList .article-item .btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 2px solid #0073e6;
+  color: #0073e6;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+#articleList .article-item .btn:hover {
+  background-color: #0073e6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Miglioramento Search Bar */
+#searchInput {
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+/* Miglior spacing articoli */
+#articleList .article-item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#articleList .article-item h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#blog {
+  padding-bottom: 4rem;
+}
+
+/* Badge custom */
+.bg-purple {
+  background-color: #7a5fff !important;
+  color: #fff;
+}
+
+/* Top Picks section */
+.top-picks .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.35em 0.65em;
+  border-radius: 4px;
+}
+
+.top-picks h5 {
+  font-size: 1.1rem;
+}
+
+.top-picks p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.top-picks .btn {
+  margin-top: 0.5rem; {
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
 }

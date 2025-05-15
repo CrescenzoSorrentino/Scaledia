@@ -1,0 +1,275 @@
+{
+  "heroBadge": {
+    "en": "NEW to Scaledia?",
+    "it": "NUOVO su Scaledia?",
+    "es": "¿Nuevo en Scaledia?",
+    "zh": "第一次來 Scaledia？"
+  },
+  "heroTitle": {
+    "en": "Scaledia starts at home.",
+    "it": "Scaledia inizia da qui.",
+    "es": "Scaledia comienza aquí.",
+    "zh": "Scaledia 從這裡開始。"
+  },
+  "heroSubtitle": {
+    "en": "Learn, grow, and connect...",
+    "it": "Impara, cresci e connettiti...",
+    "es": "Aprende, crece y conecta...",
+    "zh": "學習、成長、連結..."
+  },
+  "joinClub": {
+    "en": "Join the club",
+    "it": "Unisciti al club",
+    "es": "Únete al club",
+    "zh": "加入我們"
+  },
+  "navbar": {
+    "language": {
+      "en": "Language",
+      "it": "Lingua",
+      "es": "Idioma",
+      "zh": "語言"
+    }
+  },
+  "footer": {
+    "footerTitle": {
+      "en": "Let's Grow Together",
+      "it": "Cresciamo Insieme",
+      "es": "Crecemos Juntos",
+      "zh": "一起成長"
+    },
+    "footerText": {
+      "en": "Join the Scaledia community and get weekly insights on marketing, money, and mindset",
+      "it": "Unisciti alla community Scaledia e ricevi ogni settimana consigli su marketing, denaro e mindset",
+      "es": "Únete a la comunidad de Scaledia y recibe consejos semanales sobre marketing, dinero y mentalidad",
+      "zh": "加入 Scaledia 社群，每週獲得行銷、財務與心態的洞察"
+    },
+    "placeholderEmail": {
+      "en": "Enter your email",
+      "it": "Inserisci la tua email",
+      "es": "Introduce tu correo electrónico",
+      "zh": "輸入你的信箱"
+    },
+    "subscribe": {
+      "en": "Subscribe",
+      "it": "Iscriviti",
+      "es": "Suscribirse",
+      "zh": "訂閱"
+    },
+    "privacyPolicy": {
+      "en": "Privacy Policy",
+      "it": "Privacy Policy",
+      "es": "Política de Privacidad",
+      "zh": "隱私政策"
+    },
+    "cookiePolicy": {
+      "en": "Cookie Policy",
+      "it": "Cookie Policy",
+      "es": "Política de Cookies",
+      "zh": "Cookie 政策"
+    },
+    "terms": {
+      "en": "Terms and Conditions",
+      "it": "Termini e Condizioni",
+      "es": "Términos y Condiciones",
+      "zh": "條款與條件"
+    },
+    "copyright": {
+      "en": "© 2025 Scaledia. All rights reserved.",
+      "it": "© 2025 Scaledia. Tutti i diritti riservati.",
+      "es": "© 2025 Scaledia. Todos los derechos reservados.",
+      "zh": "© 2025 Scaledia. 版權所有。"
+    }
+  },
+  "meta": {
+    "title": {
+      "en": "Scaledia | Growth, Marketing & Finance Without Fluff",
+      "it": "Scaledia | Crescita, Marketing e Finanza Senza Fronzoli",
+      "es": "Scaledia | Crecimiento, Marketing y Finanzas Sin Relleno",
+      "zh": "Scaledia｜成長、行銷與財務，去蕪存菁"
+    },
+    "description": {
+      "en": "Scaledia helps creators and marketers grow smarter. Discover real strategies about growth hacking, marketing and money.",
+      "it": "Scaledia aiuta creator e marketer a crescere in modo più intelligente. Scopri strategie reali su growth hacking, marketing e denaro.",
+      "es": "Scaledia ayuda a creadores y marketers a crecer con inteligencia. Descubre estrategias reales sobre growth hacking, marketing y dinero.",
+      "zh": "Scaledia 幫助創作者與行銷人更聰明成長。探索真正有效的成長駭客、行銷與財務策略。"
+    }
+  },
+  "growthTitle": {
+    "en": "Growth Tactics",
+    "it": "Tattiche di Crescita",
+    "es": "Tácticas de Crecimiento",
+    "zh": "增長策略"
+  },
+  "growthText": {
+    "en": "Proven frameworks, hacks and loops used by top startups to scale fast.",
+    "it": "Framework collaudati e hack usati dalle migliori startup per crescere in fretta.",
+    "es": "Frameworks y trucos usados por startups para escalar rápidamente.",
+    "zh": "頂尖新創用來快速成長的實戰策略。"
+  },
+  "marketingTitle": {
+    "en": "Marketing That Converts",
+    "it": "Marketing che Converte",
+    "es": "Marketing que Convierte",
+    "zh": "高轉換行銷"
+  },
+  "marketingText": {
+    "en": "Strategies that bring clicks, keep attention, and build brand authority.",
+    "it": "Strategie per ottenere click, mantenere l’attenzione e costruire autorevolezza.",
+    "es": "Estrategias para obtener clics, mantener atención y construir autoridad.",
+    "zh": "吸引點擊、留住注意力、建立品牌權威的策略。"
+  },
+  "financeTitle": {
+    "en": "Smart Finance",
+    "it": "Finanza Intelligente",
+    "es": "Finanzas Inteligentes",
+    "zh": "聰明理財"
+  },
+  "financeText": {
+    "en": "Control your money, ditch the fluff, and grow a creator-proof mindset.",
+    "it": "Controlla i tuoi soldi, elimina la fuffa e sviluppa una mentalità antifragile.",
+    "es": "Controla tu dinero, elimina el ruido y desarrolla una mentalidad antifrágil.",
+    "zh": "掌控金錢、捨棄雜訊、養成穩健創作者思維。"
+  },
+  "blogTitle": {
+    "en": "Latest from the Blog",
+    "it": "Ultimi dal Blog",
+    "es": "Últimos del Blog",
+    "zh": "最新文章"
+  },
+  "topPicks": {
+    "en": "Top Picks",
+    "it": "Scelti per Te",
+    "es": "Selecciones Destacadas",
+    "zh": "精選推薦"
+  },
+  "blogIntro": {
+    "en": "The best ideas from growth, marketing and personal finance tested, simplified, and ready to use.",
+    "it": "Le migliori idee su crescita, marketing e finanza personale, testate e pronte da applicare.",
+    "es": "Las mejores ideas sobre crecimiento, marketing y finanzas personales listas para usar.",
+    "zh": "從成長、行銷到理財，最實用的精華整理。"
+  },
+  "searchPlaceholder": {
+    "en": "Search articles...",
+    "it": "Cerca articoli...",
+    "es": "Buscar artículos...",
+    "zh": "搜尋文章..."
+  },
+  "categories": {
+    "all": {
+      "en": "All",
+      "it": "Tutti",
+      "es": "Todos",
+      "zh": "全部"
+    },
+    "marketing": {
+      "en": "Marketing",
+      "it": "Marketing",
+      "es": "Marketing",
+      "zh": "行銷"
+    },
+    "finance": {
+      "en": "Finance",
+      "it": "Finanza",
+      "es": "Finanzas",
+      "zh": "財務"
+    },
+    "growth": {
+      "en": "Growth",
+      "it": "Crescita",
+      "es": "Crecimiento",
+      "zh": "成長"
+    }
+  },
+  "noResults": {
+    "en": "No articles found. Try another keyword or category.",
+    "it": "Nessun articolo trovato. Prova con un’altra parola o categoria.",
+    "es": "No se encontraron artículos. Prueba con otra palabra o categoría.",
+    "zh": "找不到相關文章，請嘗試其他關鍵字或分類。"
+  },
+
+  "readMore": {
+    "en": "Read More",
+    "it": "Leggi di più",
+    "es": "Leer más",
+    "zh": "閱讀更多"
+  },
+
+  "sectionTitle": {
+    "en": "What You'll Learn at Scaledia",
+    "it": "Cosa Imparerai su Scaledia",
+    "es": "Qué Aprenderás en Scaledia",
+    "zh": "你會在 Scaledia 學到什麼"
+  },
+
+  "suggestDiscord": {
+    "en": "Suggest a Topic on Discord",
+    "it": "Suggerisci un argomento su Discord",
+    "es": "Sugiere un tema en Discord",
+    "zh": "在 Discord 上提出主題"
+  },
+  "loadMore": {
+    "en": "Load More",
+    "it": "Carica Altri",
+    "es": "Cargar Más",
+    "zh": "載入更多"
+  },
+  "articlesCards": {
+    "creditCards": {
+      "title": {
+        "en": "Credit Cards: Practical Guide to Use Them Smart",
+        "it": "Carte di Credito: Guida Pratica all'Uso Intelligente",
+        "es": "Tarjetas de Crédito: Guía Práctica para Usarlas con Inteligencia",
+        "zh": "信用卡：聰明使用的實用指南"
+      },
+      "text": {
+        "en": "Learn how to use credit cards smartly: tips, risks, and practical strategies.",
+        "it": "Scopri come usare le carte di credito in modo furbo: consigli, rischi e strategie pratiche.",
+        "es": "Aprende a usar tarjetas de crédito con inteligencia: consejos, riesgos y estrategias prácticas.",
+        "zh": "學會如何聰明地使用信用卡：技巧、風險與實戰策略。"
+      }
+    },
+    "duolingo": {
+      "title": {
+        "en": "Duolingo: Growth Hacker in Disguise",
+        "it": "Duolingo: Il Ninja del Growth travestito da Gufo",
+        "es": "Duolingo: El Hacker del Crecimiento con Disfraz de Búho",
+        "zh": "Duolingo：披著貓頭鷹外衣的增長黑客"
+      },
+      "text": {
+        "en": "A growth hack masterclass: how Duolingo made language learning addictive.",
+        "it": "Una masterclass di growth hacking: come Duolingo ha reso lo studio delle lingue un’abitudine.",
+        "es": "Una lección de growth hacking: cómo Duolingo hizo del idioma un vicio.",
+        "zh": "一堂成長課：Duolingo 如何讓語言學習變上癮。"
+      }
+    },
+    "marketingGlossary": {
+      "title": {
+        "en": "Practical Marketing Glossary",
+        "it": "Glossario Marketing Pratico",
+        "es": "Glosario de Marketing Práctico",
+        "zh": "行銷術語實用彙編"
+      },
+      "text": {
+        "en": "25 key acronyms explained with no fluff. Just what matters, clearly.",
+        "it": "25 acronimi chiave spiegati senza fuffa. Solo ciò che serve, chiaro.",
+        "es": "25 acrónimos esenciales explicados sin relleno. Solo lo importante.",
+        "zh": "25個行銷縮寫，清楚解釋，重點不廢話。"
+      }
+    },
+    "abTest": {
+      "title": {
+        "en": "A/B Test: The Secret Weapon",
+        "it": "A/B Test: L’Arma Segreta",
+        "es": "A/B Test: El Arma Secreta",
+        "zh": "A/B 測試：轉換率秘密武器"
+      },
+      "text": {
+        "en": "Discover how A/B tests can double your conversions by changing just a few words.",
+        "it": "Scopri come piccoli test A/B possono raddoppiare le conversioni.",
+        "es": "Descubre cómo los tests A/B pueden duplicar tus conversiones con pequeños cambios.",
+        "zh": "了解 A/B 測試如何用幾個詞翻倍轉換率。"
+      }
+    }
+  }
+}
