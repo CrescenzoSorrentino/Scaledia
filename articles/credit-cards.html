@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="">
+<script>document.documentElement.lang = localStorage.getItem("preferredLang") || "en";</script>
 <head>
 <!-- META DINAMICI INSERITI DA SCALEDIA -->
 <title id="metaTitle">Loading...</title>
-<meta name="description" id="metaDescription" content="" />
-<meta property="og:title" id="ogTitle" content="" />
-<meta property="og:description" id="ogDescription" content="" />
-<meta name="twitter:title" id="twitterTitle" content="" />
-<meta name="twitter:description" id="twitterDescription" content="" />
-<meta property="og:url" id="ogUrl" content="" />
-<link rel="canonical" id="canonicalLink" href="" />
+<meta content="" id="metaDescription" name="description"/>
+<meta content="" id="ogTitle" property="og:title"/>
+<meta content="" id="ogDescription" property="og:description"/>
+<meta content="" id="twitterTitle" name="twitter:title"/>
+<meta content="" id="twitterDescription" name="twitter:description"/>
+<meta content="" id="ogUrl" property="og:url"/>
+<link href="" id="canonicalLink" rel="canonical"/>
 <!-- FINE META DINAMICI -->
 <!-- Google Tag Manager -->
 <script>
@@ -34,10 +35,10 @@
 <meta content="article" property="og:type"/>
 <meta content="https://crescenzosorrentino.github.io/Scaledia/credit-cards.html" property="og:url"/>
 <!-- Twitter -->
-<meta content="summary_large_image" name="twitter:card">
-<meta content="Credit Cards: How to Use Them Without Regret" name="twitter:title">
-<meta content="Smart and practical strategies to use credit cards in your favor. No fluff, just facts." name="twitter:description"/>
-<meta content="https://crescenzosorrentino.github.io/Scaledia/images/share-preview.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Credit Cards: How to Use Them Without Regret" name="twitter:title"/>
+<meta content="Smart and practical strategies to use credit cards in your favor. No fluff, just facts." name="twitter:description">
+<meta content="https://crescenzosorrentino.github.io/Scaledia/images/share-preview.png" name="twitter:image">
 <!-- Lang -->
 <link href="https://crescenzosorrentino.github.io/Scaledia/credit-cards.html" hreflang="en" rel="alternate"/>
 <link href="https://crescenzosorrentino.github.io/Scaledia/it/credit-cards.html" hreflang="it" rel="alternate"/>
@@ -49,8 +50,8 @@
 <!-- Title -->
 <title>Credit Cards: How to Use Them Without Regret</title>
 <!-- Styles -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link href="../stylesheets/main.css" rel="stylesheet"/>
 <script>
     // Legge la lingua corrente dal tag <html lang="...">
@@ -104,8 +105,9 @@
   },
   "datePublished": "2025-04-30",
   "image": "https://crescenzosorrentino.github.io/Scaledia/images/share-preview.png",
-  "url": "https://crescenzosorrentino.github.io/Scaledia/articles/credit-cards.html"
-}</script></head>
+  "url": "https://crescenzosorrentino.github.io/Scaledia/articles/credit-cards.html",
+  "timeRequired": "PT3M"
+}</script><meta content="3" name="readTime"/></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PXVN2GTW" style="display:none;visibility:hidden" width="0"></iframe></noscript>
@@ -124,7 +126,6 @@
 <!-- Link a sinistra -->
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="../articles.html">Articles</a>
 </li>
 </ul>
 <!-- Lingue a destra -->
@@ -277,5 +278,46 @@
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script defer="" src="../scripts/scaledia.js"></script>
+<script src="../home.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const article = document.querySelector(".article-content");
+  if (!article) return;
+
+  const wordCount = article.innerText.trim().split(/\s+/).length;
+  const readTime = Math.ceil(wordCount / 180);
+
+  const info = document.createElement("div");
+  info.className = "text-muted small mb-3";
+  info.innerHTML = `<i class="bi bi-clock me-1"></i>${readTime} min read`;
+
+  const hero = document.querySelector(".article-hero .container");
+  if (hero) hero.appendChild(info);
+});
+</script>
+<style>
+.article-hero .read-time {
+  font-size: 1rem;
+  color: #d2ebff;
+  margin-top: 1rem;
+  display: inline-block;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const article = document.querySelector(".article-content");
+  if (!article) return;
+
+  const wordCount = article.innerText.trim().split(/\s+/).length;
+  const readTime = Math.ceil(wordCount / 180);
+
+  const info = document.createElement("div");
+  info.className = "read-time";
+  info.innerHTML = `<i class="bi bi-clock me-1"></i>${readTime} min read`;
+
+  const hero = document.querySelector(".article-hero .container");
+  if (hero) hero.appendChild(info);
+});
+</script>
 </body>
 </html>

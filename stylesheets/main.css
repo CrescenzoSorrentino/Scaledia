@@ -594,3 +594,12 @@ body {
 #what .shadow-sm .btn {
   margin-top: auto !important;
 }
+
+
+/* Tempo di lettura nella sezione hero degli articoli */
+.article-hero .read-time {
+  font-size: 1rem;
+  color: #d2ebff;
+  margin-top: 1rem;
+  display: inline-block;
+}

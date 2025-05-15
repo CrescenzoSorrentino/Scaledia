@@ -189,7 +189,7 @@
   },
   "readMore": {
     "en": "Read More",
-    "it": "Leggi di più",
+    "it": "Leggi tutto",
     "es": "Leer más",
     "zh": "閱讀更多"
   },
@@ -266,6 +266,20 @@
         "it": "Scopri come piccoli test A/B possono raddoppiare le conversioni.",
         "es": "Descubre cómo los tests A/B pueden duplicar tus conversiones con pequeños cambios.",
         "zh": "了解 A/B 測試如何用幾個詞翻倍轉換率。"
+      }
+    },
+    "aidaModel": {
+      "title": {
+        "en": "AIDA Model: The Secret to Persuasive Copy",
+        "it": "Modello AIDA: Il Segreto per un Copy Persuasivo",
+        "es": "Modelo AIDA: El Secreto para un Copy Persuasivo",
+        "zh": "AIDA 模型：說服力文案的秘密"
+      },
+      "text": {
+        "en": "Learn how to use the AIDA model to create persuasive copy that converts.",
+        "it": "Scopri come usare il modello AIDA per creare un copy persuasivo.",
+        "es": "Aprende a usar el modelo AIDA para crear un copy persuasivo.",
+        "zh": "了解如何使用 AIDA 模型創建具有說服力的文案。"
       }
     }
   },

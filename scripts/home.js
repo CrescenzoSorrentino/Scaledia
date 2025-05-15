@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "25 key acronyms explained with no fluff. Just what matters, clearly.",
       category: "marketing",
       url: "articles/marketing-glossary.html",
-      featured: true
     },
     {
       id: "abTest",
@@ -58,7 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "marketing",
       url: "articles/ab-test.html",
       featured: true
-    }
+    },
+    {
+      id: "aidaMOdel",
+      published: "2025-05-15",
+      title: "AIDA Model: The Secret to Persuasive Copy",
+      text: "Learn how to use the AIDA model to create persuasive copy that converts.",
+      category: "marketing",
+      url: "articles/aida-model.html",
+      featured: true
+    },
   ];
 
   fetch("articles-data/home.json")
@@ -256,8 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
       el.innerHTML = `
         <span class="badge bg-${badgeColor} text-uppercase mb-2 category-badge" style="cursor:pointer;" data-category="${article.category}">${translateCategory(article.category)}</span>
         ${isNew ? `<span class="badge bg-danger ms-2">${translations?.newBadge?.[lang] || 'NEW'}</span>` : ''}
-        <h5 class="fw-bold article-title"></h5>
-        <div class="text-muted small mb-1">${readTime} ${translations?.readTime?.[lang] || "min read"}</div>${title}</h5>
+        <h5 class="fw-bold article-title">${title}</h5>
+        <div class="text-muted small mb-1">${readTime} ${translations?.readTime?.[lang] || "min read"}</div>
         <p>${text}</p>
         <a href="${article.url}" class="btn btn-outline-primary" data-lang-key="readMore">Read More</a>
       `;
