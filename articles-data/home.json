@@ -18,10 +18,10 @@
     "zh": "學習、成長、連結..."
   },
   "joinClub": {
-    "en": "Join the club",
-    "it": "Unisciti al club",
-    "es": "Únete al club",
-    "zh": "加入我們"
+    "en": "Enter our Discord",
+    "it": "Entra nel nostro Discord",
+    "es": "Únete a nuestro Discord",
+    "zh": "加入我們的 Discord"
   },
   "navbar": {
     "language": {
@@ -300,5 +300,11 @@
     "it": "Vedi esempio",
     "es": "Ver ejemplo",
     "zh": "查看範例"
+  },
+  "joinClubLabel": {
+    "en": "Enter our Discord",
+    "it": "Entra nel nostro Discord",
+    "es": "Únete a nuestro Discord",
+    "zh": "加入我們的 Discord"
   }
 }

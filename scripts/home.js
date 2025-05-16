@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
       translations = data;
       articlesTranslations = data.articlesCards || {};
       applyTranslationsHome(translations, lang);
+const joinBtn = document.querySelector(".hero-content a.btn");
+  if (joinBtn) {
+    joinBtn.setAttribute("aria-label", translations?.joinClubLabel?.[lang] || 'Enter our Discord');
+  }
       renderArticles(true);
       renderTopPicks();
 
@@ -325,4 +329,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initCategoryFilters();
+const hero = document.querySelector(".hero-content");
+  if (hero) {
+    setTimeout(() => {
+      hero.classList.add("animate");
+    }, 300);
+  }
 });

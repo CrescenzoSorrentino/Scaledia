@@ -32,7 +32,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
 <link href="stylesheets/main.css" rel="stylesheet"/>
-
 <!-- Cookie Solution Iubenda -->
 <script>
   var lang = localStorage.getItem("preferredLang") || "en";
@@ -63,8 +62,17 @@
   autoblock.setAttribute("src", "https://cs.iubenda.com/autoblocking/4019868.js");
   document.head.appendChild(autoblock);
 </script>
-
-</head>
+<link as_="image" href="images/hero-scaledia.webp" rel="preload" type="image/webp"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Scaledia",
+  "url": "https://crescenzosorrentino.github.io/Scaledia/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://crescenzosorrentino.github.io/Scaledia/index.html#blog?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}</script></head>
 <body>
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
@@ -94,11 +102,11 @@
 <!-- HERO -->
 <div class="hero-section homepage-hero">
 <div class="hero-overlay">
-<div class="container hero-content">
+<div aria-label="Welcome section" class="container hero-content animate" role="banner">
 <span class="badge bg-warning text-dark mb-3" data-lang-key="heroBadge">NEW to Scaledia?</span>
 <h1 class="display-5 fw-bold" data-lang-key="heroTitle">Scaledia starts at home.</h1>
 <p class="lead mb-4" data-lang-key="heroSubtitle">Learn, grow, and connect...</p>
-<a class="btn btn-outline-light mt-3" data-lang-key="joinClub" href="https://discord.gg/UYU3AbDb3p">Join the club</a>
+<a aria-label="Join Scaledia Discord server" class="btn btn-outline-light mt-3" data-lang-key="joinClub" href="https://discord.gg/UYU3AbDb3p">Enter our Discord</a>
 </div>
 <a aria-label="Scroll" class="scroll-button" href="#what">
 <svg height="48" viewbox="0 0 24 48" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -106,9 +114,7 @@
 </svg>
 </a>
 </div>
-</div>
-<!-- SEZIONE ABOUT -->
-<section class="py-5 bg-white" id="what">
+</div><section class="py-5 bg-white" id="what">
 <div class="container">
 <h2 class="text-center fw-bold mb-4" data-lang-key="sectionTitle">What You'll Learn at Scaledia</h2>
 <div class="row g-4">
@@ -133,8 +139,9 @@
 </div>
 </div>
 </section>
+<!-- SEZIONE ABOUT -->
 <!-- BLOG -->
-<section class="py-5 bg-white" id="blog">
+<section class="py-5 bg-white pt-3" id="blog">
 <div class="container">
 <h2 class="text-center fw-bold mb-4" data-lang-key="blogTitle">Latest from the Blog</h2>
 <h4 class="text-center text-primary fw-bold mb-4" data-lang-key="topPicks">Top Picks</h4>
@@ -156,10 +163,9 @@
 <div class="d-flex flex-column gap-4" id="articleList"></div>
 <div class="alert alert-warning text-center mt-4" data-lang-key="noResults" id="noResults" style="display:none;">No articles found. Try another keyword or category.</div>
 <div class="text-center mt-5">
-<a class="btn btn-outline-secondary" data-lang-key="suggestDiscord" href="https://discord.gg/dvYrPVge7p" target="_blank">Suggest a Topic on Discord</a>
 </div>
 <div class="text-center mt-4">
-<button class="btn btn-primary" data-lang-key="loadMore" id="loadMoreBtn">Load More</button>
+<button class="btn btn-primary" data-lang-key="loadMore" id="loadMoreBtn">Load More</button><div class="text-center mt-3"><a class="btn btn-outline-secondary" data-lang-key="suggestDiscord" href="https://discord.gg/dvYrPVge7p" target="_blank">Suggest a Topic on Discord</a></div>
 </div>
 </div>
 </section>
