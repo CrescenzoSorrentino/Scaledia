@@ -1,0 +1,29 @@
+.flag-icon {
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  margin-right: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+}
+
+.flag-icon-it {
+  background-color: #009246;
+  background-image: linear-gradient(
+    to right,
+    #009246 33.33%,
+    #ffffff 33.33%,
+    #ffffff 66.66%,
+    #ce2b37 66.66%
+  );
+}
+
+.flag-icon-gb {
+  background-color: #012169;
+  background-image: 
+    linear-gradient(to bottom, transparent 43%, #C8102E 43%, #C8102E 57%, transparent 57%),
+    linear-gradient(to right, transparent 43%, #C8102E 43%, #C8102E 57%, transparent 57%),
+    linear-gradient(to bottom right, transparent 47%, #FFFFFF 47%, #FFFFFF 53%, transparent 53%),
+    linear-gradient(to bottom left, transparent 47%, #FFFFFF 47%, #FFFFFF 53%, transparent 53%);
+}

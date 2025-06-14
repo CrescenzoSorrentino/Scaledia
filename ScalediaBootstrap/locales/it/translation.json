@@ -1,0 +1,379 @@
+{
+  "navbar": {
+    "brand": "Il Mio Blog",
+    "home": "Home",
+    "about": "Chi Sono",
+    "articles": "Articoli",
+    "categories": "Categorie",
+    "newsletter": "Newsletter",
+    "language": "Lingua"
+  },
+  "categories": {
+    "marketing": "Marketing",
+    "finance": "Finanza Personale",
+    "programming": "Programmazione"
+  },
+  "hero": {
+    "title": "Trasforma le Tue Competenze Digitali",
+    "subtitle": "Strategie pratiche, consigli esperti e guide dettagliate su Marketing, Finanza Personale e Programmazione per aiutarti a crescere professionalmente",
+    "cta": "Scopri i Contenuti Esclusivi"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "intro": "Ciao! Sono un appassionato di marketing, finanza personale e programmazione.",
+    "description1": "Condivido le mie conoscenze ed esperienze attraverso questo blog per aiutare altri a crescere in questi ambiti. La mia missione è rendere questi argomenti accessibili a tutti.",
+    "description2": "Ho diversi anni di esperienza nel settore e sono sempre alla ricerca di nuove tendenze e strategie da condividere con i miei lettori."
+  },
+  "featuredArticles": {
+    "title": "Articoli Nuovi e Consigliati",
+    "readMore": "Leggi di più"
+  },
+  "newsletter": {
+    "title": "Iscriviti alla Newsletter",
+    "description": "Ricevi aggiornamenti sui nuovi articoli e contenuti esclusivi direttamente nella tua casella di posta.",
+    "placeholder": "La tua email",
+    "button": "Iscriviti"
+  },
+  "allArticles": {
+    "title": "Tutti gli Articoli",
+    "all": "Tutti",
+    "noArticles": "Non ci sono articoli di programmazione al momento."
+  },
+  "footer": {
+    "description": "Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.",
+    "usefulLinks": "Link Utili",
+    "privacyPolicy": "Privacy Policy",
+    "contacts": "Contatti",
+    "copyright": "© 2023 Il Mio Blog. Tutti i diritti riservati."
+  },
+  "backToTop": "Torna in cima",
+  "readingTime": "Tempo di lettura: {{time}} min",
+  "cards": {
+    "creditCards": {
+      "title": "Carte di Credito",
+      "description": "Scopri tutto sulle carte di credito: vantaggi, svantaggi e come scegliere quella più adatta alle tue esigenze."
+    },
+    "duolingoCase": {
+      "title": "Caso Studio Duolingo",
+      "description": "Un'analisi approfondita della strategia di marketing di Duolingo e come ha rivoluzionato l'apprendimento delle lingue."
+    },
+    "marketingGlossary": {
+      "title": "Glossario di Marketing",
+      "description": "Un glossario completo dei termini di marketing essenziali per professionisti e principianti."
+    },
+    "abTest": {
+      "title": "Test A/B",
+      "description": "Guida completa ai test A/B: come implementarli, analizzare i risultati e ottimizzare le tue campagne di marketing."
+    },
+    "aidaModel": {
+      "title": "Modello AIDA",
+      "description": "Esplora il modello AIDA (Attenzione, Interesse, Desiderio, Azione) e come applicarlo alle tue strategie di marketing."
+    }
+  },
+  "articles": {
+    "duolingoCase": {
+      "subtitle": "Come un gufo verde ha conquistato il mondo (e perché dovresti prendere appunti)",
+      "intro": "Un gufo verde ossessionante, notifiche passive-aggressive e una strategia di marketing così brillante che ti fa sentire in colpa se non studi una lingua straniera. Benvenuto nel mondo di Duolingo, l'app che ha trasformato l'apprendimento delle lingue in un'ossessione globale.",
+      "stats": {
+        "downloads": "Download totali",
+        "users": "Utenti attivi mensili",
+        "valuation": "Valutazione di mercato"
+      },
+      "section1": {
+        "title": "Il segreto che nessuno vuole ammettere",
+        "p1": "Facciamoci una domanda scomoda: perché un'app per imparare le lingue è diventata più popolare di molti giochi? La risposta è brutalmente semplice: Duolingo ha capito che la maggior parte delle persone odia studiare le lingue ma ama i giochi.",
+        "p2": "Invece di creare un altro noioso corso di lingue, hanno creato un gioco che ti insegna una lingua quasi per caso. È come se ti dessero delle verdure nascoste in un delizioso dessert. E tu, ignaro, continui a mangiarne.",
+        "highlight": {
+          "title": "Verità scomoda:",
+          "content": "Duolingo non è diventato un successo perché insegna le lingue meglio degli altri. È diventato un successo perché ha reso l'apprendimento delle lingue meno doloroso degli altri. E questa è una lezione di marketing che vale oro."
+        }
+      },
+      "section2": {
+        "title": "La gamification: quando il tuo cervello viene hackerato (e ne è felice)",
+        "p1": "Se hai mai usato Duolingo, conosci quella sensazione di soddisfazione quando completi una lezione. Quel piccolo \"ding!\" e quelle stelline che appaiono. Quella sensazione non è casuale, è progettata scientificamente per farti tornare.",
+        "p2": "Ecco come Duolingo ha trasformato lo studio in un gioco che crea dipendenza:",
+        "list": {
+          "item1": {
+            "title": "Streak giornaliere:",
+            "content": "\"Non rompere la tua streak di 64 giorni!\" è più motivante di \"Studia francese oggi\". È la stessa psicologia che usa il tuo capo quando dice \"Non hai mai fatto un giorno di malattia quest'anno, peccato rovinare questo record...\""
+          },
+          "item2": {
+            "title": "Ricompense immediate:",
+            "content": "XP, gemme, corone... sono solo pixel sullo schermo, ma il tuo cervello li ama come se fossero oro vero."
+          },
+          "item3": {
+            "title": "Competizione sociale:",
+            "content": "Vedere i tuoi amici superarti in classifica è più motivante di qualsiasi insegnante che ti dice di studiare. L'orgoglio è un motivatore potente, amico mio."
+          }
+        },
+        "quote": "\"Duolingo non vende corsi di lingua. Vende la sensazione di realizzazione personale, confezionata in piccole dosi quotidiane che creano dipendenza.\""
+      },
+      "section3": {
+        "title": "Il gufo: da mascotte a meme (e perché è geniale)",
+        "p1": "Parliamo di Duo, il gufo verde. Non è solo una mascotte carina, è un genio del marketing travestito da uccello cartoonesco.",
+        "p2": "Quando Duo ti manda quelle notifiche passive-aggressive (\"Queste lezioni non si faranno da sole!\" o \"Sembra che tu abbia bisogno di un promemoria per studiare!\"), non sta solo cercando di farti aprire l'app. Sta creando un personaggio che genera emozioni. E indovina un po'? Le emozioni sono condivisibili.",
+        "p3": "I meme di Duo che minaccia gli utenti che saltano le lezioni non sono un incidente. Sono marketing virale gratuito. Duolingo ha trasformato le notifiche fastidiose in un fenomeno culturale che le persone condividono volontariamente.",
+        "highlight": {
+          "title": "Lezione di marketing:",
+          "content": "Se riesci a far ridere le persone (anche se è a spese del tuo brand), hai vinto. Le persone condividono ciò che le fa ridere molto più di ciò che trovano utile."
+        }
+      },
+      "section4": {
+        "title": "Il modello freemium: quando gratis non significa davvero gratis",
+        "p1": "Duolingo è gratuito. O almeno, così dicono. Ma hanno costruito un modello di business brillante che ti fa desiderare di pagare dopo averti dato abbastanza gratuitamente.",
+        "p2": "Il loro approccio è come quello del tuo spacciatore di fiducia: la prima dose è gratis. Una volta che sei dipendente dalle streak e dalle lezioni, ecco che arriva Duolingo Plus con le sue tentazioni: niente pubblicità, lezioni offline, e soprattutto, vite infinite.",
+        "p3": "E funziona! Nel 2022, i ricavi di Duolingo hanno superato i 250 milioni di dollari. Non male per un'app \"gratuita\", vero?"
+      },
+      "section5": {
+        "title": "Cosa puoi rubare (ehm, imparare) da Duolingo",
+        "intro": "Non tutti possiamo creare la prossima Duolingo, ma possiamo sicuramente rubare alcune delle loro strategie geniali:",
+        "list": {
+          "item1": {
+            "title": "Rendi divertente ciò che è noioso:",
+            "content": "Qualunque sia il tuo prodotto, c'è sempre un modo per renderlo più coinvolgente. Se Duolingo può rendere divertente studiare il congiuntivo francese, tu puoi rendere divertente qualsiasi cosa."
+          },
+          "item2": {
+            "title": "Crea un personaggio, non un logo:",
+            "content": "Le persone si relazionano con i personaggi, non con i loghi aziendali. Crea una mascotte o un personaggio che possa diventare la voce del tuo brand."
+          },
+          "item3": {
+            "title": "Usa la psicologia delle abitudini:",
+            "content": "Streak, ricompense immediate, competizione sociale... sono tutti trigger che creano abitudini. E le abitudini significano clienti fedeli."
+          },
+          "item4": {
+            "title": "Abbraccia i meme:",
+            "content": "Se le persone prendono in giro il tuo brand, non arrabbiarti. Unisciti alla festa! Duolingo ha abbracciato i meme del \"gufo minaccioso\" e li ha trasformati in una campagna di marketing."
+          }
+        }
+      },
+      "conclusion": {
+        "title": "Conclusione: Perché Duolingo continuerà a vincere",
+        "p1": "Duolingo non è solo un'app per imparare le lingue. È un caso studio di come trasformare qualcosa di intrinsecamente noioso in un'esperienza coinvolgente che le persone amano (o amano odiare, il che nel marketing è quasi la stessa cosa).",
+        "p2": "Mentre altre app di apprendimento linguistico si concentrano su metodi didattici migliori o contenuti più completi, Duolingo si concentra sull'esperienza umana: motivazione, divertimento, competizione, e quel sottile senso di colpa che ti fa tornare ogni giorno.",
+        "p3": "E tu? Sei pronto a duolinghizzare il tuo business? O preferisci continuare a fare marketing come si faceva nel 2010? La scelta è tua, ma ricorda: c'è un gufo verde là fuori che sta rivoluzionando un intero settore mentre tu leggi questo articolo."
+      },
+      "share": {
+        "title": "Condividi questo articolo (prima che il gufo ti trovi)"
+      },
+      "related": {
+        "title": "Articoli correlati"
+      }
+    },
+    "creditCards": {
+      "subtitle": "La tua relazione tossica preferita: tu, la tua carta di credito e il tuo conto in banca!",
+      "intro": "Ah, le carte di credito! Quei piccoli rettangoli di plastica che promettono libertà finanziaria ma spesso finiscono per tenerti prigioniero dei debiti. Sei pronto a scoprire come domarle una volta per tutte?",
+      "section1": {
+        "title": "La verità scomoda che nessuno ti dice",
+        "p1": "Parliamoci chiaro: le banche non ti danno una carta di credito perché ti vogliono bene. La tua carta di credito è come quel amico che ti offre sempre da bere ma poi ti presenta un conto salato quando sei troppo ubriaco per fare i calcoli. Le banche guadagnano quando tu perdi il controllo!",
+        "p2": "Ma non temere, non sono qui per farti sentire in colpa (o forse sì, un pochino). Sono qui per darti gli strumenti per usare queste bestie a tuo vantaggio.",
+        "highlight": {
+          "title": "Dato scioccante:",
+          "content": "L'italiano medio ha un debito sulla carta di credito di circa 1.500€. E indovina un po'? La maggior parte di queste persone non sa nemmeno quale sia il tasso di interesse che sta pagando. Sei uno di loro? 🤔"
+        }
+      },
+      "section2": {
+        "title": "Come scegliere la carta giusta (senza farti fregare)",
+        "p1": "Scegliere una carta di credito è un po' come scegliere un partner: se non leggi i termini e le condizioni, potresti ritrovarti in una relazione tossica per anni. Ecco cosa devi guardare:",
+        "list": {
+          "item1": "Tasso di interesse: Se pensi che il 18% sia un buon rendimento per i tuoi investimenti, immagina quanto sia terribile come tasso da pagare sui tuoi debiti!",
+          "item2": "Commissioni annuali: Alcune carte ti fanno pagare solo per il privilegio di possederle. Come se pagassi l'affitto per un appartamento in cui non vivi mai.",
+          "item3": "Programmi fedeltà: Punti, miglia, cashback... Sembrano regali, ma ricorda: se stai pagando interessi, stai finanziando tu stesso quei \"regali\"."
+        },
+        "quote": "\"La carta di credito è come un martello: può aiutarti a costruire la tua casa finanziaria o può distruggerla completamente. Dipende tutto da come la usi.\""
+      },
+      "section3": {
+        "title": "I trucchi che le banche non vogliono che tu conosca",
+        "p1": "Le banche hanno un intero arsenale di tattiche per farti spendere di più. Ecco come difenderti:",
+        "list": {
+          "item1": "Il limite di credito generoso: \"Ehi, abbiamo aumentato il tuo limite a 5.000€!\" Non è generosità, è come un pescatore che allunga la lenza sperando che tu abbocchi di più.",
+          "item2": "Il pagamento minimo: La trappola perfetta. Paghi poco ogni mese ma gli interessi continuano ad accumularsi. È come svuotare l'oceano con un cucchiaino mentre piove.",
+          "item3": "Offerte a tasso zero: \"0% di interessi per 12 mesi!\" Sì, e poi? Il 24% dopo? È come un appuntamento fantastico che si trasforma in un incubo alla mezzanotte."
+        },
+        "highlight": {
+          "title": "Pro Tip:",
+          "content": "Imposta il pagamento automatico dell'intero saldo ogni mese. È come avere un angelo custode finanziario che ti impedisce di fare stupidaggini!"
+        }
+      },
+      "section4": {
+        "title": "Come usare la carta di credito e dormire sonni tranquilli",
+        "p1": "Usare la carta di credito senza finire nei guai è possibile, te lo giuro! Ecco le regole d'oro:",
+        "list": {
+          "item1": "Regola #1: Se non puoi permetterti di pagarlo in contanti, non puoi permetterti di pagarlo con la carta. Punto.",
+          "item2": "Regola #2: Paga sempre l'intero saldo. Gli interessi sono come i vampiri: una volta che entrano, è difficile liberarsene.",
+          "item3": "Regola #3: Controlla il tuo estratto conto come se fossi un detective paranoico. Gli errori e le frodi esistono, e indovina un po'? Non sono mai a tuo favore!"
+        },
+        "p2": "Seguendo queste regole, la tua carta di credito diventerà uno strumento utile invece che una bomba a orologeria nel tuo portafoglio."
+      },
+      "conclusion": {
+        "title": "Conclusione: La carta di credito è tua amica o nemica?",
+        "p1": "La risposta è semplice: dipende da te. Come con molte cose nella vita, non è lo strumento in sé a essere buono o cattivo, ma come lo usi.",
+        "p2": "Se usi la tua carta con consapevolezza, goditi i vantaggi: protezione sugli acquisti, tracciabilità delle spese, punti e premi. Ma se la usi come un'estensione magica del tuo stipendio, preparati a una relazione finanziaria dolorosa.",
+        "p3": "Ricorda: le banche hanno squadre di psicologi e marketer che lavorano per farti spendere di più. Ma ora hai questo articolo, quindi sei armato per la battaglia. Vai e conquista il mondo della finanza personale, un acquisto consapevole alla volta!"
+      },
+      "share": {
+        "title": "Condividi questo articolo (e salva i tuoi amici dalle grinfie delle banche!)"
+      },
+      "related": {
+        "title": "Articoli correlati"
+      }
+    },
+    "marketingGlossary": {
+      "subtitle": "Perché fingere di capire i termini di marketing quando puoi davvero impararli (e fare la figura dell'esperto)",
+      "intro": "Sei stanco di annuire durante le riunioni di marketing mentre dentro di te pensi \"Ma che diavolo è un KPI?\" Non preoccuparti, non sei solo. Il marketing è pieno di termini che sembrano inventati apposta per farti sentire inadeguato. Ma oggi cambiamo le carte in tavola.",
+      "p1": "Questo glossario è la tua arma segreta per sopravvivere nel mondo del marketing senza dover fingere di sapere tutto. E a differenza di altri glossari noiosi, questo è scritto in italiano comprensibile, con esempi reali e un pizzico di umorismo per aiutarti a ricordare i concetti.",
+      "terms": {
+        "a": {
+          "title": "A",
+          "abTesting": {
+            "title": "A/B Testing",
+            "difficulty": "Intermedio",
+            "description": "Non è un test del sangue, ma quasi. È quando crei due versioni (A e B) di una pagina web, email o qualsiasi cosa, e vedi quale funziona meglio. È come quando non sai quale outfit indossare per un appuntamento e mandi foto di entrambi ai tuoi amici per un sondaggio, ma con dati reali invece di opinioni discutibili."
+          },
+          "acquisitionCost": {
+            "title": "Acquisition Cost",
+            "difficulty": "Base",
+            "description": "Quanto spendi per convincere qualcuno a comprare il tuo prodotto. Se stai spendendo 100€ in pubblicità per vendere un prodotto da 50€, hai un problema matematico serio. È come pagare 20€ di benzina per andare a comprare una pizza da 10€ - tecnicamente hai la pizza, ma a che prezzo?"
+          },
+          "aida": {
+            "title": "AIDA",
+            "difficulty": "Intermedio",
+            "description": "Attenzione, Interesse, Desiderio, Azione. Non è un'opera di Verdi, ma un modello che descrive i passaggi che un cliente attraversa prima di comprare. È come il processo di innamoramento: prima noti qualcuno (attenzione), poi scopri che ha un senso dell'umorismo fantastico (interesse), poi inizi a fantasticare su un futuro insieme (desiderio), e infine gli chiedi di uscire (azione). O almeno, così dovrebbe funzionare."
+          }
+        },
+        "b": {
+          "title": "B",
+          "bounceRate": {
+            "title": "Bounce Rate",
+            "difficulty": "Base",
+            "description": "La percentuale di visitatori che arrivano sul tuo sito e scappano via come se avessero visto un fantasma. È come quando qualcuno entra in un negozio, dà un'occhiata veloce e se ne va senza nemmeno fingere di essere interessato. Alto bounce rate = il tuo sito è noioso o, peggio, confuso."
+          },
+          "b2bAndB2c": {
+            "title": "B2B e B2C",
+            "difficulty": "Base",
+            "description": "Business-to-Business e Business-to-Consumer. Il primo è quando vendi ad altre aziende (pensa a software aziendali o servizi di consulenza), il secondo è quando vendi direttamente ai consumatori (come Netflix o il tuo caffè preferito). La differenza? Nel B2B devi convincere un intero comitato di persone annoiate in giacca e cravatta, nel B2C devi convincere una persona che probabilmente sta scrollando Instagram mentre è in bagno."
+          }
+        },
+        "c": {
+          "title": "C",
+          "conversionRate": {
+            "title": "Conversion Rate",
+            "difficulty": "Base",
+            "description": "La percentuale di visitatori che effettivamente fanno ciò che vuoi (comprare, iscriversi, ecc.). È come il tasso di successo quando chiedi il numero di telefono a qualcuno in un bar. Se su 100 persone che entrano nel tuo sito, solo 2 comprano, hai un conversion rate del 2% (e probabilmente un problema di persuasione)."
+          },
+          "customerPersona": {
+            "title": "Customer Persona",
+            "difficulty": "Intermedio",
+            "description": "Un profilo immaginario del tuo cliente ideale, completo di nome, età, interessi e problemi. È come creare un personaggio per un romanzo, ma invece di farlo combattere contro i draghi, lo fai comprare i tuoi prodotti. \"Marco, 35 anni, manager stressato che non ha tempo per fare la spesa\" è più utile di \"uomini tra i 25 e i 45 anni\"."
+          }
+        },
+        "d": {
+          "title": "D",
+          "dashboard": {
+            "title": "Dashboard",
+            "difficulty": "Base",
+            "description": "Una visualizzazione di tutti i tuoi dati importanti in un unico posto. È come il cruscotto della tua auto, ma invece di mostrarti quanto carburante ti resta, ti mostra quanto denaro stai bruciando in pubblicità. Un buon dashboard ti fa sentire in controllo; un cattivo dashboard ti fa sentire come se stessi pilotando un aereo senza manuale."
+          }
+        },
+        "e": {
+          "title": "E",
+          "emailMarketing": {
+            "title": "Email Marketing",
+            "difficulty": "Base",
+            "description": "L'arte di inviare email che le persone effettivamente aprono invece di mandare direttamente nella cartella spam. È come cercare di attirare l'attenzione di qualcuno in una stanza affollata, ma la stanza è la casella di posta con 200 email non lette e tu sei solo un'altra notifica."
+          },
+          "engagement": {
+            "title": "Engagement",
+            "difficulty": "Base",
+            "description": "Quanto le persone interagiscono con i tuoi contenuti (like, commenti, condivisioni, ecc.). Alto engagement = le persone ti amano. Basso engagement = stai parlando da solo. È come la differenza tra una festa dove tutti ballano e una dove tutti stanno appoggiati al muro guardando i loro telefoni."
+          }
+        },
+        "f": {
+          "title": "F",
+          "marketingFunnel": {
+            "title": "Funnel di Marketing",
+            "difficulty": "Intermedio",
+            "description": "Il percorso che un potenziale cliente fa dal momento in cui scopre il tuo brand fino all'acquisto. È a forma di imbuto perché molte persone entrano dall'alto (conoscenza), ma poche arrivano in fondo (acquisto). È come un reality show: inizi con 20 concorrenti, ma solo uno vince il premio finale."
+          }
+        },
+        "g": {
+          "title": "G",
+          "gamification": {
+            "title": "Gamification",
+            "difficulty": "Avanzato",
+            "description": "Aggiungere elementi di gioco (punti, badge, classifiche) a cose non-gioco per renderle più coinvolgenti. È come quando tua madre ti diceva \"ancora un boccone e poi il dessert\" - tecnicamente stavi ancora mangiando verdure, ma improvvisamente sembrava un gioco."
+          }
+        },
+        "k": {
+          "title": "K",
+          "kpi": {
+            "title": "KPI (Key Performance Indicator)",
+            "difficulty": "Intermedio",
+            "description": "I numeri che ti dicono se stai facendo un buon lavoro o se dovresti considerare una carriera alternativa. Possono essere vendite, traffico web, engagement sui social, ecc. È come il tuo voto a scuola, ma per adulti con budget da gestire."
+          },
+          "keyword": {
+            "title": "Keyword",
+            "difficulty": "Base",
+            "description": "Le parole o frasi che le persone digitano nei motori di ricerca. Trovare le giuste keyword è come indovinare cosa c'è nella mente dei tuoi potenziali clienti, ma con dati reali invece di poteri psichici. \"Migliore pizza a Milano\" è una keyword; \"voglio mangiare qualcosa di rotondo con formaggio\" non lo è (ancora)."
+          }
+        },
+        "r": {
+          "title": "R",
+          "retargeting": {
+            "title": "Retargeting",
+            "difficulty": "Intermedio",
+            "description": "Quando guardi un paio di scarpe online e poi quelle stesse scarpe ti seguono ovunque sul web come un ex ossessionato. Tecnicamente, è una strategia pubblicitaria che mostra annunci a persone che hanno già visitato il tuo sito. È inquietante? Sì. Funziona? Anche."
+          },
+          "roi": {
+            "title": "ROI (Return on Investment)",
+            "difficulty": "Base",
+            "description": "Quanto guadagni rispetto a quanto spendi. Se spendi 100€ in pubblicità e guadagni 300€ in vendite, il tuo ROI è del 200%. Se spendi 100€ e guadagni 50€, il tuo ROI è negativo e dovresti probabilmente smettere di fare quello che stai facendo. È matematica di base, ma sorprendentemente molte aziende la ignorano."
+          }
+        },
+        "s": {
+          "title": "S",
+          "seo": {
+            "title": "SEO (Search Engine Optimization)",
+            "difficulty": "Intermedio",
+            "description": "L'arte oscura di convincere Google che il tuo sito merita di essere in prima pagina. È come cercare di entrare nel club più esclusivo della città: ci sono regole non scritte, tutti pensano di conoscerle, ma il buttafuori (Google) cambia continuamente i criteri."
+          },
+          "socialMediaMarketing": {
+            "title": "Social Media Marketing",
+            "difficulty": "Base",
+            "description": "Usare piattaforme social per promuovere il tuo brand. È come essere a una festa e parlare del tuo nuovo progetto, ma senza essere quella persona noiosa che parla solo di sé. Il trucco è essere interessante abbastanza da far sì che le persone vogliano ascoltarti."
+          }
+        },
+        "t": {
+          "title": "T",
+          "targetAudience": {
+            "title": "Target Audience",
+            "difficulty": "Base",
+            "description": "Le persone a cui stai cercando di vendere. \"Tutti\" non è un target audience. \"Donne tra i 25 e i 40 anni interessate al fitness e con un budget medio-alto\" lo è. È come scegliere a chi mandare gli inviti per la tua festa: invitare tutti potrebbe sembrare inclusivo, ma finiresti con una strana miscela di persone che non si divertono."
+          }
+        },
+        "u": {
+          "title": "U",
+          "ugc": {
+            "title": "UGC (User Generated Content)",
+            "difficulty": "Intermedio",
+            "description": "Contenuti creati dai tuoi utenti/clienti invece che da te. È come avere un esercito di creatori di contenuti che lavorano gratis per te. Le recensioni, le foto dei clienti con i tuoi prodotti, i video di unboxing - tutto questo è UGC, ed è oro puro perché le persone si fidano più degli altri consumatori che dei brand."
+          },
+          "ux": {
+            "title": "UX (User Experience)",
+            "difficulty": "Intermedio",
+            "description": "Come si sentono le persone quando usano il tuo prodotto o sito web. Una buona UX è come un buon cameriere: ti dà esattamente ciò di cui hai bisogno senza che tu debba chiederlo. Una cattiva UX è come un labirinto: confusa, frustrante e ti fa venire voglia di uscire il prima possibile."
+          }
+        }
+      },
+      "conclusion": {
+        "p1": "Ecco fatto! Ora puoi partecipare a qualsiasi riunione di marketing senza quel sudore freddo quando qualcuno menziona \"KPI\" o \"funnel\". Ricorda: il marketing è in parte scienza, in parte arte, e in parte fingere di sapere cosa stai facendo finché non lo sai davvero.",
+        "p2": "E se qualcuno ti chiede dove hai imparato tutti questi termini, puoi sempre dire \"Ho fatto un corso intensivo\", che suona molto meglio di \"Ho letto un glossario sarcastico online\"."
+      },
+      "share": {
+        "title": "Condividi questo articolo (e salva un collega confuso)"
+      },
+      "related": {
+        "title": "Articoli correlati"
+      }
+    }
+  }
+}
