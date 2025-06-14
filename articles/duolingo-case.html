@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cards.duolingoCase.title">Caso Studio Duolingo</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Flag Icons CSS -->
+    <link href="../css/flags.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #20c997;
+            background-image: linear-gradient(135deg, #20c997 0%, #198754 100%);
+        }
+        .highlight {
+            background-color: #d1e7dd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #20c997;
+        }
+        .article-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 4px solid #20c997;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #20c997;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" data-i18n="navbar.brand">Il Mio Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> <span data-i18n="navbar.home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about"><i class="bi bi-person me-1"></i> <span data-i18n="navbar.about">Chi Sono</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid me-1"></i> <span data-i18n="navbar.categories">Categorie</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#marketing"><i class="bi bi-megaphone me-2"></i> <span data-i18n="categories.marketing">Marketing</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#finance"><i class="bi bi-cash-coin me-2"></i> <span data-i18n="categories.finance">Finanza Personale</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#programming"><i class="bi bi-code-slash me-2"></i> <span data-i18n="categories.programming">Programmazione</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#newsletter"><i class="bi bi-envelope me-1"></i> <span data-i18n="navbar.newsletter">Newsletter</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i> <span data-i18n="navbar.language">Lingua</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-it" aria-hidden="true"></span>Italiano</a></li>
+                            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb" aria-hidden="true"></span>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header py-5 text-center text-white">
+        <div class="container">
+            <span class="badge bg-success mb-3" data-i18n="categories.marketing">Marketing</span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="cards.duolingoCase.title">Caso Studio Duolingo</h1>
+            <p class="lead mb-4" data-i18n="articles.duolingoCase.subtitle">Come un gufo verde ha conquistato il mondo (e perché dovresti prendere appunti)</p>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar me-2"></i> <span class="article-date">10/06/2023</span></span>
+                <span class="mx-3"><i class="bi bi-clock me-2"></i> <span data-i18n="readingTime" data-i18n-options='{"time": "8"}'>Tempo di lettura: 8 min</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="article-image mb-5">
+                        <img src="../images/duolingo-case-study.jpeg" class="img-fluid rounded" alt="Duolingo Case Study">
+                    </div>
+
+                    <div class="article-body">
+                        <p class="lead" data-i18n="articles.duolingoCase.intro">Un gufo verde ossessionante, notifiche passive-aggressive e una strategia di marketing così brillante che ti fa sentire in colpa se non studi una lingua straniera. Benvenuto nel mondo di Duolingo, l'app che ha trasformato l'apprendimento delle lingue in un'ossessione globale.</p>
+
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="stat-box">
+                                    <div class="stat-number">500M+</div>
+                                    <p data-i18n="articles.duolingoCase.stats.downloads">Download totali</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-box">
+                                    <div class="stat-number">40M+</div>
+                                    <p data-i18n="articles.duolingoCase.stats.users">Utenti attivi mensili</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-box">
+                                    <div class="stat-number">$2.4B</div>
+                                    <p data-i18n="articles.duolingoCase.stats.valuation">Valutazione di mercato</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 data-i18n="articles.duolingoCase.section1.title">Il segreto che nessuno vuole ammettere</h2>
+                        <p data-i18n="articles.duolingoCase.section1.p1">Facciamoci una domanda scomoda: perché un'app per imparare le lingue è diventata più popolare di molti giochi? La risposta è brutalmente semplice: Duolingo ha capito che la maggior parte delle persone odia studiare le lingue ma ama i giochi.</p>
+
+                        <p data-i18n="articles.duolingoCase.section1.p2">Invece di creare un altro noioso corso di lingue, hanno creato un gioco che ti insegna una lingua quasi per caso. È come se ti dessero delle verdure nascoste in un delizioso dessert. E tu, ignaro, continui a mangiarne.</p>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.duolingoCase.section1.highlight.title">Verità scomoda:</strong> <span data-i18n="articles.duolingoCase.section1.highlight.content">Duolingo non è diventato un successo perché insegna le lingue meglio degli altri. È diventato un successo perché ha reso l'apprendimento delle lingue <em>meno doloroso</em> degli altri. E questa è una lezione di marketing che vale oro.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.duolingoCase.section2.title">La gamification: quando il tuo cervello viene hackerato (e ne è felice)</h2>
+                        <p data-i18n="articles.duolingoCase.section2.p1">Se hai mai usato Duolingo, conosci quella sensazione di soddisfazione quando completi una lezione. Quel piccolo "ding!" e quelle stelline che appaiono. Quella sensazione non è casuale, è progettata scientificamente per farti tornare.</p>
+
+                        <p data-i18n="articles.duolingoCase.section2.p2">Ecco come Duolingo ha trasformato lo studio in un gioco che crea dipendenza:</p>
+
+                        <ul>
+                            <li><strong data-i18n="articles.duolingoCase.section2.list.item1.title">Streak giornaliere:</strong> <span data-i18n="articles.duolingoCase.section2.list.item1.content">"Non rompere la tua streak di 64 giorni!" è più motivante di "Studia francese oggi". È la stessa psicologia che usa il tuo capo quando dice "Non hai mai fatto un giorno di malattia quest'anno, peccato rovinare questo record..."</span></li>
+                            <li><strong data-i18n="articles.duolingoCase.section2.list.item2.title">Ricompense immediate:</strong> <span data-i18n="articles.duolingoCase.section2.list.item2.content">XP, gemme, corone... sono solo pixel sullo schermo, ma il tuo cervello li ama come se fossero oro vero.</span></li>
+                            <li><strong data-i18n="articles.duolingoCase.section2.list.item3.title">Competizione sociale:</strong> <span data-i18n="articles.duolingoCase.section2.list.item3.content">Vedere i tuoi amici superarti in classifica è più motivante di qualsiasi insegnante che ti dice di studiare. L'orgoglio è un motivatore potente, amico mio.</span></li>
+                        </ul>
+
+                        <p class="article-quote" data-i18n="articles.duolingoCase.section2.quote">"Duolingo non vende corsi di lingua. Vende la sensazione di realizzazione personale, confezionata in piccole dosi quotidiane che creano dipendenza."</p>
+
+                        <h2 data-i18n="articles.duolingoCase.section3.title">Il gufo: da mascotte a meme (e perché è geniale)</h2>
+                        <p data-i18n="articles.duolingoCase.section3.p1">Parliamo di Duo, il gufo verde. Non è solo una mascotte carina, è un genio del marketing travestito da uccello cartoonesco.</p>
+
+                        <p data-i18n="articles.duolingoCase.section3.p2">Quando Duo ti manda quelle notifiche passive-aggressive ("Queste lezioni non si faranno da sole!" o "Sembra che tu abbia bisogno di un promemoria per studiare!"), non sta solo cercando di farti aprire l'app. Sta creando un personaggio che genera emozioni. E indovina un po'? Le emozioni sono condivisibili.</p>
+
+                        <p data-i18n="articles.duolingoCase.section3.p3">I meme di Duo che minaccia gli utenti che saltano le lezioni non sono un incidente. Sono marketing virale gratuito. Duolingo ha trasformato le notifiche fastidiose in un fenomeno culturale che le persone condividono volontariamente.</p>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.duolingoCase.section3.highlight.title">Lezione di marketing:</strong> <span data-i18n="articles.duolingoCase.section3.highlight.content">Se riesci a far ridere le persone (anche se è a spese del tuo brand), hai vinto. Le persone condividono ciò che le fa ridere molto più di ciò che trovano utile.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.duolingoCase.section4.title">Il modello freemium: quando gratis non significa davvero gratis</h2>
+                        <p data-i18n="articles.duolingoCase.section4.p1">Duolingo è gratuito. O almeno, così dicono. Ma hanno costruito un modello di business brillante che ti fa desiderare di pagare dopo averti dato abbastanza gratuitamente.</p>
+
+                        <p data-i18n="articles.duolingoCase.section4.p2">Il loro approccio è come quello del tuo spacciatore di fiducia: la prima dose è gratis. Una volta che sei dipendente dalle streak e dalle lezioni, ecco che arriva Duolingo Plus con le sue tentazioni: niente pubblicità, lezioni offline, e soprattutto, vite infinite.</p>
+
+                        <p data-i18n="articles.duolingoCase.section4.p3">E funziona! Nel 2022, i ricavi di Duolingo hanno superato i 250 milioni di dollari. Non male per un'app "gratuita", vero?</p>
+
+                        <h2 data-i18n="articles.duolingoCase.section5.title">Cosa puoi rubare (ehm, imparare) da Duolingo</h2>
+                        <p data-i18n="articles.duolingoCase.section5.intro">Non tutti possiamo creare la prossima Duolingo, ma possiamo sicuramente rubare alcune delle loro strategie geniali:</p>
+
+                        <ol>
+                            <li><strong data-i18n="articles.duolingoCase.section5.list.item1.title">Rendi divertente ciò che è noioso:</strong> <span data-i18n="articles.duolingoCase.section5.list.item1.content">Qualunque sia il tuo prodotto, c'è sempre un modo per renderlo più coinvolgente. Se Duolingo può rendere divertente studiare il congiuntivo francese, tu puoi rendere divertente qualsiasi cosa.</span></li>
+                            <li><strong data-i18n="articles.duolingoCase.section5.list.item2.title">Crea un personaggio, non un logo:</strong> <span data-i18n="articles.duolingoCase.section5.list.item2.content">Le persone si relazionano con i personaggi, non con i loghi aziendali. Crea una mascotte o un personaggio che possa diventare la voce del tuo brand.</span></li>
+                            <li><strong data-i18n="articles.duolingoCase.section5.list.item3.title">Usa la psicologia delle abitudini:</strong> <span data-i18n="articles.duolingoCase.section5.list.item3.content">Streak, ricompense immediate, competizione sociale... sono tutti trigger che creano abitudini. E le abitudini significano clienti fedeli.</span></li>
+                            <li><strong data-i18n="articles.duolingoCase.section5.list.item4.title">Abbraccia i meme:</strong> <span data-i18n="articles.duolingoCase.section5.list.item4.content">Se le persone prendono in giro il tuo brand, non arrabbiarti. Unisciti alla festa! Duolingo ha abbracciato i meme del "gufo minaccioso" e li ha trasformati in una campagna di marketing.</span></li>
+                        </ol>
+
+                        <h2 data-i18n="articles.duolingoCase.conclusion.title">Conclusione: Perché Duolingo continuerà a vincere</h2>
+                        <p data-i18n="articles.duolingoCase.conclusion.p1">Duolingo non è solo un'app per imparare le lingue. È un caso studio di come trasformare qualcosa di intrinsecamente noioso in un'esperienza coinvolgente che le persone amano (o amano odiare, il che nel marketing è quasi la stessa cosa).</p>
+
+                        <p data-i18n="articles.duolingoCase.conclusion.p2">Mentre altre app di apprendimento linguistico si concentrano su metodi didattici migliori o contenuti più completi, Duolingo si concentra sull'esperienza umana: motivazione, divertimento, competizione, e quel sottile senso di colpa che ti fa tornare ogni giorno.</p>
+
+                        <p data-i18n="articles.duolingoCase.conclusion.p3">E tu? Sei pronto a duolinghizzare il tuo business? O preferisci continuare a fare marketing come si faceva nel 2010? La scelta è tua, ma ricorda: c'è un gufo verde là fuori che sta rivoluzionando un intero settore mentre tu leggi questo articolo.</p>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons mt-5 pt-4 border-top">
+                        <h5 data-i18n="articles.duolingoCase.share.title">Condividi questo articolo (prima che il gufo ti trovi)</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-articles mt-5 pt-4 border-top">
+                        <h3 class="mb-4" data-i18n="articles.duolingoCase.related.title">Articoli correlati</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="Marketing Glossary">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.marketingGlossary.title">Glossario di Marketing</h5>
+                                        <p class="card-text" data-i18n="cards.marketingGlossary.description">Un glossario completo dei termini di marketing essenziali per professionisti e principianti.</p>
+                                        <a href="marketing-glossary.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="AIDA Model">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.aidaModel.title">Modello AIDA</h5>
+                                        <p class="card-text" data-i18n="cards.aidaModel.description">Esplora il modello AIDA (Attenzione, Interesse, Desiderio, Azione) e come applicarlo alle tue strategie di marketing.</p>
+                                        <a href="aida-model.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="footer.usefulLinks">Link Utili</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
+                        <li class="mb-3"><a href="../index.html#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
+                        <li class="mb-3"><a href="../index.html#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="../index.html#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (necessario per jqueryI18next) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Librerie i18next -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+
+    <!-- Il tuo file di configurazione i18n -->
+    <script src="../js/i18n.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/custom.js"></script>
+</body>
+</html>
