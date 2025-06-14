@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cards.creditCards.title">Carte di Credito</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Flag Icons CSS -->
+    <link href="../css/flags.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #0d6efd;
+            background-image: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .article-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 4px solid #0d6efd;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" data-i18n="navbar.brand">Il Mio Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> <span data-i18n="navbar.home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about"><i class="bi bi-person me-1"></i> <span data-i18n="navbar.about">Chi Sono</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid me-1"></i> <span data-i18n="navbar.categories">Categorie</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#marketing"><i class="bi bi-megaphone me-2"></i> <span data-i18n="categories.marketing">Marketing</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#finance"><i class="bi bi-cash-coin me-2"></i> <span data-i18n="categories.finance">Finanza Personale</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#programming"><i class="bi bi-code-slash me-2"></i> <span data-i18n="categories.programming">Programmazione</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#newsletter"><i class="bi bi-envelope me-1"></i> <span data-i18n="navbar.newsletter">Newsletter</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i> <span data-i18n="navbar.language">Lingua</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-it" aria-hidden="true"></span>Italiano</a></li>
+                            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb" aria-hidden="true"></span>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header py-5 text-center text-white">
+        <div class="container">
+            <span class="badge bg-primary mb-3" data-i18n="categories.finance">Finanza Personale</span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="cards.creditCards.title">Carte di Credito</h1>
+            <p class="lead mb-4" data-i18n="articles.creditCards.subtitle">La tua relazione tossica preferita: tu, la tua carta di credito e il tuo conto in banca!</p>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar me-2"></i> <span class="article-date">15/05/2023</span></span>
+                <span class="mx-3"><i class="bi bi-clock me-2"></i> <span data-i18n="readingTime" data-i18n-options='{"time": "7"}'>Tempo di lettura: 7 min</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="article-image mb-5">
+                        <img src="../images/placeholder.jpg" class="img-fluid rounded" alt="Carte di Credito">
+                    </div>
+
+                    <div class="article-body">
+                        <p class="lead" data-i18n="articles.creditCards.intro">Ah, le carte di credito! Quei piccoli rettangoli di plastica che promettono libertà finanziaria ma spesso finiscono per tenerti prigioniero dei debiti. Sei pronto a scoprire come domarle una volta per tutte?</p>
+
+                        <h2 data-i18n="articles.creditCards.section1.title">La verità scomoda che nessuno ti dice</h2>
+                        <p data-i18n="articles.creditCards.section1.p1">Parliamoci chiaro: le banche non ti danno una carta di credito perché ti vogliono bene. La tua carta di credito è come quel amico che ti offre sempre da bere ma poi ti presenta un conto salato quando sei troppo ubriaco per fare i calcoli. Le banche guadagnano quando tu perdi il controllo!</p>
+
+                        <p data-i18n="articles.creditCards.section1.p2">Ma non temere, non sono qui per farti sentire in colpa (o forse sì, un pochino). Sono qui per darti gli strumenti per usare queste bestie a tuo vantaggio.</p>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.creditCards.section1.highlight.title">Dato scioccante:</strong> <span data-i18n="articles.creditCards.section1.highlight.content">L'italiano medio ha un debito sulla carta di credito di circa 1.500€. E indovina un po'? La maggior parte di queste persone non sa nemmeno quale sia il tasso di interesse che sta pagando. Sei uno di loro? 🤔</span>
+                        </div>
+
+                        <h2 data-i18n="articles.creditCards.section2.title">Come scegliere la carta giusta (senza farti fregare)</h2>
+                        <p data-i18n="articles.creditCards.section2.p1">Scegliere una carta di credito è un po' come scegliere un partner: se non leggi i termini e le condizioni, potresti ritrovarti in una relazione tossica per anni. Ecco cosa devi guardare:</p>
+
+                        <ul>
+                            <li data-i18n="articles.creditCards.section2.list.item1"><strong>Tasso di interesse:</strong> Se pensi che il 18% sia un buon rendimento per i tuoi investimenti, immagina quanto sia terribile come tasso da pagare sui tuoi debiti!</li>
+                            <li data-i18n="articles.creditCards.section2.list.item2"><strong>Commissioni annuali:</strong> Alcune carte ti fanno pagare solo per il privilegio di possederle. Come se pagassi l'affitto per un appartamento in cui non vivi mai.</li>
+                            <li data-i18n="articles.creditCards.section2.list.item3"><strong>Programmi fedeltà:</strong> Punti, miglia, cashback... Sembrano regali, ma ricorda: se stai pagando interessi, stai finanziando tu stesso quei "regali".</li>
+                        </ul>
+
+                        <p class="article-quote" data-i18n="articles.creditCards.section2.quote">"La carta di credito è come un martello: può aiutarti a costruire la tua casa finanziaria o può distruggerla completamente. Dipende tutto da come la usi."</p>
+
+                        <h2 data-i18n="articles.creditCards.section3.title">I trucchi che le banche non vogliono che tu conosca</h2>
+                        <p data-i18n="articles.creditCards.section3.p1">Le banche hanno un intero arsenale di tattiche per farti spendere di più. Ecco come difenderti:</p>
+
+                        <ol>
+                            <li data-i18n="articles.creditCards.section3.list.item1"><strong>Il limite di credito generoso:</strong> "Ehi, abbiamo aumentato il tuo limite a 5.000€!" Non è generosità, è come un pescatore che allunga la lenza sperando che tu abbocchi di più.</li>
+                            <li data-i18n="articles.creditCards.section3.list.item2"><strong>Il pagamento minimo:</strong> La trappola perfetta. Paghi poco ogni mese ma gli interessi continuano ad accumularsi. È come svuotare l'oceano con un cucchiaino mentre piove.</li>
+                            <li data-i18n="articles.creditCards.section3.list.item3"><strong>Offerte a tasso zero:</strong> "0% di interessi per 12 mesi!" Sì, e poi? Il 24% dopo? È come un appuntamento fantastico che si trasforma in un incubo alla mezzanotte.</li>
+                        </ol>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.creditCards.section3.highlight.title">Pro Tip:</strong> <span data-i18n="articles.creditCards.section3.highlight.content">Imposta il pagamento automatico dell'intero saldo ogni mese. È come avere un angelo custode finanziario che ti impedisce di fare stupidaggini!</span>
+                        </div>
+
+                        <h2 data-i18n="articles.creditCards.section4.title">Come usare la carta di credito e dormire sonni tranquilli</h2>
+                        <p data-i18n="articles.creditCards.section4.p1">Usare la carta di credito senza finire nei guai è possibile, te lo giuro! Ecco le regole d'oro:</p>
+
+                        <ul>
+                            <li data-i18n="articles.creditCards.section4.list.item1"><strong>Regola #1:</strong> Se non puoi permetterti di pagarlo in contanti, non puoi permetterti di pagarlo con la carta. Punto.</li>
+                            <li data-i18n="articles.creditCards.section4.list.item2"><strong>Regola #2:</strong> Paga sempre l'intero saldo. Gli interessi sono come i vampiri: una volta che entrano, è difficile liberarsene.</li>
+                            <li data-i18n="articles.creditCards.section4.list.item3"><strong>Regola #3:</strong> Controlla il tuo estratto conto come se fossi un detective paranoico. Gli errori e le frodi esistono, e indovina un po'? Non sono mai a tuo favore!</li>
+                        </ul>
+
+                        <p data-i18n="articles.creditCards.section4.p2">Seguendo queste regole, la tua carta di credito diventerà uno strumento utile invece che una bomba a orologeria nel tuo portafoglio.</p>
+
+                        <h2 data-i18n="articles.creditCards.conclusion.title">Conclusione: La carta di credito è tua amica o nemica?</h2>
+                        <p data-i18n="articles.creditCards.conclusion.p1">La risposta è semplice: dipende da te. Come con molte cose nella vita, non è lo strumento in sé a essere buono o cattivo, ma come lo usi.</p>
+
+                        <p data-i18n="articles.creditCards.conclusion.p2">Se usi la tua carta con consapevolezza, goditi i vantaggi: protezione sugli acquisti, tracciabilità delle spese, punti e premi. Ma se la usi come un'estensione magica del tuo stipendio, preparati a una relazione finanziaria dolorosa.</p>
+
+                        <p data-i18n="articles.creditCards.conclusion.p3">Ricorda: le banche hanno squadre di psicologi e marketer che lavorano per farti spendere di più. Ma ora hai questo articolo, quindi sei armato per la battaglia. Vai e conquista il mondo della finanza personale, un acquisto consapevole alla volta!</p>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons mt-5 pt-4 border-top">
+                        <h5 data-i18n="articles.creditCards.share.title">Condividi questo articolo (e salva i tuoi amici dalle grinfie delle banche!)</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-articles mt-5 pt-4 border-top">
+                        <h3 class="mb-4" data-i18n="articles.creditCards.related.title">Articoli correlati</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/duolingo-case-study.jpeg" class="card-img-top" alt="Duolingo Case Study">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.duolingoCase.title">Caso Studio Duolingo</h5>
+                                        <p class="card-text" data-i18n="cards.duolingoCase.description">Un'analisi approfondita della strategia di marketing di Duolingo e come ha rivoluzionato l'apprendimento delle lingue.</p>
+                                        <a href="duolingo-case.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="AB Test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.abTest.title">Test A/B</h5>
+                                        <p class="card-text" data-i18n="cards.abTest.description">Guida completa ai test A/B: come implementarli, analizzare i risultati e ottimizzare le tue campagne di marketing.</p>
+                                        <a href="ab-test.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="footer.usefulLinks">Link Utili</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
+                        <li class="mb-3"><a href="../index.html#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
+                        <li class="mb-3"><a href="../index.html#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="../index.html#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (necessario per jqueryI18next) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Librerie i18next -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+
+    <!-- Il tuo file di configurazione i18n -->
+    <script src="../js/i18n.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/custom.js"></script>
+</body>
+</html>

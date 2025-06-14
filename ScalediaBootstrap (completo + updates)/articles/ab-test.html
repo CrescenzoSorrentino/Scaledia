@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cards.abTest.title">Test A/B</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Flag Icons CSS -->
+    <link href="../css/flags.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #6f42c1;
+            background-image: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%);
+        }
+        .highlight {
+            background-color: #e2d9f3;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #6f42c1;
+        }
+        .article-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 4px solid #6f42c1;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .comparison-table th {
+            background-color: #6f42c1;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .vs-container {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        .vs-item {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .vs-divider {
+            padding: 0 20px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #6f42c1;
+        }
+        .example-image {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive styles for vs-container */
+        @media (max-width: 767.98px) {
+            .vs-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .vs-divider {
+                padding: 10px 0;
+                margin: 5px 0;
+            }
+            .vs-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" data-i18n="navbar.brand">Il Mio Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> <span data-i18n="navbar.home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about"><i class="bi bi-person me-1"></i> <span data-i18n="navbar.about">Chi Sono</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid me-1"></i> <span data-i18n="navbar.categories">Categorie</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#marketing"><i class="bi bi-megaphone me-2"></i> <span data-i18n="categories.marketing">Marketing</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#finance"><i class="bi bi-cash-coin me-2"></i> <span data-i18n="categories.finance">Finanza Personale</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#programming"><i class="bi bi-code-slash me-2"></i> <span data-i18n="categories.programming">Programmazione</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#newsletter"><i class="bi bi-envelope me-1"></i> <span data-i18n="navbar.newsletter">Newsletter</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i> <span data-i18n="navbar.language">Lingua</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-it" aria-hidden="true"></span>Italiano</a></li>
+                            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb" aria-hidden="true"></span>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header py-5 text-center text-white">
+        <div class="container">
+            <span class="badge bg-primary mb-3" data-i18n="categories.marketing">Marketing</span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="cards.abTest.title">Test A/B</h1>
+            <p class="lead mb-4" data-i18n="articles.abTest.subtitle">Quando l'indecisione diventa una strategia di marketing (e funziona pure!)</p>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar me-2"></i> <span class="article-date">20/07/2023</span></span>
+                <span class="mx-3"><i class="bi bi-clock me-2"></i> <span data-i18n="readingTime" data-i18n-options='{"time": "9"}'>Tempo di lettura: 9 min</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="article-image mb-5">
+                        <img src="../images/placeholder.jpg" class="img-fluid rounded" alt="AB Testing">
+                    </div>
+
+                    <div class="article-body">
+                        <p class="lead" data-i18n="articles.abTest.intro">Sei mai stato in un negozio di abbigliamento con un amico, indeciso tra due magliette, e hai chiesto "Quale mi sta meglio?". Congratulazioni, hai appena fatto un test A/B analogico! Solo che invece di migliorare il tuo guardaroba, oggi imparerai come questa indecisione strategica può farti guadagnare un sacco di soldi.</p>
+
+                        <h2 data-i18n="articles.abTest.section1.title">Cos'è un test A/B (spiegato come se stessi parlando a un umano)</h2>
+                        <p data-i18n="articles.abTest.section1.p1">Dimentichiamo per un attimo il gergo tecnico. Un test A/B è semplicemente quando mostri due versioni di qualcosa a persone diverse e vedi quale funziona meglio. È come avere due ristoranti identici, uno con tovaglie rosse e uno con tovaglie blu, e vedere in quale la gente spende di più.</p>
+
+                        <p data-i18n="articles.abTest.section1.p2">Nel mondo digitale, questo significa creare due versioni di una pagina web, un'email, un pulsante o qualsiasi altra cosa, e misurare quale versione ottiene più clic, iscrizioni, acquisti o qualsiasi altra azione tu voglia che le persone compiano.</p>
+
+                        <div class="vs-container">
+                            <div class="vs-item">
+                                <img src="../images/buy-now-blue.jpeg" class="example-image" alt="Versione A">
+                                <h5 data-i18n="articles.abTest.section1.example.versionA.title">Versione A</h5>
+                                <p data-i18n="articles.abTest.section1.example.versionA.content">"Acquista ora" (testo blu)</p>
+                            </div>
+                            <div class="vs-divider">VS</div>
+                            <div class="vs-item">
+                                <img src="../images/buy-now-red.jpeg" class="example-image" alt="Versione B">
+                                <h5 data-i18n="articles.abTest.section1.example.versionB.title">Versione B</h5>
+                                <p data-i18n="articles.abTest.section1.example.versionB.content">"Acquista ora" (testo rosso)</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.abTest.section1.highlight.title">Verità scomoda:</strong> <span data-i18n="articles.abTest.section1.highlight.content">La maggior parte delle aziende pensa di sapere cosa vogliono i propri clienti. La maggior parte delle aziende si sbaglia. I test A/B sono il modo per smettere di indovinare e iniziare a sapere.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.abTest.section2.title">Perché dovresti fare test A/B (a meno che non ti piaccia buttare soldi dalla finestra)</h2>
+                        <p data-i18n="articles.abTest.section2.p1">Immagina di spendere 10.000€ per una nuova landing page, solo per scoprire che converte peggio della vecchia. O di inviare un'email a 100.000 persone con un oggetto che nessuno apre. O di lanciare una campagna pubblicitaria che attira meno clic di un video di gattini che dormono.</p>
+
+                        <p data-i18n="articles.abTest.section2.p2">I test A/B ti permettono di evitare questi disastri testando le tue idee su un piccolo gruppo prima di lanciarle al mondo intero. È come assaggiare la zuppa prima di servirla agli ospiti.</p>
+
+                        <p data-i18n="articles.abTest.section2.p3">Ecco alcuni benefici concreti:</p>
+
+                        <ul>
+                            <li><strong data-i18n="articles.abTest.section2.list.item1.title">Aumento delle conversioni:</strong> <span data-i18n="articles.abTest.section2.list.item1.content">Anche un piccolo miglioramento del 2% può significare migliaia di euro in più se hai un traffico decente.</span></li>
+                            <li><strong data-i18n="articles.abTest.section2.list.item2.title">Decisioni basate sui dati:</strong> <span data-i18n="articles.abTest.section2.list.item2.content">Niente più "secondo me" o "mi piace di più così". Solo dati freddi e brutali che ti dicono cosa funziona davvero.</span></li>
+                            <li><strong data-i18n="articles.abTest.section2.list.item3.title">Conoscenza del tuo pubblico:</strong> <span data-i18n="articles.abTest.section2.list.item3.content">Ogni test ti insegna qualcosa di nuovo sui tuoi clienti, anche quando fallisce (anzi, soprattutto quando fallisce).</span></li>
+                        </ul>
+
+                        <p class="article-quote" data-i18n="articles.abTest.section2.quote">"In Dio confidiamo. Tutti gli altri portino dati." - W. Edwards Deming</p>
+
+                        <h2 data-i18n="articles.abTest.section3.title">Cosa puoi testare (praticamente tutto, ma ecco le cose che contano davvero)</h2>
+                        <p data-i18n="articles.abTest.section3.p1">Tecnicamente, puoi testare qualsiasi elemento della tua presenza digitale. Ma alcune cose hanno un impatto maggiore di altre. Ecco dove concentrare i tuoi sforzi:</p>
+
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="articles.abTest.section3.table.headers.element">Elemento</th>
+                                    <th data-i18n="articles.abTest.section3.table.headers.impact">Impatto potenziale</th>
+                                    <th data-i18n="articles.abTest.section3.table.headers.difficulty">Difficoltà</th>
+                                    <th data-i18n="articles.abTest.section3.table.headers.worthIt">Vale la pena?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.headlines.element">Titoli e headline</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.headlines.impact">ALTO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.headlines.difficulty">Bassa</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.headlines.worthIt">Assolutamente sì!</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.cta.element">Call-to-action (testo e colore)</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.cta.impact">ALTO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.cta.difficulty">Bassa</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.cta.worthIt">Sì, sempre</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.images.element">Immagini principali</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.images.impact">MEDIO-ALTO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.images.difficulty">Media</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.images.worthIt">Sì</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.price.element">Prezzo e offerte</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.price.impact">ALTO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.price.difficulty">Media</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.price.worthIt">Sì, ma con cautela</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.layout.element">Layout della pagina</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.layout.impact">MEDIO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.layout.difficulty">Alta</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.layout.worthIt">Solo se hai già ottimizzato il resto</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="articles.abTest.section3.table.rows.logo.element">Colore del logo</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.logo.impact">BASSO</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.logo.difficulty">Media</td>
+                                    <td data-i18n="articles.abTest.section3.table.rows.logo.worthIt">No, a meno che non stai ribranding</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2 data-i18n="articles.abTest.section4.title">Come fare un test A/B senza sembrare un principiante</h2>
+                        <p data-i18n="articles.abTest.section4.p1">Ok, sei convinto. Vuoi testare tutto. Ma come si fa esattamente? Ecco una guida passo-passo che ti farà sembrare un professionista (anche se è la prima volta):</p>
+
+                        <ol>
+                            <li><strong data-i18n="articles.abTest.section4.list.item1.title">Identifica un problema:</strong> <span data-i18n="articles.abTest.section4.list.item1.content">Non testare a caso. Parti da un problema reale: "La mia landing page ha un bounce rate del 90%" o "Nessuno si iscrive alla mia newsletter". Altrimenti è come andare dal dottore senza sintomi.</span></li>
+                            <li><strong data-i18n="articles.abTest.section4.list.item2.title">Formula un'ipotesi:</strong> <span data-i18n="articles.abTest.section4.list.item2.content">"Credo che cambiando il colore del pulsante da verde a rosso, aumenterò i clic del 15% perché il rosso crea più urgenza". Sì, deve essere specifica come questa.</span></li>
+                            <li><strong data-i18n="articles.abTest.section4.list.item3.title">Crea le varianti:</strong> <span data-i18n="articles.abTest.section4.list.item3.content">Versione A (controllo) e Versione B (variante). Cambia UNA SOLA COSA alla volta. Se cambi più elementi, non saprai mai quale ha fatto la differenza.</span></li>
+                            <li><strong data-i18n="articles.abTest.section4.list.item4.title">Dividi il traffico:</strong> <span data-i18n="articles.abTest.section4.list.item4.content">Usa uno strumento di A/B testing (Google Optimize, VWO, Optimizely) per mostrare le diverse versioni a diversi visitatori in modo casuale.</span></li>
+                            <li><strong data-i18n="articles.abTest.section4.list.item5.title">Raccogli dati sufficienti:</strong> <span data-i18n="articles.abTest.section4.list.item5.content">Non fermarti dopo 10 visitatori. Hai bisogno di un campione statisticamente significativo. Ci sono calcolatori online che ti dicono quanto è grande questo numero.</span></li>
+                            <li><strong data-i18n="articles.abTest.section4.list.item6.title">Analizza i risultati:</strong> <span data-i18n="articles.abTest.section4.list.item6.content">La variante B ha vinto? Implementala! Ha perso? Impara dalla sconfitta e prova qualcos'altro.</span></li>
+                        </ol>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.abTest.section4.highlight.title">Pro Tip:</strong> <span data-i18n="articles.abTest.section4.highlight.content">Non testare durante periodi anomali come il Black Friday o le festività natalizie, a meno che non stai ottimizzando specificamente per quei periodi. Il comportamento degli utenti cambia drasticamente durante questi eventi.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.abTest.section5.title">Gli errori che tutti commettono (e che tu eviterai)</h2>
+                        <p data-i18n="articles.abTest.section5.p1">Anche i marketer più esperti commettono questi errori. Ma tu sei più intelligente, giusto?</p>
+
+                        <ul>
+                            <li><strong data-i18n="articles.abTest.section5.list.item1.title">Terminare i test troppo presto:</strong> <span data-i18n="articles.abTest.section5.list.item1.content">"Wow, dopo 2 ore la versione B sta vincendo del 300%!" No, aspetta. La significatività statistica richiede tempo e numeri.</span></li>
+                            <li><strong data-i18n="articles.abTest.section5.list.item2.title">Testare troppe cose contemporaneamente:</strong> <span data-i18n="articles.abTest.section5.list.item2.content">Se cambi il titolo, l'immagine e il colore del pulsante, come saprai cosa ha funzionato?</span></li>
+                            <li><strong data-i18n="articles.abTest.section5.list.item3.title">Ignorare i dispositivi mobili:</strong> <span data-i18n="articles.abTest.section5.list.item3.content">Quello che funziona su desktop potrebbe essere un disastro su mobile. Testa su entrambi.</span></li>
+                            <li><strong data-i18n="articles.abTest.section5.list.item4.title">Non avere un obiettivo chiaro:</strong> <span data-i18n="articles.abTest.section5.list.item4.content">"Voglio migliorare la pagina" non è un obiettivo. "Voglio aumentare le iscrizioni alla newsletter del 20%" lo è.</span></li>
+                            <li><strong data-i18n="articles.abTest.section5.list.item5.title">Testare cose irrilevanti:</strong> <span data-i18n="articles.abTest.section5.list.item5.content">Il colore del footer probabilmente non cambierà la tua vita. Concentrati su ciò che conta.</span></li>
+                        </ul>
+
+                        <h2 data-i18n="articles.abTest.section6.title">Casi studio che ti faranno sembrare intelligente alle riunioni</h2>
+                        <p data-i18n="articles.abTest.section6.p1">Niente convince più dei numeri reali. Ecco alcuni casi studio famosi che puoi citare per impressionare colleghi e clienti:</p>
+
+                        <div class="term-card">
+                            <h3 class="term-title"><i class="bi bi-bar-chart"></i> <span data-i18n="articles.abTest.section6.case1.title">Obama e i 60 milioni di dollari</span></h3>
+                            <p data-i18n="articles.abTest.section6.case1.content">La campagna di Obama del 2008 ha testato diversi pulsanti di call-to-action e immagini. La combinazione vincente ha generato 60 milioni di dollari in più in donazioni. Sì, hai letto bene: 60 MILIONI solo cambiando alcune parole e immagini.</p>
+                        </div>
+
+                        <div class="term-card">
+                            <h3 class="term-title"><i class="bi bi-bar-chart"></i> <span data-i18n="articles.abTest.section6.case2.title">Hubspot e l'aumento del 106%</span></h3>
+                            <p data-i18n="articles.abTest.section6.case2.content">Hubspot ha testato una landing page con un form a destra vs una con il form a sinistra. La versione con il form a sinistra ha aumentato le conversioni del 106%. Perché? Perché in Occidente leggiamo da sinistra a destra, quindi vediamo prima il form.</p>
+                        </div>
+
+                        <div class="term-card">
+                            <h3 class="term-title"><i class="bi bi-bar-chart"></i> <span data-i18n="articles.abTest.section6.case3.title">Amazon e il miliardo di dollari</span></h3>
+                            <p data-i18n="articles.abTest.section6.case3.content">Amazon esegue costantemente test A/B. Uno dei più famosi è stato il passaggio dal design a tab al design con la barra di navigazione laterale, che si stima abbia aumentato le vendite di 1 miliardo di dollari. Sì, B come Miliardo.</p>
+                        </div>
+
+                        <h2 data-i18n="articles.abTest.section7.title">Strumenti per iniziare (senza spendere un patrimonio)</h2>
+                        <p data-i18n="articles.abTest.section7.p1">Non hai bisogno di un budget da multinazionale per iniziare con l'A/B testing. Ecco alcuni strumenti che puoi usare:</p>
+
+                        <ul>
+                            <li><strong data-i18n="articles.abTest.section7.list.item1.title">Google Optimize:</strong> <span data-i18n="articles.abTest.section7.list.item1.content">Gratuito e si integra con Google Analytics. Perfetto per i principianti.</span></li>
+                            <li><strong data-i18n="articles.abTest.section7.list.item2.title">Optimizely:</strong> <span data-i18n="articles.abTest.section7.list.item2.content">Più avanzato, con prezzi che partono da qualche centinaio di euro al mese.</span></li>
+                            <li><strong data-i18n="articles.abTest.section7.list.item3.title">VWO (Visual Website Optimizer):</strong> <span data-i18n="articles.abTest.section7.list.item3.content">Una via di mezzo, con un'interfaccia intuitiva.</span></li>
+                            <li><strong data-i18n="articles.abTest.section7.list.item4.title">Mailchimp o altri provider di email marketing:</strong> <span data-i18n="articles.abTest.section7.list.item4.content">La maggior parte offre funzionalità di A/B testing per le email.</span></li>
+                        </ul>
+
+                        <h2 data-i18n="articles.abTest.conclusion.title">Conclusione: Testa o muori</h2>
+                        <p data-i18n="articles.abTest.conclusion.p1">Nel marketing digitale di oggi, non testare è come guidare bendati. Potresti arrivare a destinazione, ma è molto più probabile che ti schianti contro un albero.</p>
+
+                        <p data-i18n="articles.abTest.conclusion.p2">I test A/B non sono solo per i grandi brand con budget illimitati. Sono per chiunque voglia prendere decisioni basate sui dati invece che sull'istinto o, peggio, sul "si è sempre fatto così".</p>
+
+                        <p data-i18n="articles.abTest.conclusion.p3">Ricorda: ogni test è un'opportunità di apprendimento. Anche quando perdi, in realtà stai vincendo perché hai imparato cosa NON funziona. E questo, nel lungo termine, vale oro.</p>
+
+                        <p data-i18n="articles.abTest.conclusion.p4">Ora vai e testa qualcosa. Il tuo portafoglio ti ringrazierà.</p>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons mt-5 pt-4 border-top">
+                        <h5 data-i18n="articles.abTest.share.title">Condividi questo articolo (e vedi quale versione converte meglio!)</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-articles mt-5 pt-4 border-top">
+                        <h3 class="mb-4" data-i18n="articles.abTest.related.title">Articoli correlati</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="Marketing Glossary">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.marketingGlossary.title">Glossario di Marketing</h5>
+                                        <p class="card-text" data-i18n="cards.marketingGlossary.description">Un glossario completo dei termini di marketing essenziali per professionisti e principianti.</p>
+                                        <a href="marketing-glossary.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="AIDA Model">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.aidaModel.title">Modello AIDA</h5>
+                                        <p class="card-text" data-i18n="cards.aidaModel.description">Esplora il modello AIDA (Attenzione, Interesse, Desiderio, Azione) e come applicarlo alle tue strategie di marketing.</p>
+                                        <a href="aida-model.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="footer.usefulLinks">Link Utili</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
+                        <li class="mb-3"><a href="../index.html#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
+                        <li class="mb-3"><a href="../index.html#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="../index.html#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (necessario per jqueryI18next) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Librerie i18next -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+
+    <!-- Il tuo file di configurazione i18n -->
+    <script src="../js/i18n.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/custom.js"></script>
+</body>
+</html>
