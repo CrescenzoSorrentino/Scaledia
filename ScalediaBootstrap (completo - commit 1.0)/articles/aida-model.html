@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cards.aidaModel.title">Modello AIDA</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Flag Icons CSS -->
+    <link href="../css/flags.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #fd7e14;
+            background-image: linear-gradient(135deg, #fd7e14 0%, #e76b08 100%);
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #fd7e14;
+        }
+        .article-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            border-left: 4px solid #fd7e14;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        .aida-step {
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .aida-step h3 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .aida-step h3 i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        .aida-attention {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+        .aida-interest {
+            background-color: #d1e7dd;
+            border-left: 5px solid #198754;
+        }
+        .aida-desire {
+            background-color: #cfe2ff;
+            border-left: 5px solid #0d6efd;
+        }
+        .aida-action {
+            background-color: #e2d9f3;
+            border-left: 5px solid #6f42c1;
+        }
+        .example-box {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .example-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fd7e14;
+        }
+        .example-content {
+            font-style: italic;
+        }
+        .do-dont {
+            display: flex;
+            margin: 30px 0;
+        }
+        .do, .dont {
+            flex: 1;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .do {
+            background-color: #d1e7dd;
+            margin-right: 15px;
+        }
+        .dont {
+            background-color: #f8d7da;
+        }
+        /* Media query for mobile devices */
+        @media (max-width: 767.98px) {
+            .do-dont {
+                flex-direction: column;
+            }
+            .do, .dont {
+                width: 100%;
+            }
+            .do {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        .do h4, .dont h4 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .do h4 i {
+            color: #198754;
+            margin-right: 10px;
+        }
+        .dont h4 i {
+            color: #dc3545;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" data-i18n="navbar.brand">Il Mio Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> <span data-i18n="navbar.home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about"><i class="bi bi-person me-1"></i> <span data-i18n="navbar.about">Chi Sono</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid me-1"></i> <span data-i18n="navbar.categories">Categorie</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#marketing"><i class="bi bi-megaphone me-2"></i> <span data-i18n="categories.marketing">Marketing</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#finance"><i class="bi bi-cash-coin me-2"></i> <span data-i18n="categories.finance">Finanza Personale</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#programming"><i class="bi bi-code-slash me-2"></i> <span data-i18n="categories.programming">Programmazione</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#newsletter"><i class="bi bi-envelope me-1"></i> <span data-i18n="navbar.newsletter">Newsletter</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i> <span data-i18n="navbar.language">Lingua</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-it" aria-hidden="true"></span>Italiano</a></li>
+                            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb" aria-hidden="true"></span>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header py-5 text-center text-white">
+        <div class="container">
+            <span class="badge bg-success mb-3" data-i18n="categories.marketing">Marketing</span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="cards.aidaModel.title">Modello AIDA</h1>
+            <p class="lead mb-4" data-i18n="articles.aidaModel.subtitle">La formula segreta per vendere qualsiasi cosa (anche a tua suocera)</p>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar me-2"></i> <span class="article-date">15/08/2023</span></span>
+                <span class="mx-3"><i class="bi bi-clock me-2"></i> <span data-i18n="readingTime" data-i18n-options='{"time": "8"}'>Tempo di lettura: 8 min</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="article-image mb-5">
+                        <img src="../images/placeholder.jpg" class="img-fluid rounded" alt="AIDA Model">
+                    </div>
+
+                    <div class="article-body">
+                        <p class="lead" data-i18n="articles.aidaModel.intro">Hai mai notato come alcune pubblicità ti catturano immediatamente, mentre altre le ignori come le email di tuo cugino che vende integratori? O come alcuni venditori ti convincono a comprare cose che non sapevi nemmeno di volere, mentre altri non riuscirebbero a venderti un ombrello durante un uragano?</p>
+
+                        <p data-i18n="articles.aidaModel.p1">La differenza non è fortuna o magia. È AIDA. E no, non sto parlando dell'opera di Verdi (anche se entrambe possono essere drammatiche).</p>
+
+                        <h2 data-i18n="articles.aidaModel.section1.title">Cos'è AIDA e perché dovresti interessartene</h2>
+                        <p data-i18n="articles.aidaModel.section1.p1">AIDA è un acronimo che sta per Attenzione, Interesse, Desiderio, Azione. È un modello di marketing sviluppato alla fine del 19° secolo (sì, è più vecchio di tua nonna) che descrive i passaggi che un potenziale cliente attraversa prima di decidere di acquistare.</p>
+
+                        <p data-i18n="articles.aidaModel.section1.p2">Pensa ad AIDA come alla versione marketing del corteggiamento. Non puoi chiedere a qualcuno di sposarti al primo appuntamento (beh, potresti, ma le probabilità non sono a tuo favore). Allo stesso modo, non puoi aspettarti che qualcuno compri da te senza prima attirare la sua attenzione, suscitare il suo interesse, creare desiderio e infine spingerlo all'azione.</p>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.aidaModel.section1.highlight.title">Verità scomoda:</strong> <span data-i18n="articles.aidaModel.section1.highlight.content">La maggior parte dei marketer fallisce perché salta direttamente all'azione ("Compra ora!") senza prima costruire attenzione, interesse e desiderio. È come chiedere il numero di telefono a qualcuno senza prima presentarti. Potrebbe funzionare, ma le probabilità sono... diciamo... scarse.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.aidaModel.section2.title">Le 4 fasi di AIDA (e come non rovinarle)</h2>
+
+                        <div class="aida-step aida-attention">
+                            <h3><i class="bi bi-eye"></i> <span data-i18n="articles.aidaModel.section2.attention.title">A = Attenzione</span></h3>
+                            <p data-i18n="articles.aidaModel.section2.attention.p1">Prima di tutto, devi far sì che il tuo potenziale cliente si accorga che esisti. In un mondo dove siamo bombardati da migliaia di messaggi pubblicitari al giorno, questo è più difficile di quanto sembri.</p>
+
+                            <p data-i18n="articles.aidaModel.section2.attention.p2">L'attenzione è come l'ossigeno per il tuo marketing: senza di essa, tutto il resto muore. Devi interrompere il pilota automatico mentale delle persone con qualcosa di sorprendente, scioccante, divertente o semplicemente diverso.</p>
+
+                            <div class="example-box">
+                                <div class="example-title" data-i18n="articles.aidaModel.section2.attention.example.title">Esempio di headline che cattura l'attenzione:</div>
+                                <div class="example-content" data-i18n="articles.aidaModel.section2.attention.example.content">"Scopri perché il 93% dei dietologi non vuole che tu conosca questo segreto per perdere peso"</div>
+                            </div>
+
+                            <div class="do-dont">
+                                <div class="do">
+                                    <h4><i class="bi bi-check-circle"></i> <span data-i18n="articles.aidaModel.section2.attention.do.title">Da fare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.attention.do.item1">Usa titoli provocatori</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.do.item2">Fai domande che creano curiosità</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.do.item3">Usa statistiche sorprendenti</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.do.item4">Sfrutta immagini d'impatto</li>
+                                    </ul>
+                                </div>
+                                <div class="dont">
+                                    <h4><i class="bi bi-x-circle"></i> <span data-i18n="articles.aidaModel.section2.attention.dont.title">Da evitare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.attention.dont.item1">Essere troppo generici</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.dont.item2">Usare clickbait che poi delude</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.dont.item3">Essere troppo rumoroso senza sostanza</li>
+                                        <li data-i18n="articles.aidaModel.section2.attention.dont.item4">Confondere il pubblico</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aida-step aida-interest">
+                            <h3><i class="bi bi-lightbulb"></i> <span data-i18n="articles.aidaModel.section2.interest.title">I = Interesse</span></h3>
+                            <p data-i18n="articles.aidaModel.section2.interest.p1">Ok, hai la loro attenzione. Ora cosa? Ora devi trasformare quella curiosità iniziale in un interesse genuino. Questo è il momento in cui mostri che capisci i loro problemi e che hai una soluzione che vale la pena esplorare.</p>
+
+                            <p data-i18n="articles.aidaModel.section2.interest.p2">L'interesse è come un primo appuntamento: hai superato l'approccio iniziale, ma ora devi dimostrare che c'è sostanza dietro quell'apertura accattivante.</p>
+
+                            <div class="example-box">
+                                <div class="example-title" data-i18n="articles.aidaModel.section2.interest.example.title">Esempio di testo che genera interesse:</div>
+                                <div class="example-content" data-i18n="articles.aidaModel.section2.interest.example.content">"Questo metodo di perdita di peso non richiede diete estreme, ore in palestra o pillole costose. È basato su una semplice routine di 5 minuti che chiunque può seguire, anche con una vita frenetica."</div>
+                            </div>
+
+                            <div class="do-dont">
+                                <div class="do">
+                                    <h4><i class="bi bi-check-circle"></i> <span data-i18n="articles.aidaModel.section2.interest.do.title">Da fare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.interest.do.item1">Mostra che capisci i loro problemi</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.do.item2">Fornisci informazioni rilevanti</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.do.item3">Racconta storie coinvolgenti</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.do.item4">Usa un linguaggio che risuona con loro</li>
+                                    </ul>
+                                </div>
+                                <div class="dont">
+                                    <h4><i class="bi bi-x-circle"></i> <span data-i18n="articles.aidaModel.section2.interest.dont.title">Da evitare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.interest.dont.item1">Parlare solo del prodotto</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.dont.item2">Usare gergo tecnico incomprensibile</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.dont.item3">Essere noiosi o prevedibili</li>
+                                        <li data-i18n="articles.aidaModel.section2.interest.dont.item4">Dilungarti troppo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aida-step aida-desire">
+                            <h3><i class="bi bi-heart"></i> <span data-i18n="articles.aidaModel.section2.desire.title">D = Desiderio</span></h3>
+                            <p data-i18n="articles.aidaModel.section2.desire.p1">L'interesse è razionale. Il desiderio è emotivo. Qui è dove trasformi il "Sembra interessante" in "Lo voglio!". Devi far sì che il tuo potenziale cliente non solo capisca intellettualmente il valore della tua offerta, ma la desideri emotivamente.</p>
+
+                            <p data-i18n="articles.aidaModel.section2.desire.p2">Il desiderio è come innamorarsi: non è più solo una questione di logica, ma di emozioni profonde che ti spingono verso qualcosa (o qualcuno).</p>
+
+                            <div class="example-box">
+                                <div class="example-title" data-i18n="articles.aidaModel.section2.desire.example.title">Esempio di testo che crea desiderio:</div>
+                                <div class="example-content" data-i18n="articles.aidaModel.section2.desire.example.content">"Immagina di svegliarti ogni mattina sentendoti energico e guardando con piacere il tuo riflesso nello specchio. Immagina di ricevere complimenti da amici che non vedi da tempo. Immagina di poter indossare quei vestiti che hai relegato in fondo all'armadio pensando 'un giorno forse'... Quel giorno è oggi."</div>
+                            </div>
+
+                            <div class="do-dont">
+                                <div class="do">
+                                    <h4><i class="bi bi-check-circle"></i> <span data-i18n="articles.aidaModel.section2.desire.do.title">Da fare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.desire.do.item1">Fai appello alle emozioni</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.do.item2">Usa un linguaggio sensoriale</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.do.item3">Mostra (non raccontare) i benefici</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.do.item4">Usa testimonianze e casi studio</li>
+                                    </ul>
+                                </div>
+                                <div class="dont">
+                                    <h4><i class="bi bi-x-circle"></i> <span data-i18n="articles.aidaModel.section2.desire.dont.title">Da evitare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.desire.dont.item1">Concentrarti solo sulle caratteristiche</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.dont.item2">Usare un linguaggio piatto e noioso</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.dont.item3">Esagerare con promesse irrealistiche</li>
+                                        <li data-i18n="articles.aidaModel.section2.desire.dont.item4">Ignorare le obiezioni potenziali</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="aida-step aida-action">
+                            <h3><i class="bi bi-cursor"></i> <span data-i18n="articles.aidaModel.section2.action.title">A = Azione</span></h3>
+                            <p data-i18n="articles.aidaModel.section2.action.p1">Hai catturato la loro attenzione, hai suscitato il loro interesse, hai creato desiderio... ora è il momento di chiudere! L'azione è dove trasformi tutto quel lavoro in risultati concreti. Senza una chiara call-to-action, rischi di lasciare il tuo potenziale cliente in un limbo di "Sembra fantastico, ma cosa devo fare ora?"</p>
+
+                            <p data-i18n="articles.aidaModel.section2.action.p2">L'azione è come chiedere il numero di telefono dopo un ottimo appuntamento. Se non lo fai, tutto quel corteggiamento è stato inutile.</p>
+
+                            <div class="example-box">
+                                <div class="example-title" data-i18n="articles.aidaModel.section2.action.example.title">Esempio di call-to-action efficace:</div>
+                                <div class="example-content" data-i18n="articles.aidaModel.section2.action.example.content">"Clicca qui per iniziare la tua trasformazione oggi stesso. I primi 100 iscritti riceveranno anche una consulenza personalizzata gratuita del valore di 97€. Non aspettare - i posti sono limitati e questa offerta scade a mezzanotte!"</div>
+                            </div>
+
+                            <div class="do-dont">
+                                <div class="do">
+                                    <h4><i class="bi bi-check-circle"></i> <span data-i18n="articles.aidaModel.section2.action.do.title">Da fare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.action.do.item1">Usa verbi d'azione chiari</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.do.item2">Crea un senso di urgenza</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.do.item3">Riduci il rischio (garanzie, prove gratuite)</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.do.item4">Rendi l'azione facile da compiere</li>
+                                    </ul>
+                                </div>
+                                <div class="dont">
+                                    <h4><i class="bi bi-x-circle"></i> <span data-i18n="articles.aidaModel.section2.action.dont.title">Da evitare</span></h4>
+                                    <ul>
+                                        <li data-i18n="articles.aidaModel.section2.action.dont.item1">Essere vaghi su cosa fare dopo</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.dont.item2">Offrire troppe opzioni</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.dont.item3">Nascondere la call-to-action</li>
+                                        <li data-i18n="articles.aidaModel.section2.action.dont.item4">Creare falsa scarsità o urgenza</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 data-i18n="articles.aidaModel.section3.title">AIDA nel mondo reale: esempi che funzionano</h2>
+                        <p data-i18n="articles.aidaModel.section3.intro">AIDA non è solo teoria. È usato ogni giorno da brand di successo. Ecco alcuni esempi che probabilmente hai visto (e che probabilmente ti hanno convinto a comprare):</p>
+
+                        <div class="term-card">
+                            <h3 class="term-title"><i class="bi bi-apple"></i> <span data-i18n="articles.aidaModel.section3.example1.title">Apple</span></h3>
+                            <p><strong data-i18n="articles.aidaModel.section3.attention">Attenzione:</strong> <span data-i18n="articles.aidaModel.section3.example1.attention">"Pensa diverso" - Un headline semplice ma provocatorio che sfida lo status quo.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.interest">Interesse:</strong> <span data-i18n="articles.aidaModel.section3.example1.interest">Presentazioni di prodotti che mostrano caratteristiche innovative e design elegante.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.desire">Desiderio:</strong> <span data-i18n="articles.aidaModel.section3.example1.desire">Persone cool che usano i prodotti Apple, sensazione di appartenenza a un club esclusivo.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.action">Azione:</strong> <span data-i18n="articles.aidaModel.section3.example1.action">"Disponibile ora" con un grande pulsante "Acquista" e la possibilità di provare in negozio.</span></p>
+                        </div>
+
+                        <div class="term-card">
+                            <h3 class="term-title"><i class="bi bi-cup-hot"></i> <span data-i18n="articles.aidaModel.section3.example2.title">Nespresso</span></h3>
+                            <p><strong data-i18n="articles.aidaModel.section3.attention">Attenzione:</strong> <span data-i18n="articles.aidaModel.section3.example2.attention">George Clooney che chiede "What else?" - Una celebrità amata che cattura immediatamente l'attenzione.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.interest">Interesse:</strong> <span data-i18n="articles.aidaModel.section3.example2.interest">L'idea che puoi avere un caffè di qualità da bar a casa tua.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.desire">Desiderio:</strong> <span data-i18n="articles.aidaModel.section3.example2.desire">Immagini di caffè perfetto, la sensazione di lusso e sofisticatezza.</span></p>
+                            <p><strong data-i18n="articles.aidaModel.section3.action">Azione:</strong> <span data-i18n="articles.aidaModel.section3.example2.action">"Diventa membro del club Nespresso" - Non stai solo comprando caffè, stai entrando in un club esclusivo.</span></p>
+                        </div>
+
+                        <h2 data-i18n="articles.aidaModel.section4.title">Come applicare AIDA al tuo business (senza sembrare un venditore disperato)</h2>
+                        <p data-i18n="articles.aidaModel.section4.intro">Ok, ora che hai capito cos'è AIDA e hai visto come i grandi brand lo usano, come puoi applicarlo al tuo business senza sembrare un venditore di auto usate degli anni '80?</p>
+
+                        <ol>
+                            <li><strong data-i18n="articles.aidaModel.section4.step1.title">Conosci il tuo pubblico:</strong> <span data-i18n="articles.aidaModel.section4.step1.content">AIDA funziona solo se conosci profondamente i desideri, le paure e le motivazioni del tuo pubblico. Fai ricerche, parla con i clienti, diventa ossessionato da ciò che li spinge ad agire.</span></li>
+                            <li><strong data-i18n="articles.aidaModel.section4.step2.title">Crea una mappa del percorso:</strong> <span data-i18n="articles.aidaModel.section4.step2.content">Per ogni canale di marketing (sito web, email, social media), pianifica come guiderai le persone attraverso ogni fase di AIDA. Non tutti i canali devono coprire tutte le fasi.</span></li>
+                            <li><strong data-i18n="articles.aidaModel.section4.step3.title">Testa e ottimizza:</strong> <span data-i18n="articles.aidaModel.section4.step3.content">Usa gli A/B test per vedere quali headline catturano più attenzione, quali storie generano più interesse, quali immagini creano più desiderio e quali CTA portano a più azioni.</span></li>
+                            <li><strong data-i18n="articles.aidaModel.section4.step4.title">Sii autentico:</strong> <span data-i18n="articles.aidaModel.section4.step4.content">AIDA è una struttura, non una licenza per essere manipolativo. Usa questa struttura per comunicare il valore reale che offri, non per ingannare le persone.</span></li>
+                        </ol>
+
+                        <div class="highlight">
+                            <strong data-i18n="articles.aidaModel.section4.highlight.title">Pro Tip:</strong> <span data-i18n="articles.aidaModel.section4.highlight.content">Non tutte le persone attraversano AIDA allo stesso ritmo. Alcuni potrebbero aver bisogno di settimane nella fase di interesse prima di sviluppare desiderio. Altri potrebbero passare dall'attenzione all'azione in pochi minuti. Crea contenuti per entrambi i tipi.</span>
+                        </div>
+
+                        <h2 data-i18n="articles.aidaModel.conclusion.title">Conclusione: AIDA è semplice, ma non facile</h2>
+                        <p data-i18n="articles.aidaModel.conclusion.p1">AIDA è uno di quei concetti di marketing che sembrano ovvi una volta che li conosci. "Certo, devo prima attirare l'attenzione delle persone prima di convincerle a comprare. Duh!"</p>
+
+                        <p data-i18n="articles.aidaModel.conclusion.p2">Ma la semplicità di AIDA è ingannevole. Applicarlo in modo efficace richiede creatività, empatia, strategia e un sacco di test. È come la cucina: gli ingredienti sono semplici, ma creare un piatto stellato richiede pratica e maestria.</p>
+
+                        <p data-i18n="articles.aidaModel.conclusion.p3">La buona notizia? Non devi essere perfetto. Anche solo essere consapevole di AIDA e fare uno sforzo consapevole per guidare i tuoi potenziali clienti attraverso queste quattro fasi ti metterà già avanti rispetto alla maggior parte dei tuoi concorrenti.</p>
+
+                        <p data-i18n="articles.aidaModel.conclusion.p4">Quindi, la prossima volta che scrivi una email di marketing, crei un post sui social media o progetti una landing page, fermati e chiediti: "Sto catturando l'attenzione? Sto generando interesse? Sto creando desiderio? Sto spingendo all'azione?"</p>
+
+                        <p data-i18n="articles.aidaModel.conclusion.p5">E ricorda: AIDA non è solo un modello di marketing. È un modo per rispettare il percorso decisionale naturale delle persone. E questo, amico mio, è il marketing che funziona davvero.</p>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons mt-5 pt-4 border-top">
+                        <h5 data-i18n="articles.share.title">Condividi questo articolo (e attira l'attenzione dei tuoi amici!)</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-articles mt-5 pt-4 border-top">
+                        <h3 class="mb-4" data-i18n="articles.related.title">Articoli correlati</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="Marketing Glossary">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.marketingGlossary.title">Glossario di Marketing</h5>
+                                        <p class="card-text" data-i18n="cards.marketingGlossary.description">Un glossario completo dei termini di marketing essenziali per professionisti e principianti.</p>
+                                        <a href="marketing-glossary.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="AB Test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.abTest.title">Test A/B</h5>
+                                        <p class="card-text" data-i18n="cards.abTest.description">Guida completa ai test A/B: come implementarli, analizzare i risultati e ottimizzare le tue campagne di marketing.</p>
+                                        <a href="ab-test.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="footer.usefulLinks">Link Utili</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
+                        <li class="mb-3"><a href="../index.html#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
+                        <li class="mb-3"><a href="../index.html#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="../index.html#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (necessario per jqueryI18next) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Librerie i18next -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+
+    <!-- Il tuo file di configurazione i18n -->
+    <script src="../js/i18n.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/custom.js"></script>
+</body>
+</html>

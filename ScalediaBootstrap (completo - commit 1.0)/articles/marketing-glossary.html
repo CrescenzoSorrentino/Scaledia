@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="cards.marketingGlossary.title">Glossario di Marketing</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Flag Icons CSS -->
+    <link href="../css/flags.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #0dcaf0;
+            background-image: linear-gradient(135deg, #0dcaf0 0%, #0aa2c0 100%);
+        }
+        .term-card {
+            border-left: 4px solid #0dcaf0;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .term-title {
+            color: #0aa2c0;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .term-title i {
+            margin-right: 8px;
+        }
+        .term-difficulty {
+            font-size: 0.8rem;
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: white;
+        }
+        .beginner {
+            background-color: #20c997;
+        }
+        .intermediate {
+            background-color: #fd7e14;
+        }
+        .advanced {
+            background-color: #dc3545;
+        }
+        .term-description {
+            margin-bottom: 0;
+        }
+        .alphabet-nav {
+            position: sticky;
+            top: 20px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            z-index: 100;
+        }
+        .alphabet-nav a {
+            margin: 0 5px;
+            color: #0aa2c0;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .alphabet-nav a:hover {
+            color: #0dcaf0;
+        }
+        .alphabet-section {
+            padding-top: 20px;
+            margin-bottom: 30px;
+        }
+        .alphabet-title {
+            border-bottom: 2px solid #0dcaf0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" data-i18n="navbar.brand">Il Mio Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> <span data-i18n="navbar.home">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about"><i class="bi bi-person me-1"></i> <span data-i18n="navbar.about">Chi Sono</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid me-1"></i> <span data-i18n="navbar.categories">Categorie</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../index.html#marketing"><i class="bi bi-megaphone me-2"></i> <span data-i18n="categories.marketing">Marketing</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#finance"><i class="bi bi-cash-coin me-2"></i> <span data-i18n="categories.finance">Finanza Personale</span></a></li>
+                            <li><a class="dropdown-item" href="../index.html#programming"><i class="bi bi-code-slash me-2"></i> <span data-i18n="categories.programming">Programmazione</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#newsletter"><i class="bi bi-envelope me-1"></i> <span data-i18n="navbar.newsletter">Newsletter</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i> <span data-i18n="navbar.language">Lingua</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-it" aria-hidden="true"></span>Italiano</a></li>
+                            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb" aria-hidden="true"></span>English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header py-5 text-center text-white">
+        <div class="container">
+            <span class="badge bg-info mb-3" data-i18n="categories.marketing">Marketing</span>
+            <h1 class="display-4 fw-bold mb-3" data-i18n="cards.marketingGlossary.title">Glossario di Marketing</h1>
+            <p class="lead mb-4" data-i18n="articles.marketingGlossary.subtitle">Perché fingere di capire i termini di marketing quando puoi davvero impararli (e fare la figura dell'esperto)</p>
+            <div class="article-meta">
+                <span><i class="bi bi-calendar me-2"></i> <span class="article-date">05/07/2023</span></span>
+                <span class="mx-3"><i class="bi bi-clock me-2"></i> <span data-i18n="readingTime" data-i18n-options='{"time": "10"}'>Tempo di lettura: 10 min</span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="article-image mb-5">
+                        <img src="../images/placeholder.jpg" class="img-fluid rounded" alt="Marketing Glossary">
+                    </div>
+
+                    <div class="article-body">
+                        <p class="lead" data-i18n="articles.marketingGlossary.intro">Sei stanco di annuire durante le riunioni di marketing mentre dentro di te pensi "Ma che diavolo è un KPI?" Non preoccuparti, non sei solo. Il marketing è pieno di termini che sembrano inventati apposta per farti sentire inadeguato. Ma oggi cambiamo le carte in tavola.</p>
+
+                        <p data-i18n="articles.marketingGlossary.p1">Questo glossario è la tua arma segreta per sopravvivere nel mondo del marketing senza dover fingere di sapere tutto. E a differenza di altri glossari noiosi, questo è scritto in italiano comprensibile, con esempi reali e un pizzico di umorismo per aiutarti a ricordare i concetti.</p>
+
+                        <div class="alphabet-nav mb-4">
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <a href="#A">A</a>
+                                <a href="#B">B</a>
+                                <a href="#C">C</a>
+                                <a href="#D">D</a>
+                                <a href="#E">E</a>
+                                <a href="#F">F</a>
+                                <a href="#G">G</a>
+                                <a href="#K">K</a>
+                                <a href="#R">R</a>
+                                <a href="#S">S</a>
+                                <a href="#T">T</a>
+                                <a href="#U">U</a>
+                            </div>
+                        </div>
+
+                        <div id="A" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.a.title">A</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-bullseye"></i> <span data-i18n="articles.marketingGlossary.terms.a.abTesting.title">A/B Testing</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.a.abTesting.difficulty">Intermedio</span> <a href="ab-test.html" class="ms-2" title="Approfondisci su A/B Testing"><i class="bi bi-info-circle-fill text-primary"></i></a></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.a.abTesting.description">Non è un test del sangue, ma quasi. È quando crei due versioni (A e B) di una pagina web, email o qualsiasi cosa, e vedi quale funziona meglio. È come quando non sai quale outfit indossare per un appuntamento e mandi foto di entrambi ai tuoi amici per un sondaggio, ma con dati reali invece di opinioni discutibili.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-graph-up-arrow"></i> <span data-i18n="articles.marketingGlossary.terms.a.acquisitionCost.title">Acquisition Cost</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.a.acquisitionCost.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.a.acquisitionCost.description">Quanto spendi per convincere qualcuno a comprare il tuo prodotto. Se stai spendendo 100€ in pubblicità per vendere un prodotto da 50€, hai un problema matematico serio. È come pagare 20€ di benzina per andare a comprare una pizza da 10€ - tecnicamente hai la pizza, ma a che prezzo?</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-megaphone"></i> <span data-i18n="articles.marketingGlossary.terms.a.aida.title">AIDA</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.a.aida.difficulty">Intermedio</span> <a href="aida-model.html" class="ms-2" title="Approfondisci sul modello AIDA"><i class="bi bi-info-circle-fill text-primary"></i></a></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.a.aida.description">Attenzione, Interesse, Desiderio, Azione. Non è un'opera di Verdi, ma un modello che descrive i passaggi che un cliente attraversa prima di comprare. È come il processo di innamoramento: prima noti qualcuno (attenzione), poi scopri che ha un senso dell'umorismo fantastico (interesse), poi inizi a fantasticare su un futuro insieme (desiderio), e infine gli chiedi di uscire (azione). O almeno, così dovrebbe funzionare.</p>
+                            </div>
+                        </div>
+
+                        <div id="B" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.b.title">B</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-arrow-return-right"></i> <span data-i18n="articles.marketingGlossary.terms.b.bounceRate.title">Bounce Rate</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.b.bounceRate.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.b.bounceRate.description">La percentuale di visitatori che arrivano sul tuo sito e scappano via come se avessero visto un fantasma. È come quando qualcuno entra in un negozio, dà un'occhiata veloce e se ne va senza nemmeno fingere di essere interessato. Alto bounce rate = il tuo sito è noioso o, peggio, confuso.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-building"></i> <span data-i18n="articles.marketingGlossary.terms.b.b2bAndB2c.title">B2B e B2C</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.b.b2bAndB2c.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.b.b2bAndB2c.description">Business-to-Business e Business-to-Consumer. Il primo è quando vendi ad altre aziende (pensa a software aziendali o servizi di consulenza), il secondo è quando vendi direttamente ai consumatori (come Netflix o il tuo caffè preferito). La differenza? Nel B2B devi convincere un intero comitato di persone annoiate in giacca e cravatta, nel B2C devi convincere una persona che probabilmente sta scrollando Instagram mentre è in bagno.</p>
+                            </div>
+                        </div>
+
+                        <div id="C" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.c.title">C</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-cart"></i> <span data-i18n="articles.marketingGlossary.terms.c.conversionRate.title">Conversion Rate</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.c.conversionRate.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.c.conversionRate.description">La percentuale di visitatori che effettivamente fanno ciò che vuoi (comprare, iscriversi, ecc.). È come il tasso di successo quando chiedi il numero di telefono a qualcuno in un bar. Se su 100 persone che entrano nel tuo sito, solo 2 comprano, hai un conversion rate del 2% (e probabilmente un problema di persuasione).</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-people"></i> <span data-i18n="articles.marketingGlossary.terms.c.customerPersona.title">Customer Persona</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.c.customerPersona.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.c.customerPersona.description">Un profilo immaginario del tuo cliente ideale, completo di nome, età, interessi e problemi. È come creare un personaggio per un romanzo, ma invece di farlo combattere contro i draghi, lo fai comprare i tuoi prodotti. "Marco, 35 anni, manager stressato che non ha tempo per fare la spesa" è più utile di "uomini tra i 25 e i 45 anni".</p>
+                            </div>
+                        </div>
+
+                        <div id="D" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.d.title">D</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-bar-chart"></i> <span data-i18n="articles.marketingGlossary.terms.d.dashboard.title">Dashboard</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.d.dashboard.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.d.dashboard.description">Una visualizzazione di tutti i tuoi dati importanti in un unico posto. È come il cruscotto della tua auto, ma invece di mostrarti quanto carburante ti resta, ti mostra quanto denaro stai bruciando in pubblicità. Un buon dashboard ti fa sentire in controllo; un cattivo dashboard ti fa sentire come se stessi pilotando un aereo senza manuale.</p>
+                            </div>
+                        </div>
+
+                        <div id="E" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.e.title">E</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-envelope"></i> <span data-i18n="articles.marketingGlossary.terms.e.emailMarketing.title">Email Marketing</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.e.emailMarketing.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.e.emailMarketing.description">L'arte di inviare email che le persone effettivamente aprono invece di mandare direttamente nella cartella spam. È come cercare di attirare l'attenzione di qualcuno in una stanza affollata, ma la stanza è la casella di posta con 200 email non lette e tu sei solo un'altra notifica.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-person-check"></i> <span data-i18n="articles.marketingGlossary.terms.e.engagement.title">Engagement</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.e.engagement.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.e.engagement.description">Quanto le persone interagiscono con i tuoi contenuti (like, commenti, condivisioni, ecc.). Alto engagement = le persone ti amano. Basso engagement = stai parlando da solo. È come la differenza tra una festa dove tutti ballano e una dove tutti stanno appoggiati al muro guardando i loro telefoni.</p>
+                            </div>
+                        </div>
+
+                        <div id="F" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.f.title">F</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-funnel"></i> <span data-i18n="articles.marketingGlossary.terms.f.marketingFunnel.title">Funnel di Marketing</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.f.marketingFunnel.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.f.marketingFunnel.description">Il percorso che un potenziale cliente fa dal momento in cui scopre il tuo brand fino all'acquisto. È a forma di imbuto perché molte persone entrano dall'alto (conoscenza), ma poche arrivano in fondo (acquisto). È come un reality show: inizi con 20 concorrenti, ma solo uno vince il premio finale.</p>
+                            </div>
+                        </div>
+
+                        <div id="G" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.g.title">G</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-controller"></i> <span data-i18n="articles.marketingGlossary.terms.g.gamification.title">Gamification</span> <span class="term-difficulty advanced" data-i18n="articles.marketingGlossary.terms.g.gamification.difficulty">Avanzato</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.g.gamification.description">Aggiungere elementi di gioco (punti, badge, classifiche) a cose non-gioco per renderle più coinvolgenti. È come quando tua madre ti diceva "ancora un boccone e poi il dessert" - tecnicamente stavi ancora mangiando verdure, ma improvvisamente sembrava un gioco.</p>
+                            </div>
+                        </div>
+
+                        <div id="K" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.k.title">K</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-key"></i> <span data-i18n="articles.marketingGlossary.terms.k.kpi.title">KPI (Key Performance Indicator)</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.k.kpi.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.k.kpi.description">I numeri che ti dicono se stai facendo un buon lavoro o se dovresti considerare una carriera alternativa. Possono essere vendite, traffico web, engagement sui social, ecc. È come il tuo voto a scuola, ma per adulti con budget da gestire.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-search"></i> <span data-i18n="articles.marketingGlossary.terms.k.keyword.title">Keyword</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.k.keyword.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.k.keyword.description">Le parole o frasi che le persone digitano nei motori di ricerca. Trovare le giuste keyword è come indovinare cosa c'è nella mente dei tuoi potenziali clienti, ma con dati reali invece di poteri psichici. "Migliore pizza a Milano" è una keyword; "voglio mangiare qualcosa di rotondo con formaggio" non lo è (ancora).</p>
+                            </div>
+                        </div>
+
+                        <div id="R" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.r.title">R</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-arrow-repeat"></i> <span data-i18n="articles.marketingGlossary.terms.r.retargeting.title">Retargeting</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.r.retargeting.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.r.retargeting.description">Quando guardi un paio di scarpe online e poi quelle stesse scarpe ti seguono ovunque sul web come un ex ossessionato. Tecnicamente, è una strategia pubblicitaria che mostra annunci a persone che hanno già visitato il tuo sito. È inquietante? Sì. Funziona? Anche.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-currency-dollar"></i> <span data-i18n="articles.marketingGlossary.terms.r.roi.title">ROI (Return on Investment)</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.r.roi.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.r.roi.description">Quanto guadagni rispetto a quanto spendi. Se spendi 100€ in pubblicità e guadagni 300€ in vendite, il tuo ROI è del 200%. Se spendi 100€ e guadagni 50€, il tuo ROI è negativo e dovresti probabilmente smettere di fare quello che stai facendo. È matematica di base, ma sorprendentemente molte aziende la ignorano.</p>
+                            </div>
+                        </div>
+
+                        <div id="S" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.s.title">S</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-search"></i> <span data-i18n="articles.marketingGlossary.terms.s.seo.title">SEO (Search Engine Optimization)</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.s.seo.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.s.seo.description">L'arte oscura di convincere Google che il tuo sito merita di essere in prima pagina. È come cercare di entrare nel club più esclusivo della città: ci sono regole non scritte, tutti pensano di conoscerle, ma il buttafuori (Google) cambia continuamente i criteri.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-share"></i> <span data-i18n="articles.marketingGlossary.terms.s.socialMediaMarketing.title">Social Media Marketing</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.s.socialMediaMarketing.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.s.socialMediaMarketing.description">Usare piattaforme social per promuovere il tuo brand. È come essere a una festa e parlare del tuo nuovo progetto, ma senza essere quella persona noiosa che parla solo di sé. Il trucco è essere interessante abbastanza da far sì che le persone vogliano ascoltarti.</p>
+                            </div>
+                        </div>
+
+                        <div id="T" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.t.title">T</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-bullseye"></i> <span data-i18n="articles.marketingGlossary.terms.t.targetAudience.title">Target Audience</span> <span class="term-difficulty beginner" data-i18n="articles.marketingGlossary.terms.t.targetAudience.difficulty">Base</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.t.targetAudience.description">Le persone a cui stai cercando di vendere. "Tutti" non è un target audience. "Donne tra i 25 e i 40 anni interessate al fitness e con un budget medio-alto" lo è. È come scegliere a chi mandare gli inviti per la tua festa: invitare tutti potrebbe sembrare inclusivo, ma finiresti con una strana miscela di persone che non si divertono.</p>
+                            </div>
+                        </div>
+
+                        <div id="U" class="alphabet-section">
+                            <h2 class="alphabet-title" data-i18n="articles.marketingGlossary.terms.u.title">U</h2>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-person-circle"></i> <span data-i18n="articles.marketingGlossary.terms.u.ugc.title">UGC (User Generated Content)</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.u.ugc.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.u.ugc.description">Contenuti creati dai tuoi utenti/clienti invece che da te. È come avere un esercito di creatori di contenuti che lavorano gratis per te. Le recensioni, le foto dei clienti con i tuoi prodotti, i video di unboxing - tutto questo è UGC, ed è oro puro perché le persone si fidano più degli altri consumatori che dei brand.</p>
+                            </div>
+
+                            <div class="term-card">
+                                <h3 class="term-title"><i class="bi bi-ui-checks"></i> <span data-i18n="articles.marketingGlossary.terms.u.ux.title">UX (User Experience)</span> <span class="term-difficulty intermediate" data-i18n="articles.marketingGlossary.terms.u.ux.difficulty">Intermedio</span></h3>
+                                <p class="term-description" data-i18n="articles.marketingGlossary.terms.u.ux.description">Come si sentono le persone quando usano il tuo prodotto o sito web. Una buona UX è come un buon cameriere: ti dà esattamente ciò di cui hai bisogno senza che tu debba chiederlo. Una cattiva UX è come un labirinto: confusa, frustrante e ti fa venire voglia di uscire il prima possibile.</p>
+                            </div>
+                        </div>
+
+                        <p class="mt-5" data-i18n="articles.marketingGlossary.conclusion.p1">Ecco fatto! Ora puoi partecipare a qualsiasi riunione di marketing senza quel sudore freddo quando qualcuno menziona "KPI" o "funnel". Ricorda: il marketing è in parte scienza, in parte arte, e in parte fingere di sapere cosa stai facendo finché non lo sai davvero.</p>
+
+                        <p data-i18n="articles.marketingGlossary.conclusion.p2">E se qualcuno ti chiede dove hai imparato tutti questi termini, puoi sempre dire "Ho fatto un corso intensivo", che suona molto meglio di "Ho letto un glossario sarcastico online".</p>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons mt-5 pt-4 border-top">
+                        <h5 data-i18n="articles.marketingGlossary.share.title">Condividi questo articolo (e salva un collega confuso)</h5>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="me-3"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-articles mt-5 pt-4 border-top">
+                        <h3 class="mb-4" data-i18n="articles.marketingGlossary.related.title">Articoli correlati</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/duolingo-case-study.jpeg" class="card-img-top" alt="Duolingo Case Study">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.duolingoCase.title">Caso Studio Duolingo</h5>
+                                        <p class="card-text" data-i18n="cards.duolingoCase.description">Un'analisi approfondita della strategia di marketing di Duolingo e come ha rivoluzionato l'apprendimento delle lingue.</p>
+                                        <a href="duolingo-case.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <img src="../images/placeholder.jpg" class="card-img-top" alt="AB Test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" data-i18n="cards.abTest.title">Test A/B</h5>
+                                        <p class="card-text" data-i18n="cards.abTest.description">Guida completa ai test A/B: come implementarli, analizzare i risultati e ottimizzare le tue campagne di marketing.</p>
+                                        <a href="ab-test.html" class="btn btn-outline-primary" data-i18n="featuredArticles.readMore">Leggi di più</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                    <h5 class="section-title mb-4" data-i18n="footer.usefulLinks">Link Utili</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
+                        <li class="mb-3"><a href="../index.html#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
+                        <li class="mb-3"><a href="../index.html#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="../index.html#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="text-center">
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (necessario per jqueryI18next) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Librerie i18next -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+
+    <!-- Il tuo file di configurazione i18n -->
+    <script src="../js/i18n.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/custom.js"></script>
+</body>
+</html>
