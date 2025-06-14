@@ -16,12 +16,64 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- Flag Icons CSS -->
     <link href="css/flags.css" rel="stylesheet">
+
+    <!-- Iubenda Cookie Banner -->
+    <script type="text/javascript">
+        // Get the language from localStorage (set by i18next)
+        function getSelectedLanguage() {
+            // Try to get language from localStorage first
+            var storedLang = localStorage.getItem('selectedLanguage');
+            if (storedLang) {
+                return storedLang;
+            }
+            // If i18next is loaded, use its language
+            if (typeof i18next !== 'undefined' && i18next.language) {
+                return i18next.language;
+            }
+            // Default to Italian if no language is found
+            return 'it';
+        }
+
+        var _iub = _iub || [];
+        _iub.csConfiguration = {
+            cookiePolicyId: 16452539, // Replace with your actual Iubenda Cookie Policy ID
+            siteId: 4019868, // Replace with your actual Iubenda Site ID
+            lang: getSelectedLanguage(),
+            countryDetection: true,
+            enableLgpd: true,
+            enableUspr: true,
+            banner: {
+                acceptButtonDisplay: true,
+                customizeButtonDisplay: true,
+                position: "float-bottom-center",
+                rejectButtonDisplay: true
+            }
+        };
+
+        // Update Iubenda language when site language changes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Listen for language changes
+            if (typeof i18next !== 'undefined') {
+                i18next.on('languageChanged', function(lang) {
+                    // Reload Iubenda with new language
+                    if (_iub.csConfiguration) {
+                        _iub.csConfiguration.lang = lang;
+                        // Force reload of Iubenda banner if it exists
+                        if (typeof _iub.cs !== 'undefined' && typeof _iub.cs.reload === 'function') {
+                            _iub.cs.reload();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#" data-i18n="navbar.brand">Il Mio Blog</a>
+            <a class="navbar-brand" href="#" data-i18n="navbar.brand">Scaledia</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,6 +87,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#articles"><i class="bi bi-file-text me-1"></i> <span data-i18n="navbar.articles">Articoli</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#educational-materials"><i class="bi bi-file-earmark-arrow-down me-1"></i> <span data-i18n="educationalMaterials.title">Materiale Didattico</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,10 +142,8 @@
                     <p class="mb-3" data-i18n="about.description1">Condivido le mie conoscenze ed esperienze attraverso questo blog per aiutare altri a crescere in questi ambiti. La mia missione è rendere questi argomenti accessibili a tutti.</p>
                     <p data-i18n="about.description2">Ho diversi anni di esperienza nel settore e sono sempre alla ricerca di nuove tendenze e strategie da condividere con i miei lettori.</p>
                     <div class="social-icons mt-4">
-                        <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/12LC3FSf7RC/?mibextid=wwXIfr" class="me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="me-3"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -105,6 +158,7 @@
                 <!-- Credit Cards Article -->
                 <div class="col-md-4 px-3">
                     <div class="card h-100">
+                        <div class="card-badge card-badge-recommended" data-i18n="featuredArticles.recommended">Consigliato</div>
                         <img src="images/placeholder.jpg" class="card-img-top" alt="Credit Cards Article">
                         <div class="card-body">
                             <span class="badge bg-success mb-3" data-i18n="categories.finance">Finanza</span>
@@ -120,6 +174,7 @@
                 <!-- Duolingo Case Study Article -->
                 <div class="col-md-4 px-3">
                     <div class="card h-100">
+                        <div class="card-badge card-badge-new" data-i18n="featuredArticles.new">Nuovo</div>
                         <img src="images/duolingo-case-study.jpeg" class="card-img-top" alt="Duolingo Case Study Article">
                         <div class="card-body">
                             <span class="badge bg-primary mb-3" data-i18n="categories.marketing">Marketing</span>
@@ -135,6 +190,7 @@
                 <!-- Marketing Glossary Article -->
                 <div class="col-md-4 px-3">
                     <div class="card h-100">
+                        <div class="card-badge card-badge-recommended" data-i18n="featuredArticles.recommended">Consigliato</div>
                         <img src="images/placeholder.jpg" class="card-img-top" alt="Marketing Glossary Article">
                         <div class="card-body">
                             <span class="badge bg-primary mb-3" data-i18n="categories.marketing">Marketing</span>
@@ -370,12 +426,29 @@
         </div>
     </section>
 
+    <!-- Educational Materials Section -->
+    <section id="educational-materials" class="py-6 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title mb-5"><i class="bi bi-file-earmark-arrow-down me-2"></i><span data-i18n="educationalMaterials.title">Materiale Didattico</span></h2>
+            <p class="text-center mb-5" data-i18n="educationalMaterials.description">Scarica risorse educative gratuite per approfondire le tue conoscenze in marketing, finanza personale e programmazione.</p>
+
+            <div class="row">
+                <div class="col-12 text-center py-5">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        <p class="lead mb-0" data-i18n="educationalMaterials.comingSoon">Stiamo preparando materiale didattico di alta qualità. I contenuti saranno disponibili presto. Grazie per la pazienza!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-6">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-5 mb-md-0">
-                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Il Mio Blog</h5>
+                    <h5 class="section-title mb-4" data-i18n="navbar.brand">Scaledia</h5>
                     <p class="mb-0" data-i18n="footer.description">Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.</p>
                 </div>
                 <div class="col-md-4 mb-5 mb-md-0">
@@ -384,28 +457,28 @@
                         <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-house-door me-2"></i><span data-i18n="navbar.home">Home</span></a></li>
                         <li class="mb-3"><a href="#about" class="text-white text-decoration-none"><i class="bi bi-person me-2"></i><span data-i18n="navbar.about">Chi Sono</span></a></li>
                         <li class="mb-3"><a href="#articles" class="text-white text-decoration-none"><i class="bi bi-file-text me-2"></i><span data-i18n="navbar.articles">Articoli</span></a></li>
+                        <li class="mb-3"><a href="#educational-materials" class="text-white text-decoration-none"><i class="bi bi-file-earmark-arrow-down me-2"></i><span data-i18n="educationalMaterials.title">Materiale Didattico</span></a></li>
                         <li class="mb-3"><a href="#newsletter" class="text-white text-decoration-none"><i class="bi bi-envelope me-2"></i><span data-i18n="navbar.newsletter">Newsletter</span></a></li>
-                        <li class="mb-3"><a href="#" class="text-white text-decoration-none"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none iubenda-nostyle no-brand iubenda-embed iubenda-noiframe" title="Privacy Policy"><i class="bi bi-shield-lock me-2"></i><span data-i18n="footer.privacyPolicy">Privacy Policy</span></a></li>
+                        <li class="mb-3"><a href="#" class="text-white text-decoration-none iubenda-nostyle no-brand iubenda-embed iubenda-noiframe" title="Cookie Policy"><i class="bi bi-cookie me-2"></i><span data-i18n="footer.cookiePolicy">Cookie Policy</span></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5 class="section-title mb-4" data-i18n="footer.contacts">Contatti</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> info@mioblog.com</li>
-                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 123 456 7890</li>
-                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Milano, Italia</li>
+                        <li class="mb-3"><i class="bi bi-envelope me-2"></i> ??</li>
+                        <li class="mb-3"><i class="bi bi-telephone me-2"></i> +39 ??</li>
+                        <li class="mb-4"><i class="bi bi-geo-alt me-2"></i> Napoli, Italia</li>
                     </ul>
                     <div class="social-icons">
-                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/18wrecFjLP/?mibextid=wwXIfr" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <!--              <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>        -->
                     </div>
                 </div>
             </div>
             <hr class="my-5">
             <div class="text-center">
-                <p class="mb-0" data-i18n="footer.copyright">&copy; 2023 Il Mio Blog. Tutti i diritti riservati.</p>
+                <p class="mb-0" data-i18n="footer.copyright">&copy; 2025 Scaledia. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
@@ -430,5 +503,37 @@
 
     <!-- Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+    <!-- Iubenda Privacy Policy and Cookie Policy Scripts -->
+    <script type="text/javascript">
+        (function (w,d) {
+            var loader = function () {
+                var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+                s.src = "https://cdn.iubenda.com/iubenda.js";
+                tag.parentNode.insertBefore(s,tag);
+            };
+            if(w.addEventListener){w.addEventListener("load", loader, false);}
+            else if(w.attachEvent){w.attachEvent("onload", loader);}
+            else{w.onload = loader;}
+        })(window, document);
+    </script>
+    <script type="text/javascript">
+        // Replace these IDs with your actual Iubenda policy IDs
+        var privacyPolicyId = '16452539';
+        var cookiePolicyId = '16452539';
+
+        // Update privacy policy link
+        document.addEventListener('DOMContentLoaded', function() {
+            var privacyLinks = document.querySelectorAll('a[title="Privacy Policy"]');
+            for (var i = 0; i < privacyLinks.length; i++) {
+                privacyLinks[i].setAttribute('href', 'https://www.iubenda.com/privacy-policy/' + privacyPolicyId);
+            }
+
+            var cookieLinks = document.querySelectorAll('a[title="Cookie Policy"]');
+            for (var i = 0; i < cookieLinks.length; i++) {
+                cookieLinks[i].setAttribute('href', 'https://www.iubenda.com/privacy-policy/' + cookiePolicyId + '/cookie-policy');
+            }
+        });
+    </script>
 </body>
 </html>

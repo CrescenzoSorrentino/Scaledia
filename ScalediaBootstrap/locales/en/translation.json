@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "brand": "My Blog",
+    "brand": "Scaledia",
     "home": "Home",
     "about": "About Me",
     "articles": "Articles",
@@ -26,7 +26,9 @@
   },
   "featuredArticles": {
     "title": "New and Recommended Articles",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "new": "New",
+    "recommended": "Recommended"
   },
   "newsletter": {
     "title": "Subscribe to the Newsletter",
@@ -39,12 +41,31 @@
     "all": "All",
     "noArticles": "There are no programming articles at the moment."
   },
+  "educationalMaterials": {
+    "title": "Educational Materials",
+    "description": "Download free educational resources to deepen your knowledge in marketing, personal finance, and programming.",
+    "download": "Download",
+    "comingSoon": "We are preparing high-quality educational materials. Content will be available soon. Thank you for your patience!",
+    "marketing": {
+      "title": "Digital Marketing Guide",
+      "description": "A comprehensive guide to get started with digital marketing, including strategies for social media, email marketing, and SEO."
+    },
+    "finance": {
+      "title": "Financial Planning",
+      "description": "Templates and guides to create a personal budget, plan investments, and manage your finances effectively."
+    },
+    "programming": {
+      "title": "Introduction to Programming",
+      "description": "Resources for beginners who want to learn programming, with practical examples and guided exercises."
+    }
+  },
   "footer": {
     "description": "A blog dedicated to marketing, personal finance, and programming. I share knowledge and experiences to help you grow in these areas.",
     "usefulLinks": "Useful Links",
     "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
     "contacts": "Contacts",
-    "copyright": "© 2023 My Blog. All rights reserved."
+    "copyright": "© 2025 Scaledia. All rights reserved."
   },
   "backToTop": "Back to Top",
   "readingTime": "Reading time: {{time}} min",

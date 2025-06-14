@@ -34,25 +34,63 @@ function checkJQueryI18next() {
 // Run checks when the document is ready
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM is ready, running checks...');
-  
+
   const i18nextLoaded = checkI18next();
   const jQueryLoaded = checkJQuery();
   const jqueryI18nextLoaded = checkJQueryI18next();
-  
+
   if (i18nextLoaded && jQueryLoaded && jqueryI18nextLoaded) {
     console.log('All i18n libraries are loaded correctly.');
   } else {
     console.error('Some i18n libraries are missing or not loaded correctly!');
   }
-  
+
   // Check if there are elements with data-i18n attributes
   const i18nElements = document.querySelectorAll('[data-i18n]');
   console.log(`Found ${i18nElements.length} elements with data-i18n attributes.`);
-  
+
   // Check if translations are loaded
   if (i18nextLoaded) {
     console.log('Current language:', i18next.language);
     console.log('Available languages:', i18next.languages);
     console.log('Is initialized:', i18next.isInitialized);
+
+    // Test country-based language detection
+    console.log('Testing country-based language detection...');
+
+    // Function to test the country detection
+    async function testCountryDetection() {
+      try {
+        // Check if getCountryBasedLanguage function exists
+        if (typeof getCountryBasedLanguage === 'function') {
+          console.log('getCountryBasedLanguage function found, testing...');
+
+          // Call the function to get the language based on country
+          const countryLanguage = await getCountryBasedLanguage();
+          console.log('Detected country language:', countryLanguage);
+
+          // Check if the language is supported
+          const isSupported = i18next.languages.includes(countryLanguage);
+          console.log('Is language supported:', isSupported);
+
+          return {
+            success: true,
+            language: countryLanguage,
+            isSupported: isSupported
+          };
+        } else {
+          console.error('getCountryBasedLanguage function not found!');
+          return { success: false, error: 'Function not found' };
+        }
+      } catch (error) {
+        console.error('Error testing country detection:', error.message);
+        return { success: false, error: error.message };
+      }
+    }
+
+    // Run the test
+    testCountryDetection().then(result => {
+      console.log('Country detection test result:', result);
+    });
   }
 });

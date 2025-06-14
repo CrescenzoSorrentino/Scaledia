@@ -127,6 +127,31 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     background-color: #fff;
     margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Card Badge Styles */
+.card-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-badge-new {
+    background-color: #dc3545;
+    color: white;
+}
+
+.card-badge-recommended {
+    background-color: #198754;
+    color: white;
 }
 
 /* Increased spacing between card rows */

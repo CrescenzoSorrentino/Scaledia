@@ -1,4 +1,112 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Synchronize navbar category filters with article section tabs
+    const syncFilters = () => {
+        // Get navbar dropdown items and dropdown toggle
+        const navbarDropdown = document.getElementById('navbarDropdown');
+        const marketingNavLink = document.querySelector('.dropdown-menu a[href="#marketing"]');
+        const financeNavLink = document.querySelector('.dropdown-menu a[href="#finance"]');
+        const programmingNavLink = document.querySelector('.dropdown-menu a[href="#programming"]');
+
+        // Get article section tabs
+        const allTab = document.getElementById('all-tab');
+        const marketingTab = document.getElementById('marketing-tab');
+        const financeTab = document.getElementById('finance-tab');
+        const programmingTab = document.getElementById('programming-tab');
+
+        // Function to update navbar dropdown text based on selected category
+        const updateNavbarDropdown = (category) => {
+            if (navbarDropdown) {
+                // Get the i18n text for the category
+                let categoryText = '';
+                if (category === 'marketing') {
+                    categoryText = marketingNavLink ? marketingNavLink.textContent.trim() : 'Marketing';
+                } else if (category === 'finance') {
+                    categoryText = financeNavLink ? financeNavLink.textContent.trim() : 'Finanza Personale';
+                } else if (category === 'programming') {
+                    categoryText = programmingNavLink ? programmingNavLink.textContent.trim() : 'Programmazione';
+                }
+
+                // Keep the icon but update the text
+                const icon = navbarDropdown.querySelector('i') ? navbarDropdown.querySelector('i').outerHTML + ' ' : '';
+                if (categoryText) {
+                    navbarDropdown.innerHTML = icon + categoryText;
+                }
+            }
+        };
+
+        // Add click event listeners to navbar dropdown items
+        if (marketingNavLink) {
+            marketingNavLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Scroll to articles section
+                document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+                // Activate the marketing tab
+                if (marketingTab) {
+                    marketingTab.click();
+                }
+            });
+        }
+
+        if (financeNavLink) {
+            financeNavLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Scroll to articles section
+                document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+                // Activate the finance tab
+                if (financeTab) {
+                    financeTab.click();
+                }
+            });
+        }
+
+        if (programmingNavLink) {
+            programmingNavLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Scroll to articles section
+                document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+                // Activate the programming tab
+                if (programmingTab) {
+                    programmingTab.click();
+                }
+            });
+        }
+
+        // Add click event listeners to article section tabs
+        if (marketingTab) {
+            marketingTab.addEventListener('click', function() {
+                updateNavbarDropdown('marketing');
+            });
+        }
+
+        if (financeTab) {
+            financeTab.addEventListener('click', function() {
+                updateNavbarDropdown('finance');
+            });
+        }
+
+        if (programmingTab) {
+            programmingTab.addEventListener('click', function() {
+                updateNavbarDropdown('programming');
+            });
+        }
+
+        if (allTab) {
+            allTab.addEventListener('click', function() {
+                // Reset navbar dropdown to default text
+                if (navbarDropdown) {
+                    const icon = navbarDropdown.querySelector('i') ? navbarDropdown.querySelector('i').outerHTML + ' ' : '';
+                    const span = navbarDropdown.querySelector('span');
+                    if (span) {
+                        navbarDropdown.innerHTML = icon + span.outerHTML;
+                    }
+                }
+            });
+        }
+    };
+
+    // Initialize filter synchronization
+    syncFilters();
+
     // Match read more button color with badge color
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {

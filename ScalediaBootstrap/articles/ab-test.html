@@ -65,6 +65,7 @@
             display: flex;
             align-items: center;
             margin: 30px 0;
+            gap: 15px;
         }
         .vs-item {
             flex: 1;
@@ -72,6 +73,7 @@
             text-align: center;
             background-color: #f8f9fa;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .vs-divider {
             padding: 0 20px;
@@ -83,6 +85,23 @@
             border: 1px solid #dee2e6;
             border-radius: 5px;
             margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive styles for vs-container */
+        @media (max-width: 767.98px) {
+            .vs-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .vs-divider {
+                padding: 10px 0;
+                margin: 5px 0;
+            }
+            .vs-item {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -164,13 +183,13 @@
 
                         <div class="vs-container">
                             <div class="vs-item">
-                                <img src="../images/placeholder.jpg" class="example-image" alt="Versione A">
+                                <img src="../images/buy-now-blue.jpeg" class="example-image" alt="Versione A">
                                 <h5 data-i18n="articles.abTest.section1.example.versionA.title">Versione A</h5>
                                 <p data-i18n="articles.abTest.section1.example.versionA.content">"Acquista ora" (testo blu)</p>
                             </div>
                             <div class="vs-divider">VS</div>
                             <div class="vs-item">
-                                <img src="../images/placeholder.jpg" class="example-image" alt="Versione B">
+                                <img src="../images/buy-now-red.jpeg" class="example-image" alt="Versione B">
                                 <h5 data-i18n="articles.abTest.section1.example.versionB.title">Versione B</h5>
                                 <p data-i18n="articles.abTest.section1.example.versionB.content">"Acquista ora" (testo rosso)</p>
                             </div>

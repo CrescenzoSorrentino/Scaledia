@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "brand": "Il Mio Blog",
+    "brand": "Scaledia",
     "home": "Home",
     "about": "Chi Sono",
     "articles": "Articoli",
@@ -26,7 +26,9 @@
   },
   "featuredArticles": {
     "title": "Articoli Nuovi e Consigliati",
-    "readMore": "Leggi di più"
+    "readMore": "Leggi di più",
+    "new": "Nuovo",
+    "recommended": "Consigliato"
   },
   "newsletter": {
     "title": "Iscriviti alla Newsletter",
@@ -39,12 +41,31 @@
     "all": "Tutti",
     "noArticles": "Non ci sono articoli di programmazione al momento."
   },
+  "educationalMaterials": {
+    "title": "Materiale Didattico",
+    "description": "Scarica risorse educative gratuite per approfondire le tue conoscenze in marketing, finanza personale e programmazione.",
+    "download": "Scarica",
+    "comingSoon": "Stiamo preparando materiale didattico di alta qualità. I contenuti saranno disponibili presto. Grazie per la pazienza!",
+    "marketing": {
+      "title": "Guida al Marketing Digitale",
+      "description": "Una guida completa per iniziare con il marketing digitale, incluse strategie per social media, email marketing e SEO."
+    },
+    "finance": {
+      "title": "Pianificazione Finanziaria",
+      "description": "Template e guide per creare un budget personale, pianificare investimenti e gestire le tue finanze in modo efficace."
+    },
+    "programming": {
+      "title": "Introduzione alla Programmazione",
+      "description": "Risorse per principianti che vogliono imparare a programmare, con esempi pratici e esercizi guidati."
+    }
+  },
   "footer": {
     "description": "Un blog dedicato al marketing, alla finanza personale e alla programmazione. Condivido conoscenze ed esperienze per aiutarti a crescere in questi ambiti.",
     "usefulLinks": "Link Utili",
     "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
     "contacts": "Contatti",
-    "copyright": "© 2023 Il Mio Blog. Tutti i diritti riservati."
+    "copyright": "© 2025 Scaledia. Tutti i diritti riservati."
   },
   "backToTop": "Torna in cima",
   "readingTime": "Tempo di lettura: {{time}} min",

@@ -96,6 +96,19 @@
         .dont {
             background-color: #f8d7da;
         }
+        /* Media query for mobile devices */
+        @media (max-width: 767.98px) {
+            .do-dont {
+                flex-direction: column;
+            }
+            .do, .dont {
+                width: 100%;
+            }
+            .do {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
         .do h4, .dont h4 {
             display: flex;
             align-items: center;

@@ -34,13 +34,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const baseUrl = getBaseUrl();
 
+  // Function to get user's country and determine language
+  // Make it globally accessible for testing
+  window.getCountryBasedLanguage = async function() {
+    try {
+      // Try to get country from IP geolocation
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      const countryCode = data.country_code;
+      debugLog('Detected country:', countryCode);
+
+      // Map of country codes to languages
+      // Add more mappings as needed for other countries
+      const countryToLanguage = {
+        'IT': 'it', // Italy -> Italian
+        'US': 'en', // United States -> English
+        'GB': 'en', // United Kingdom -> English
+        'CA': 'en', // Canada -> English
+        'AU': 'en', // Australia -> English
+        // Add more country-language mappings as needed
+      };
+
+      // Get language based on country, default to English if not found
+      const detectedLanguage = countryToLanguage[countryCode] || 'en';
+      debugLog('Setting language based on country:', detectedLanguage);
+
+      return detectedLanguage;
+    } catch (error) {
+      console.error('Error detecting country:', error.message);
+      return 'en'; // Default to English on error
+    }
+  }
+
   // Initialize i18next
   debugLog('Initializing i18next...');
   i18next
     .use(i18nextHttpBackend)
     .use(i18nextBrowserLanguageDetector)
     .init({
-      fallbackLng: 'it',
+      fallbackLng: 'en', // Changed fallback to English
       debug: false, // Turn off debug mode to reduce console output
       backend: {
         loadPath: baseUrl + 'locales/{{lng}}/translation.json'
@@ -73,15 +105,37 @@ document.addEventListener('DOMContentLoaded', function() {
           useOptionsAttr: true
         });
 
-        // Update document language
-        document.documentElement.lang = i18next.language;
-        debugLog('Document language set to:', i18next.language);
+        // Check if language is already set in localStorage
+        const savedLanguage = localStorage.getItem('selectedLanguage');
 
-        // Localize the page
-        localizeContent();
+        if (!savedLanguage) {
+          // If no language is saved, detect country and set language
+          getCountryBasedLanguage().then(countryLanguage => {
+            // Change language based on country
+            i18next.changeLanguage(countryLanguage).then(() => {
+              // Update document language
+              document.documentElement.lang = i18next.language;
+              debugLog('Document language set to:', i18next.language);
 
-        // Update language switcher
-        updateLanguageSwitcher(i18next.language);
+              // Localize the page
+              localizeContent();
+
+              // Update language switcher
+              updateLanguageSwitcher(i18next.language);
+            });
+          });
+        } else {
+          // If language is already saved, use it
+          // Update document language
+          document.documentElement.lang = i18next.language;
+          debugLog('Document language set to:', i18next.language);
+
+          // Localize the page
+          localizeContent();
+
+          // Update language switcher
+          updateLanguageSwitcher(i18next.language);
+        }
 
         // Create a MutationObserver to detect dynamically added elements
         const observer = new MutationObserver(function(mutations) {
