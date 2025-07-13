@@ -54,7 +54,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://scaledia.net/">
 
-    <!-- Website Schema JSON-LD -->
+    <!-- Website Schema JSON-LD with Speakable -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,6 +74,16 @@
           "https://github.com/crescenzosorrentino",
           "https://linkedin.com/in/crescenzosorrentino"
         ]
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-header h1",
+          ".hero-header .lead",
+          ".py-5 h2",
+          ".py-5 .lead",
+          ".py-5 p"
+        ]
       }
     }
     </script>
@@ -90,6 +100,28 @@
           "name": "Home",
           "item": "https://scaledia.net/"
         }
+      ]
+    }
+    </script>
+
+    <!-- Navigation Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": [
+        "Home",
+        "Blog",
+        "Servizi",
+        "Chi Siamo",
+        "Contatti"
+      ],
+      "url": [
+        "https://scaledia.net/",
+        "https://scaledia.net/blog.html",
+        "https://scaledia.net/servizi.html",
+        "https://scaledia.net/chi-siamo.html",
+        "https://scaledia.net/contatti.html"
       ]
     }
     </script>
@@ -135,6 +167,79 @@
         "https://www.linkedin.com/company/scaledia",
         "https://twitter.com/scaledia"
       ]
+    }
+    </script>
+
+    <!-- VideoObject Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Come Ottimizzare il Tuo Sito Web per i Motori di Ricerca",
+      "description": "Un tutorial completo su come migliorare il posizionamento del tuo sito web sui motori di ricerca attraverso tecniche SEO avanzate.",
+      "thumbnailUrl": "https://scaledia.net/images/video-thumbnail-seo.webp",
+      "uploadDate": "2023-11-15T08:00:00+01:00",
+      "duration": "PT15M30S",
+      "contentUrl": "https://scaledia.net/videos/tutorial-seo-2023.mp4",
+      "embedUrl": "https://www.youtube.com/embed/example",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/WatchAction",
+        "userInteractionCount": 5647
+      },
+      "regionsAllowed": "IT"
+    }
+    </script>
+
+    <!-- Course Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Corso Completo di SEO e Marketing Digitale",
+      "description": "Un corso completo che ti insegnerà le migliori strategie SEO e di marketing digitale per far crescere la tua presenza online.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Scaledia",
+        "sameAs": "https://scaledia.net/"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "startDate": "2024-01-15",
+        "endDate": "2024-03-15",
+        "price": 299.00,
+        "priceCurrency": "EUR",
+        "url": "https://scaledia.net/corsi/seo-marketing-digitale/"
+      }
+    }
+    </script>
+
+    <!-- Review Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "Service",
+        "name": "Servizi SEO di Scaledia",
+        "url": "https://scaledia.net/servizi.html#seo"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Marco Bianchi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Scaledia"
+      },
+      "datePublished": "2023-10-20",
+      "reviewBody": "Ho collaborato con Scaledia per migliorare la visibilità online della mia azienda e i risultati sono stati eccezionali. In soli tre mesi, il traffico organico è aumentato del 150% e le conversioni sono cresciute del 75%. Consiglio vivamente i loro servizi SEO."
     }
     </script>
 
@@ -237,7 +342,18 @@
                         <a href="chi-siamo.html" class="btn btn-primary">Scopri di più su di noi</a>
                     </div>
                     <div class="col-md-6">
-                        <img src="images/team-working.webp" alt="Il team di Scaledia al lavoro" class="img-fluid rounded" loading="lazy" width="600" height="400" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                        <picture>
+                            <source data-srcset="images/team-working-1200w.webp 1200w, images/team-working-800w.webp 800w, images/team-working-400w.webp 400w" 
+                                    sizes="(max-width: 576px) 400px, (max-width: 992px) 800px, 1200px"
+                                    type="image/webp">
+                            <img data-src="images/team-working.webp" 
+                                 src="images/team-working-lqip.webp" 
+                                 alt="Il team di Scaledia al lavoro" 
+                                 class="img-fluid rounded lqip-blur" 
+                                 width="600" 
+                                 height="400" 
+                                 onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -250,7 +366,18 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100">
-                            <img src="images/blog/strategie-seo-2025-grafico.webp" class="card-img-top" alt="Strategie SEO 2025" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <picture>
+                                <source data-srcset="images/blog/strategie-seo-2025-grafico-800w.webp 800w, images/blog/strategie-seo-2025-grafico-400w.webp 400w" 
+                                        sizes="(max-width: 576px) 400px, 800px"
+                                        type="image/webp">
+                                <img data-src="images/blog/strategie-seo-2025-grafico.webp" 
+                                     src="images/blog/strategie-seo-2025-grafico-lqip.webp" 
+                                     class="card-img-top lqip-blur" 
+                                     alt="Strategie SEO 2025" 
+                                     width="800" 
+                                     height="450" 
+                                     onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            </picture>
                             <div class="card-body">
                                 <h5 class="card-title">Le Migliori Strategie SEO per il 2025</h5>
                                 <p class="card-text">Esploriamo le strategie più efficaci per migliorare il posizionamento del tuo sito web.</p>
@@ -262,7 +389,18 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100">
-                            <img src="images/blog/responsive-design-importanza-esempio.webp" class="card-img-top" alt="Responsive Design" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <picture>
+                                <source data-srcset="images/blog/responsive-design-importanza-esempio-800w.webp 800w, images/blog/responsive-design-importanza-esempio-400w.webp 400w" 
+                                        sizes="(max-width: 576px) 400px, 800px"
+                                        type="image/webp">
+                                <img data-src="images/blog/responsive-design-importanza-esempio.webp" 
+                                     src="images/blog/responsive-design-importanza-esempio-lqip.webp" 
+                                     class="card-img-top lqip-blur" 
+                                     alt="Responsive Design" 
+                                     width="800" 
+                                     height="450" 
+                                     onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            </picture>
                             <div class="card-body">
                                 <h5 class="card-title">Responsive Design: Perché è Fondamentale</h5>
                                 <p class="card-text">Scopri perché il design responsive è cruciale per il successo del tuo business online.</p>
@@ -274,7 +412,18 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100">
-                            <img src="images/blog/ottimizzazione-velocita-sito-web.webp" class="card-img-top" alt="Ottimizzazione velocità sito" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <picture>
+                                <source data-srcset="images/blog/ottimizzazione-velocita-sito-web-800w.webp 800w, images/blog/ottimizzazione-velocita-sito-web-400w.webp 400w" 
+                                        sizes="(max-width: 576px) 400px, 800px"
+                                        type="image/webp">
+                                <img data-src="images/blog/ottimizzazione-velocita-sito-web.webp" 
+                                     src="images/blog/ottimizzazione-velocita-sito-web-lqip.webp" 
+                                     class="card-img-top lqip-blur" 
+                                     alt="Ottimizzazione velocità sito" 
+                                     width="800" 
+                                     height="450" 
+                                     onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            </picture>
                             <div class="card-body">
                                 <h5 class="card-title">Come Ottimizzare la Velocità del Tuo Sito Web</h5>
                                 <p class="card-text">Consigli pratici per migliorare le prestazioni del tuo sito web.</p>
@@ -286,7 +435,18 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="card h-100">
-                            <img src="images/blog/strategie-content-marketing-2025-infografica.webp" class="card-img-top" alt="Content Marketing 2025" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <picture>
+                                <source data-srcset="images/blog/strategie-content-marketing-2025-infografica-800w.webp 800w, images/blog/strategie-content-marketing-2025-infografica-400w.webp 400w" 
+                                        sizes="(max-width: 576px) 400px, 800px"
+                                        type="image/webp">
+                                <img data-src="images/blog/strategie-content-marketing-2025-infografica.webp" 
+                                     src="images/blog/strategie-content-marketing-2025-infografica-lqip.webp" 
+                                     class="card-img-top lqip-blur" 
+                                     alt="Content Marketing 2025" 
+                                     width="800" 
+                                     height="450" 
+                                     onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            </picture>
                             <div class="card-body">
                                 <h5 class="card-title">Strategie di Content Marketing per il 2025</h5>
                                 <p class="card-text">Scopri le tendenze e le strategie più promettenti per il content marketing.</p>

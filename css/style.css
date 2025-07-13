@@ -71,6 +71,26 @@ body {
     border-radius: 0.25rem;
 }
 
+/* Low Quality Image Placeholders (LQIP) */
+.lqip-blur {
+    filter: blur(10px);
+    transform: scale(1.05);
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Picture element styles */
+picture {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+picture img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
 /* Article Styles */
 .article-content {
     font-size: 1.1rem;
