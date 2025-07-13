@@ -51,8 +51,34 @@
    </url>
    <url>
       <loc>https://scaledia.net/blog/strategie-content-marketing-2025</loc>
-      <lastmod>2024-05-15</lastmod>
+      <lastmod>2023-11-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
+   </url>
+   <!-- Legal Pages -->
+   <url>
+      <loc>https://scaledia.net/privacy-policy</loc>
+      <lastmod>2024-05-15</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://scaledia.net/cookie-policy</loc>
+      <lastmod>2024-05-15</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://scaledia.net/termini-condizioni</loc>
+      <lastmod>2024-05-15</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <!-- Utility Pages -->
+   <url>
+      <loc>https://scaledia.net/offline</loc>
+      <lastmod>2024-05-15</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.1</priority>
    </url>
 </urlset>

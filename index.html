@@ -9,12 +9,18 @@
     <title>Scaledia - Soluzioni Digitali Innovative | Servizi Web Professionali</title>
 
     <!-- Mobile optimization -->
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#007bff">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Scaledia">
     <meta name="format-detection" content="telephone=no">
+
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Open Graph tags per social media -->
     <meta property="og:title" content="Scaledia - Soluzioni Digitali Innovative">
@@ -243,43 +249,136 @@
     }
     </script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- All styles moved to external CSS file: css/style.css -->
+    <!-- Inline Critical CSS for faster rendering -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Accessibility - Focus states */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:focus {
+            outline: 3px solid #007bff;
+            outline-offset: 2px;
+        }
+
+        /* Hero Header */
+        .hero-header {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin-bottom: 2rem;
+        }
+
+        .hero-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-header .lead {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Picture element styles */
+        picture {
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        picture img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Low Quality Image Placeholders (LQIP) */
+        .lqip-blur {
+            filter: blur(10px);
+            transform: scale(1.05);
+            transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-header h1 {
+                font-size: 2.5rem;
+            }
+            .hero-header .lead {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"></noscript>
+
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <!-- Fallback for browsers that don't support preload -->
+    <script>
+        !function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+    </script>
 </head>
 <body>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="visually-hidden-focusable">Salta al contenuto principale</a>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Navigazione principale">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Scaledia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a class="nav-link active" aria-current="page" href="index.html" role="menuitem">Home</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="blog.html" role="menuitem">Blog</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="servizi.html" role="menuitem">Servizi</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="chi-siamo.html" role="menuitem">Chi Siamo</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="contatti.html" role="menuitem">Contatti</a>
-                    </li>
-                </ul>
+    <header role="banner">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Navigazione principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Scaledia</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a class="nav-link active" aria-current="page" href="index.html" role="menuitem">Home</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="blog.html" role="menuitem">Blog</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="servizi.html" role="menuitem">Servizi</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="chi-siamo.html" role="menuitem">Chi Siamo</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="contatti.html" role="menuitem">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <header class="hero-header">
+    <div class="hero-header">
         <div class="container text-center">
             <h1>Scaledia</h1>
             <p class="lead">Soluzioni Digitali Innovative per la Tua Azienda</p>
@@ -288,10 +387,10 @@
                 <a href="contatti.html" class="btn btn-outline-primary btn-lg">Contattaci</a>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- Main Content -->
-    <main>
+    <main role="main" id="main-content">
         <!-- Services Section -->
         <section class="py-5 bg-light">
             <div class="container">
@@ -352,6 +451,7 @@
                                  class="img-fluid rounded lqip-blur" 
                                  width="600" 
                                  height="400" 
+                                 loading="lazy"
                                  onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                         </picture>
                     </div>
@@ -376,6 +476,7 @@
                                      alt="Strategie SEO 2025" 
                                      width="800" 
                                      height="450" 
+                                     loading="lazy"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -399,6 +500,7 @@
                                      alt="Responsive Design" 
                                      width="800" 
                                      height="450" 
+                                     loading="lazy"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -422,6 +524,7 @@
                                      alt="Ottimizzazione velocità sito" 
                                      width="800" 
                                      height="450" 
+                                     loading="lazy"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -445,6 +548,7 @@
                                      alt="Content Marketing 2025" 
                                      width="800" 
                                      height="450" 
+                                     loading="lazy"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -474,7 +578,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4" role="contentinfo">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

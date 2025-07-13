@@ -9,12 +9,18 @@
     <title>Scaledia Blog - Soluzioni Digitali Innovative | Tendenze e Consigli Web</title>
 
     <!-- Mobile optimization -->
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#007bff">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Scaledia Blog">
     <meta name="format-detection" content="telephone=no">
+
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Open Graph tags per social media -->
     <meta property="og:title" content="Scaledia Blog - Soluzioni Digitali Innovative">
@@ -29,12 +35,6 @@
     <meta name="twitter:title" content="Scaledia Blog - Soluzioni Digitali Innovative">
     <meta name="twitter:description" content="Blog con articoli su SEO, web design, marketing digitale e tendenze del web.">
     <meta name="twitter:image" content="images/blog/strategie-seo-2025-grafico.webp">
-
-    <!-- Security headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
     <!-- Preconnect per risorse di terze parti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,47 +163,149 @@
     }
     </script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- All styles moved to external CSS file: css/style.css -->
+    <!-- Inline Critical CSS for faster rendering -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        /* General Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Accessibility - Focus states */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus, [tabindex]:focus {
+            outline: 3px solid #007bff;
+            outline-offset: 2px;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 2rem 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Blog Posts */
+        .blog-post {
+            margin-bottom: 2rem;
+        }
+
+        .blog-post-title {
+            font-size: 1.5rem;
+        }
+
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        /* Featured Images */
+        .featured-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Picture element styles */
+        picture {
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        picture img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Low Quality Image Placeholders (LQIP) */
+        .lqip-blur {
+            filter: blur(10px);
+            transform: scale(1.05);
+            transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/bootstrap.min.css"></noscript>
+
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+    <!-- Fallback for browsers that don't support preload -->
+    <script>
+        !function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Navigazione principale">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Scaledia</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="index.html" role="menuitem">Home</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link active" aria-current="page" href="blog.html" role="menuitem">Blog</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="servizi.html" role="menuitem">Servizi</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="chi-siamo.html" role="menuitem">Chi Siamo</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a class="nav-link" href="contatti.html" role="menuitem">Contatti</a>
-                    </li>
-                </ul>
+    <header role="banner">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Navigazione principale">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Scaledia</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="index.html" role="menuitem">Home</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link active" aria-current="page" href="blog.html" role="menuitem">Blog</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="servizi.html" role="menuitem">Servizi</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="chi-siamo.html" role="menuitem">Chi Siamo</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a class="nav-link" href="contatti.html" role="menuitem">Contatti</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Header -->
-    <header class="blog-header">
+    <!-- Blog Header -->
+    <div class="blog-header">
         <div class="container text-center">
             <h1>Scaledia Blog</h1>
             <p class="lead">Soluzioni Digitali Innovative e Tendenze del Web</p>
         </div>
-    </header>
+    </div>
 
     <!-- Breadcrumb -->
     <div class="container mt-3">
@@ -216,7 +318,7 @@
     </div>
 
     <!-- Main Content -->
-    <main class="container py-5">
+    <main class="container py-5" role="main" id="main-content">
         <div class="row">
             <!-- Blog Posts -->
             <div class="col-md-8">
@@ -224,7 +326,19 @@
                 <article class="blog-post" data-category="SEO">
                     <h2 class="blog-post-title"><a href="blog/strategie-seo-2025.html">Le Migliori Strategie SEO per il 2025</a></h2>
                     <p class="blog-post-meta">15 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img src="images/blog/strategie-seo-2025-grafico.webp" alt="Grafico delle strategie SEO più efficaci per il 2025" class="featured-image img-fluid rounded" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    <picture>
+                        <source data-srcset="images/blog/strategie-seo-2025-grafico-800w.webp 800w, images/blog/strategie-seo-2025-grafico-400w.webp 400w" 
+                                sizes="(max-width: 576px) 400px, 800px"
+                                type="image/webp">
+                        <img data-src="images/blog/strategie-seo-2025-grafico.webp" 
+                             src="images/blog/strategie-seo-2025-grafico-lqip.webp" 
+                             class="featured-image img-fluid rounded lqip-blur" 
+                             alt="Grafico delle strategie SEO più efficaci per il 2025" 
+                             width="800" 
+                             height="450" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    </picture>
                     <p>L'ottimizzazione per i motori di ricerca continua ad evolversi. In questo articolo, esploriamo le strategie più efficaci per migliorare il posizionamento del tuo sito web nei risultati di ricerca di Google nel 2025.</p>
                     <p>Le nuove tecnologie di intelligenza artificiale stanno cambiando il modo in cui i motori di ricerca interpretano i contenuti...</p>
                     <a href="blog/strategie-seo-2025.html" class="btn btn-primary">Continua a leggere</a>
@@ -233,7 +347,19 @@
                 <article class="blog-post" data-category="Web Design">
                     <h2 class="blog-post-title"><a href="blog/responsive-design-importanza.html">Responsive Design: Perché è Fondamentale</a></h2>
                     <p class="blog-post-meta">10 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img src="images/blog/responsive-design-importanza-esempio.webp" alt="Esempio di design responsive su diversi dispositivi" class="featured-image img-fluid rounded" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    <picture>
+                        <source data-srcset="images/blog/responsive-design-importanza-esempio-800w.webp 800w, images/blog/responsive-design-importanza-esempio-400w.webp 400w" 
+                                sizes="(max-width: 576px) 400px, 800px"
+                                type="image/webp">
+                        <img data-src="images/blog/responsive-design-importanza-esempio.webp" 
+                             src="images/blog/responsive-design-importanza-esempio-lqip.webp" 
+                             class="featured-image img-fluid rounded lqip-blur" 
+                             alt="Esempio di design responsive su diversi dispositivi" 
+                             width="800" 
+                             height="450" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    </picture>
                     <p>Con l'aumento dell'uso di dispositivi mobili per navigare sul web, avere un sito responsive non è più un'opzione ma una necessità. Scopri perché il design responsive è cruciale per il successo del tuo business online.</p>
                     <a href="blog/responsive-design-importanza.html" class="btn btn-primary">Continua a leggere</a>
                 </article>
@@ -241,7 +367,19 @@
                 <article class="blog-post" data-category="Web Design">
                     <h2 class="blog-post-title"><a href="blog/ottimizzare-velocita-sito.html">Come Ottimizzare la Velocità del Tuo Sito Web</a></h2>
                     <p class="blog-post-meta">5 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img src="images/blog/ottimizzazione-velocita-sito-web.webp" alt="Strumenti per ottimizzare la velocità del sito web" class="featured-image img-fluid rounded" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    <picture>
+                        <source data-srcset="images/blog/ottimizzazione-velocita-sito-web-800w.webp 800w, images/blog/ottimizzazione-velocita-sito-web-400w.webp 400w" 
+                                sizes="(max-width: 576px) 400px, 800px"
+                                type="image/webp">
+                        <img data-src="images/blog/ottimizzazione-velocita-sito-web.webp" 
+                             src="images/blog/ottimizzazione-velocita-sito-web-lqip.webp" 
+                             class="featured-image img-fluid rounded lqip-blur" 
+                             alt="Strumenti per ottimizzare la velocità del sito web" 
+                             width="800" 
+                             height="450" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    </picture>
                     <p>La velocità di caricamento è un fattore cruciale sia per l'esperienza utente che per il posizionamento SEO. In questo articolo, condividiamo consigli pratici per migliorare le prestazioni del tuo sito web.</p>
                     <a href="blog/ottimizzare-velocita-sito.html" class="btn btn-primary">Continua a leggere</a>
                 </article>
@@ -249,7 +387,19 @@
                 <article class="blog-post" data-category="Marketing Digitale">
                     <h2 class="blog-post-title"><a href="blog/strategie-content-marketing-2025.html">Strategie di Content Marketing per il 2025</a></h2>
                     <p class="blog-post-meta">1 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img src="images/blog/strategie-content-marketing-2025-infografica.webp" alt="Infografica sulle strategie di content marketing per il 2025" class="featured-image img-fluid rounded" loading="lazy" width="800" height="450" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    <picture>
+                        <source data-srcset="images/blog/strategie-content-marketing-2025-infografica-800w.webp 800w, images/blog/strategie-content-marketing-2025-infografica-400w.webp 400w" 
+                                sizes="(max-width: 576px) 400px, 800px"
+                                type="image/webp">
+                        <img data-src="images/blog/strategie-content-marketing-2025-infografica.webp" 
+                             src="images/blog/strategie-content-marketing-2025-infografica-lqip.webp" 
+                             class="featured-image img-fluid rounded lqip-blur" 
+                             alt="Infografica sulle strategie di content marketing per il 2025" 
+                             width="800" 
+                             height="450" 
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    </picture>
                     <p>Il content marketing continua ad essere una delle strategie più efficaci per attrarre e coinvolgere il pubblico. Scopri le tendenze e le strategie più promettenti per il 2025.</p>
                     <a href="blog/strategie-content-marketing-2025.html" class="btn btn-primary">Continua a leggere</a>
                 </article>
@@ -267,7 +417,8 @@
             </div>
 
             <!-- Sidebar -->
-            <aside class="col-md-4 sidebar">
+            <aside class="col-md-4 sidebar" role="complementary" aria-labelledby="sidebar-heading">
+                <div class="visually-hidden" id="sidebar-heading">Sidebar</div>
                 <!-- Search Widget -->
                 <div class="sidebar-section">
                     <h4 id="search-heading">Cerca</h4>
@@ -356,7 +507,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4" role="contentinfo">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
