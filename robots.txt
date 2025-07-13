@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.php$
+
+# Allow Google Images to index images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.png
+Allow: /*.webp
+
+# Sitemap locations
+Sitemap: https://scaledia.net/sitemap.xml
+Sitemap: https://scaledia.net/image-sitemap.xml
+
+# Cache directives
+User-agent: *
+Cache-Control: max-age=86400
+
+# Security headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: strict-origin-when-cross-origin
