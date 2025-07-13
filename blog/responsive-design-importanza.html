@@ -35,6 +35,23 @@
     <!-- Preconnect per risorse di terze parti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta http-equiv="Expires" content="7 days">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="../js/main.js" as="script">
+    <link rel="preload" href="../images/blog/responsive-design-importanza.webp" as="image" type="image/webp">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://scaledia.net/blog/responsive-design-importanza">
@@ -136,6 +153,34 @@
           }
         }
       ]
+    }
+    </script>
+
+    <!-- Review Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "Thing",
+        "name": "Responsive Web Design"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Marco"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "datePublished": "2025-01-10",
+      "reviewBody": "Il responsive design è diventato essenziale per qualsiasi sito web moderno. Con l'aumento dell'uso di dispositivi mobili, offrire un'esperienza utente ottimale su tutti gli schermi è fondamentale per il successo online. Questo approccio non solo migliora l'esperienza utente e aumenta le conversioni, ma contribuisce anche a un migliore posizionamento nei motori di ricerca grazie all'approccio mobile-first di Google.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Scaledia"
+      }
     }
     </script>
 
@@ -253,7 +298,7 @@
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Blog</a>
+                        <a class="nav-link active" aria-current="page" href="../blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Servizi</a>
@@ -282,7 +327,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="../index.html">Blog</a></li>
+                <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Responsive Design: Perché è Fondamentale</li>
             </ol>
         </nav>
@@ -297,7 +342,7 @@
                     <h1 class="blog-post-title">Responsive Design: Perché è Fondamentale</h1>
                     <p class="article-meta">Pubblicato il 10 Gennaio 2025 da <a href="#">Marco</a> | Categoria: <a href="#">Web Design</a></p>
 
-                    <img data-src="../images/blog/responsive-design-importanza.webp" alt="Responsive Design" class="featured-image img-fluid">
+                    <img src="../images/blog/responsive-design-importanza.webp" alt="Responsive Design" class="featured-image img-fluid" loading="lazy" width="800" height="450">
 
                     <div class="table-of-contents">
                         <h4>Indice dei Contenuti</h4>
@@ -341,7 +386,7 @@
                             <h3>1. Migliore Esperienza Utente</h3>
                             <p>Un sito responsive offre un'esperienza utente coerente e di alta qualità su tutti i dispositivi. Gli utenti possono navigare, leggere e interagire con il tuo sito senza dover zoomare, scorrere orizzontalmente o affrontare altri problemi di usabilità.</p>
 
-                            <img data-src="../images/blog/responsive-design-esperienza-utente.webp" alt="Esperienza utente su diversi dispositivi" class="img-fluid device-mockup">
+                            <img src="../images/blog/responsive-design-esperienza-utente.webp" alt="Esperienza utente su diversi dispositivi" class="img-fluid device-mockup" loading="lazy" width="700" height="400">
 
                             <h3>2. Aumento delle Conversioni</h3>
                             <p>Un'esperienza utente positiva si traduce direttamente in tassi di conversione più elevati. Gli utenti sono più propensi a completare un acquisto, compilare un modulo o iscriversi a una newsletter quando il processo è fluido e intuitivo su qualsiasi dispositivo.</p>
@@ -456,7 +501,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="card mb-3">
-                                    <img data-src="../images/blog/ottimizzare-velocita-sito-thumb.webp" class="card-img-top" alt="Velocità del sito web">
+                                    <img src="../images/blog/ottimizzare-velocita-sito-thumb.webp" class="card-img-top" alt="Velocità del sito web" loading="lazy" width="400" height="225">
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="ottimizzare-velocita-sito.html">Come Ottimizzare la Velocità del Tuo Sito Web</a></h5>
                                         <p class="card-text">La velocità di caricamento è un fattore cruciale sia per l'esperienza utente che per il posizionamento SEO.</p>
@@ -465,7 +510,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="card mb-3">
-                                    <img data-src="../images/blog/strategie-seo-2025-thumb.webp" class="card-img-top" alt="Strategie SEO">
+                                    <img src="../images/blog/strategie-seo-2025-thumb.webp" class="card-img-top" alt="Strategie SEO" loading="lazy" width="400" height="225">
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="strategie-seo-2025.html">Le Migliori Strategie SEO per il 2025</a></h5>
                                         <p class="card-text">L'ottimizzazione per i motori di ricerca continua ad evolversi. Scopri le strategie più efficaci.</p>

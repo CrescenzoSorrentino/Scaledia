@@ -1,31 +1,9 @@
 // main.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Convert data-src attributes to native lazy loading
-    // This ensures images are properly indexed by search engines
-    // while still benefiting from lazy loading
-    const images = document.querySelectorAll('img[data-src]');
+    // Check for images without dimensions and set them to prevent layout shifts
+    const images = document.querySelectorAll('img');
 
     images.forEach(img => {
-        const src = img.dataset.src;
-
-        if (!src) {
-            console.warn('Image loading: data-src attribute is empty for', img);
-            return;
-        }
-
-        // Set up error handling
-        img.onerror = function() {
-            console.error('Failed to load image:', src);
-            // Optionally set a fallback image
-            // img.src = 'path/to/fallback-image.jpg';
-        };
-
-        // Set native lazy loading attribute
-        img.loading = 'lazy';
-
-        // Set src attribute for search engines and browsers
-        img.src = src;
-
         // If image doesn't have explicit dimensions, try to set them
         // to prevent layout shifts during loading
         if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
@@ -36,8 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Remove data-src attribute as it's no longer needed
-        img.removeAttribute('data-src');
+        // Handle lazy loading for images with data-src attribute
+        if (img.hasAttribute('data-src')) {
+            img.setAttribute('loading', 'lazy');
+            img.setAttribute('src', img.getAttribute('data-src'));
+        }
     });
 
     // Count articles by category
@@ -64,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Search functionality
+    // Enhanced Search functionality
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
 
@@ -79,30 +60,121 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Filter posts based on search query
-            filterPosts(searchQuery);
+            // Check if we're on the blog index page or an article page
+            const isArticlePage = document.querySelector('.article-content') !== null;
+
+            if (isArticlePage) {
+                // On article page, search within the article content
+                searchInArticle(searchQuery);
+            } else {
+                // On blog index page, filter posts based on search query
+                filterPosts(searchQuery);
+            }
         });
+    }
+
+    // Function to search within an article page
+    function searchInArticle(query) {
+        const articleContent = document.querySelector('.article-content');
+        const articleTitle = document.querySelector('.blog-post-title');
+        let foundResults = false;
+        let matchCount = 0;
+
+        // Create search results container if it doesn't exist
+        let searchResults = document.getElementById('searchResults');
+        if (!searchResults) {
+            searchResults = document.createElement('div');
+            searchResults.id = 'searchResults';
+            searchResults.className = 'alert alert-info mt-3';
+            articleContent.parentNode.insertBefore(searchResults, articleContent);
+        }
+
+        // Check if query is in title
+        if (articleTitle && articleTitle.textContent.toLowerCase().includes(query)) {
+            foundResults = true;
+            matchCount++;
+        }
+
+        // Check if query is in content
+        const contentText = articleContent.textContent.toLowerCase();
+        const matches = contentText.split(query).length - 1;
+        if (matches > 0) {
+            foundResults = true;
+            matchCount += matches;
+        }
+
+        if (foundResults) {
+            // Show search results message
+            searchResults.innerHTML = `<strong>Trovati ${matchCount} risultati</strong> per la ricerca: "${query}"`;
+            searchResults.style.display = 'block';
+
+            // Scroll to first occurrence
+            const firstOccurrence = findFirstOccurrence(articleContent, query);
+            if (firstOccurrence) {
+                firstOccurrence.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        } else {
+            // Show no results message
+            searchResults.innerHTML = `<strong>Nessun risultato trovato</strong> per la ricerca: "${query}"<br>
+                <a href="../blog.html" class="btn btn-sm btn-primary mt-2">Cerca in tutti gli articoli</a>`;
+            searchResults.style.display = 'block';
+        }
+    }
+
+    // Function to find the first occurrence of a term in content
+    function findFirstOccurrence(container, term) {
+        const textNodes = [];
+        const walker = document.createTreeWalker(
+            container,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let node;
+        while (node = walker.nextNode()) {
+            if (node.nodeValue.toLowerCase().includes(term)) {
+                return node.parentNode;
+            }
+        }
+
+        return null;
     }
 
     // Function to filter posts based on search query
     function filterPosts(query) {
         const blogPosts = document.querySelectorAll('.blog-post');
         let foundResults = false;
+        let matchCount = 0;
 
         blogPosts.forEach(post => {
             const postTitle = post.querySelector('.blog-post-title').textContent.toLowerCase();
-            const postContent = post.querySelector('p').textContent.toLowerCase();
+            // Search in all paragraphs, not just the first one
+            const paragraphs = post.querySelectorAll('p');
+            let postContent = '';
+            paragraphs.forEach(p => {
+                postContent += p.textContent.toLowerCase() + ' ';
+            });
 
-            if (postTitle.includes(query) || postContent.includes(query)) {
+            // Also search in headings and other content
+            const headings = post.querySelectorAll('h2, h3, h4, h5, h6');
+            let headingContent = '';
+            headings.forEach(h => {
+                headingContent += h.textContent.toLowerCase() + ' ';
+            });
+
+            if (postTitle.includes(query) || postContent.includes(query) || headingContent.includes(query)) {
                 post.style.display = 'block';
                 foundResults = true;
+                matchCount++;
             } else {
                 post.style.display = 'none';
             }
         });
 
-        // Show message if no results found
+        // Show message with results count
         const paginationElement = document.querySelector('.blog-pagination');
+        const blogPostsContainer = document.querySelector('.col-md-8');
 
         if (!foundResults) {
             // Create or update no results message
@@ -111,13 +183,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 noResultsMsg = document.createElement('div');
                 noResultsMsg.id = 'noResultsMessage';
                 noResultsMsg.className = 'alert alert-info mt-3';
-                noResultsMsg.textContent = 'Nessun risultato trovato per la ricerca: "' + query + '"';
+                noResultsMsg.innerHTML = `<strong>Nessun risultato trovato</strong> per la ricerca: "${query}"<br>
+                    <small>Prova con termini diversi o più generici.</small>`;
 
                 // Insert before pagination
-                const blogPostsContainer = document.querySelector('.col-md-8');
                 blogPostsContainer.insertBefore(noResultsMsg, paginationElement);
             } else {
-                noResultsMsg.textContent = 'Nessun risultato trovato per la ricerca: "' + query + '"';
+                noResultsMsg.innerHTML = `<strong>Nessun risultato trovato</strong> per la ricerca: "${query}"<br>
+                    <small>Prova con termini diversi o più generici.</small>`;
                 noResultsMsg.style.display = 'block';
             }
 
@@ -126,10 +199,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 paginationElement.style.display = 'none';
             }
         } else {
-            // Hide no results message if it exists
-            const noResultsMsg = document.getElementById('noResultsMessage');
-            if (noResultsMsg) {
-                noResultsMsg.style.display = 'none';
+            // Create or update results message
+            let resultsMsg = document.getElementById('noResultsMessage');
+            if (!resultsMsg) {
+                resultsMsg = document.createElement('div');
+                resultsMsg.id = 'noResultsMessage';
+                resultsMsg.className = 'alert alert-success mt-3';
+                resultsMsg.innerHTML = `<strong>Trovati ${matchCount} risultati</strong> per la ricerca: "${query}"`;
+
+                // Insert before pagination
+                blogPostsContainer.insertBefore(resultsMsg, paginationElement);
+            } else {
+                resultsMsg.innerHTML = `<strong>Trovati ${matchCount} risultati</strong> per la ricerca: "${query}"`;
+                resultsMsg.className = 'alert alert-success mt-3';
+                resultsMsg.style.display = 'block';
             }
 
             // Show pagination when results are found

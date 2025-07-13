@@ -14,15 +14,5 @@ Allow: /*.png
 Allow: /*.webp
 
 # Sitemap locations
-Sitemap: https://scaledia.net/sitemap.xml
+Sitemap: https://scaledia.net/Sitemap.xml
 Sitemap: https://scaledia.net/image-sitemap.xml
-
-# Cache directives
-User-agent: *
-Cache-Control: max-age=86400
-
-# Security headers
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
-Referrer-Policy: strict-origin-when-cross-origin

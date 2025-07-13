@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Scaledia.net - Blog di soluzioni digitali innovative e servizi web professionali per la tua azienda. Articoli su SEO, web design, marketing digitale e tendenze del web.">
-    <meta name="keywords" content="scaledia, blog digitale, soluzioni digitali, servizi web, sviluppo web, marketing digitale, SEO, web design, responsive design">
+    <meta name="description" content="Scaledia.net - Soluzioni digitali innovative e servizi web professionali per la tua azienda. Specializzati in SEO, web design, marketing digitale e sviluppo web.">
+    <meta name="keywords" content="scaledia, soluzioni digitali, servizi web, sviluppo web, marketing digitale, SEO, web design, responsive design">
     <meta name="author" content="Crescenzo Sorrentino">
-    <title>Scaledia Blog - Soluzioni Digitali Innovative | Tendenze e Consigli Web</title>
+    <title>Scaledia - Soluzioni Digitali Innovative | Servizi Web Professionali</title>
 
     <!-- Mobile optimization -->
     <meta name="theme-color" content="#ffffff">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Scaledia Blog">
+    <meta name="apple-mobile-web-app-title" content="Scaledia">
     <meta name="format-detection" content="telephone=no">
 
     <!-- Open Graph tags per social media -->
-    <meta property="og:title" content="Scaledia Blog - Soluzioni Digitali Innovative">
+    <meta property="og:title" content="Scaledia - Soluzioni Digitali Innovative">
     <meta property="og:description" content="Scopri i servizi web professionali e le soluzioni digitali innovative di Scaledia.net per far crescere la tua presenza online. Blog con articoli su SEO, web design e marketing digitale.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scaledia.net/blog">
+    <meta property="og:url" content="https://scaledia.net/">
     <meta property="og:image" content="images/blog/strategie-seo-2025-grafico.webp">
-    <meta property="og:site_name" content="Scaledia Blog">
+    <meta property="og:site_name" content="Scaledia">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Scaledia Blog - Soluzioni Digitali Innovative">
-    <meta name="twitter:description" content="Blog con articoli su SEO, web design, marketing digitale e tendenze del web.">
+    <meta name="twitter:title" content="Scaledia - Soluzioni Digitali Innovative">
+    <meta name="twitter:description" content="Soluzioni digitali innovative e servizi web professionali per la tua azienda.">
     <meta name="twitter:image" content="images/blog/strategie-seo-2025-grafico.webp">
+
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
+    <meta http-equiv="Expires" content="7 days">
 
     <!-- Preconnect per risorse di terze parti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" as="style">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://scaledia.net/">
@@ -77,88 +94,52 @@
     }
     </script>
 
-    <!-- Blog Schema JSON-LD -->
+    <!-- Organization Schema JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Scaledia Blog",
-      "description": "Soluzioni Digitali Innovative e Tendenze del Web",
-      "url": "https://scaledia.net/blog",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Scaledia",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://scaledia.net/images/logo.png"
-        }
+      "@type": "LocalBusiness",
+      "name": "Scaledia",
+      "description": "Soluzioni Digitali Innovative e Servizi Web Professionali",
+      "url": "https://scaledia.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://scaledia.net/images/logo.png"
       },
-      "blogPost": [
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via dell'Innovazione 42",
+        "addressLocality": "Milano",
+        "addressRegion": "MI",
+        "postalCode": "20100",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "45.4642",
+        "longitude": "9.1900"
+      },
+      "telephone": "+390123456789",
+      "email": "info@scaledia.net",
+      "openingHoursSpecification": [
         {
-          "@type": "BlogPosting",
-          "headline": "Le Migliori Strategie SEO per il 2025",
-          "description": "L'ottimizzazione per i motori di ricerca continua ad evolversi. In questo articolo, esploriamo le strategie più efficaci per migliorare il posizionamento del tuo sito web nei risultati di ricerca di Google nel 2025.",
-          "image": "images/blog/strategie-seo-2025-grafico.webp",
-          "datePublished": "2023-11-15",
-          "author": {
-            "@type": "Person",
-            "name": "Crescenzo"
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://scaledia.net/blog/strategie-seo-2025"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Responsive Design: Perché è Fondamentale",
-          "description": "Con l'aumento dell'uso di dispositivi mobili per navigare sul web, avere un sito responsive non è più un'opzione ma una necessità. Scopri perché il design responsive è cruciale per il successo del tuo business online.",
-          "image": "images/blog/responsive-design-importanza-esempio.webp",
-          "datePublished": "2023-11-10",
-          "author": {
-            "@type": "Person",
-            "name": "Crescenzo"
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://scaledia.net/blog/responsive-design-importanza"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Come Ottimizzare la Velocità del Tuo Sito Web",
-          "description": "La velocità di caricamento è un fattore cruciale sia per l'esperienza utente che per il posizionamento SEO. In questo articolo, condividiamo consigli pratici per migliorare le prestazioni del tuo sito web.",
-          "image": "images/blog/ottimizzazione-velocita-sito-web.webp",
-          "datePublished": "2023-11-05",
-          "author": {
-            "@type": "Person",
-            "name": "Crescenzo"
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://scaledia.net/blog/ottimizzare-velocita-sito"
-          }
-        },
-        {
-          "@type": "BlogPosting",
-          "headline": "Strategie di Content Marketing per il 2025",
-          "description": "Il content marketing continua ad essere una delle strategie più efficaci per attrarre e coinvolgere il pubblico. Scopri le tendenze e le strategie più promettenti per il 2025.",
-          "image": "images/blog/strategie-content-marketing-2025-infografica.webp",
-          "datePublished": "2023-11-01",
-          "author": {
-            "@type": "Person",
-            "name": "Crescenzo"
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://scaledia.net/blog/strategie-content-marketing-2025"
-          }
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
         }
+      ],
+      "priceRange": "€€",
+      "sameAs": [
+        "https://www.facebook.com/scaledia",
+        "https://www.linkedin.com/company/scaledia",
+        "https://twitter.com/scaledia"
       ]
     }
     </script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- All styles moved to external CSS file: css/style.css -->
 </head>
@@ -176,7 +157,7 @@
                         <a class="nav-link active" aria-current="page" href="index.html" role="menuitem">Home</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a class="nav-link" href="index.html" role="menuitem">Blog</a>
+                        <a class="nav-link" href="blog.html" role="menuitem">Blog</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a class="nav-link" href="servizi.html" role="menuitem">Servizi</a>
@@ -192,156 +173,144 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="blog-header">
+    <!-- Hero Section -->
+    <header class="hero-header">
         <div class="container text-center">
-            <h1>Scaledia Blog</h1>
-            <p class="lead">Soluzioni Digitali Innovative e Tendenze del Web</p>
+            <h1>Scaledia</h1>
+            <p class="lead">Soluzioni Digitali Innovative per la Tua Azienda</p>
+            <div class="mt-4">
+                <a href="servizi.html" class="btn btn-primary btn-lg me-2">Scopri i Nostri Servizi</a>
+                <a href="contatti.html" class="btn btn-outline-primary btn-lg">Contattaci</a>
+            </div>
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <div class="container mt-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Home</li>
-            </ol>
-        </nav>
-    </div>
-
     <!-- Main Content -->
-    <main class="container py-5">
-        <div class="row">
-            <!-- Blog Posts -->
-            <div class="col-md-8">
-                <!-- Featured Post -->
-                <article class="blog-post" data-category="SEO">
-                    <h2 class="blog-post-title"><a href="blog/strategie-seo-2025.html">Le Migliori Strategie SEO per il 2025</a></h2>
-                    <p class="blog-post-meta">15 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img data-src="images/blog/strategie-seo-2025-grafico.webp" alt="Grafico delle strategie SEO più efficaci per il 2025" class="featured-image img-fluid rounded">
-                    <p>L'ottimizzazione per i motori di ricerca continua ad evolversi. In questo articolo, esploriamo le strategie più efficaci per migliorare il posizionamento del tuo sito web nei risultati di ricerca di Google nel 2025.</p>
-                    <p>Le nuove tecnologie di intelligenza artificiale stanno cambiando il modo in cui i motori di ricerca interpretano i contenuti...</p>
-                    <a href="blog/strategie-seo-2025.html" class="btn btn-primary">Continua a leggere</a>
-                </article>
-
-                <article class="blog-post" data-category="Web Design">
-                    <h2 class="blog-post-title"><a href="blog/responsive-design-importanza.html">Responsive Design: Perché è Fondamentale</a></h2>
-                    <p class="blog-post-meta">10 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img data-src="images/blog/responsive-design-importanza-esempio.webp" alt="Esempio di design responsive su diversi dispositivi" class="featured-image img-fluid rounded">
-                    <p>Con l'aumento dell'uso di dispositivi mobili per navigare sul web, avere un sito responsive non è più un'opzione ma una necessità. Scopri perché il design responsive è cruciale per il successo del tuo business online.</p>
-                    <a href="blog/responsive-design-importanza.html" class="btn btn-primary">Continua a leggere</a>
-                </article>
-
-                <article class="blog-post" data-category="Web Design">
-                    <h2 class="blog-post-title"><a href="blog/ottimizzare-velocita-sito.html">Come Ottimizzare la Velocità del Tuo Sito Web</a></h2>
-                    <p class="blog-post-meta">5 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img data-src="images/blog/ottimizzazione-velocita-sito-web.webp" alt="Strumenti per ottimizzare la velocità del sito web" class="featured-image img-fluid rounded">
-                    <p>La velocità di caricamento è un fattore cruciale sia per l'esperienza utente che per il posizionamento SEO. In questo articolo, condividiamo consigli pratici per migliorare le prestazioni del tuo sito web.</p>
-                    <a href="blog/ottimizzare-velocita-sito.html" class="btn btn-primary">Continua a leggere</a>
-                </article>
-
-                <article class="blog-post" data-category="Marketing Digitale">
-                    <h2 class="blog-post-title"><a href="blog/strategie-content-marketing-2025.html">Strategie di Content Marketing per il 2025</a></h2>
-                    <p class="blog-post-meta">1 Novembre 2023 di <a href="#">Crescenzo</a></p>
-                    <img data-src="images/blog/strategie-content-marketing-2025-infografica.webp" alt="Infografica sulle strategie di content marketing per il 2025" class="featured-image img-fluid rounded">
-                    <p>Il content marketing continua ad essere una delle strategie più efficaci per attrarre e coinvolgere il pubblico. Scopri le tendenze e le strategie più promettenti per il 2025.</p>
-                    <a href="blog/strategie-content-marketing-2025.html" class="btn btn-primary">Continua a leggere</a>
-                </article>
-
-                <!-- Pagination -->
-                <nav class="blog-pagination" aria-label="Pagination">
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Precedente</a></li>
-                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Successiva</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!-- Sidebar -->
-            <aside class="col-md-4 sidebar">
-                <!-- Search Widget -->
-                <div class="sidebar-section">
-                    <h4 id="search-heading">Cerca</h4>
-                    <form id="searchForm" class="d-flex" role="search" aria-labelledby="search-heading">
-                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Cerca nel blog..." aria-label="Cerca nel blog">
-                        <button class="btn btn-outline-primary" type="submit" aria-label="Esegui ricerca">Cerca</button>
-                    </form>
-                </div>
-
-                <!-- Categories Widget -->
-                <div class="sidebar-section">
-                    <h4>Categorie</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            SEO
-                            <span class="badge bg-primary rounded-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Web Design
-                            <span class="badge bg-primary rounded-pill">8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Marketing Digitale
-                            <span class="badge bg-primary rounded-pill">10</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Social Media
-                            <span class="badge bg-primary rounded-pill">7</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            E-commerce
-                            <span class="badge bg-primary rounded-pill">5</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Recent Posts Widget -->
-                <div class="sidebar-section">
-                    <h4>Post Recenti</h4>
-                    <div class="list-group">
-                        <a href="blog/strategie-seo-2025.html" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Le Migliori Strategie SEO per il 2025</h5>
+    <main>
+        <!-- Services Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">I Nostri Servizi</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="bi bi-search fs-1 mb-3 text-primary"></i>
+                                <h3 class="card-title">SEO</h3>
+                                <p class="card-text">Ottimizziamo il tuo sito per i motori di ricerca per aumentare la visibilità online e generare più traffico qualificato.</p>
+                                <a href="servizi.html#seo" class="btn btn-outline-primary">Scopri di più</a>
                             </div>
-                            <small class="text-muted">15 Novembre 2023</small>
-                        </a>
-                        <a href="blog/responsive-design-importanza.html" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Responsive Design: Perché è Fondamentale</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="bi bi-laptop fs-1 mb-3 text-primary"></i>
+                                <h3 class="card-title">Web Design</h3>
+                                <p class="card-text">Creiamo siti web responsive, moderni e ottimizzati per conversioni che rappresentano al meglio il tuo brand.</p>
+                                <a href="servizi.html#web-design" class="btn btn-outline-primary">Scopri di più</a>
                             </div>
-                            <small class="text-muted">10 Novembre 2023</small>
-                        </a>
-                        <a href="blog/ottimizzare-velocita-sito.html" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Come Ottimizzare la Velocità del Tuo Sito Web</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="bi bi-graph-up fs-1 mb-3 text-primary"></i>
+                                <h3 class="card-title">Marketing Digitale</h3>
+                                <p class="card-text">Sviluppiamo strategie di marketing digitale personalizzate per raggiungere i tuoi obiettivi di business.</p>
+                                <a href="servizi.html#marketing-digitale" class="btn btn-outline-primary">Scopri di più</a>
                             </div>
-                            <small class="text-muted">5 Novembre 2023</small>
-                        </a>
-                        <a href="blog/strategie-content-marketing-2025.html" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Strategie di Content Marketing per il 2025</h5>
-                            </div>
-                            <small class="text-muted">1 Novembre 2023</small>
-                        </a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Newsletter Widget -->
-                <div class="sidebar-section">
-                    <h4>Iscriviti alla Newsletter</h4>
-                    <p>Ricevi aggiornamenti sui nostri ultimi articoli e consigli sul mondo digitale.</p>
-                    <form>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="La tua email" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Iscriviti</button>
-                    </form>
+        <!-- About Us Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Chi Siamo</h2>
+                        <p class="lead">Scaledia è un'agenzia digitale specializzata in soluzioni web innovative e strategie di marketing efficaci.</p>
+                        <p>Il nostro team di esperti lavora con passione per aiutare le aziende a crescere online attraverso strategie personalizzate e soluzioni tecnologiche all'avanguardia.</p>
+                        <a href="chi-siamo.html" class="btn btn-primary">Scopri di più su di noi</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="images/team-working.webp" alt="Il team di Scaledia al lavoro" class="img-fluid rounded" loading="lazy" width="600" height="400" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                    </div>
                 </div>
-            </aside>
-        </div>
+            </div>
+        </section>
+
+        <!-- Latest Blog Posts Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Ultimi Articoli dal Blog</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <img src="images/blog/strategie-seo-2025-grafico.webp" class="card-img-top" alt="Strategie SEO 2025" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <div class="card-body">
+                                <h5 class="card-title">Le Migliori Strategie SEO per il 2025</h5>
+                                <p class="card-text">Esploriamo le strategie più efficaci per migliorare il posizionamento del tuo sito web.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a href="blog/strategie-seo-2025.html" class="btn btn-sm btn-outline-primary">Leggi l'articolo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <img src="images/blog/responsive-design-importanza-esempio.webp" class="card-img-top" alt="Responsive Design" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <div class="card-body">
+                                <h5 class="card-title">Responsive Design: Perché è Fondamentale</h5>
+                                <p class="card-text">Scopri perché il design responsive è cruciale per il successo del tuo business online.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a href="blog/responsive-design-importanza.html" class="btn btn-sm btn-outline-primary">Leggi l'articolo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <img src="images/blog/ottimizzazione-velocita-sito-web.webp" class="card-img-top" alt="Ottimizzazione velocità sito" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <div class="card-body">
+                                <h5 class="card-title">Come Ottimizzare la Velocità del Tuo Sito Web</h5>
+                                <p class="card-text">Consigli pratici per migliorare le prestazioni del tuo sito web.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a href="blog/ottimizzare-velocita-sito.html" class="btn btn-sm btn-outline-primary">Leggi l'articolo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <img src="images/blog/strategie-content-marketing-2025-infografica.webp" class="card-img-top" alt="Content Marketing 2025" loading="lazy" onerror="this.onerror=null; this.src='images/fallback-image.webp';">
+                            <div class="card-body">
+                                <h5 class="card-title">Strategie di Content Marketing per il 2025</h5>
+                                <p class="card-text">Scopri le tendenze e le strategie più promettenti per il content marketing.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a href="blog/strategie-content-marketing-2025.html" class="btn btn-sm btn-outline-primary">Leggi l'articolo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="blog.html" class="btn btn-primary">Visita il nostro Blog</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container text-center">
+                <h2>Pronto a far crescere la tua presenza online?</h2>
+                <p class="lead">Contattaci oggi per una consulenza gratuita e scopri come possiamo aiutarti a raggiungere i tuoi obiettivi.</p>
+                <a href="contatti.html" class="btn btn-light btn-lg mt-3">Contattaci Ora</a>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -356,7 +325,7 @@
                     <h5>Link Utili</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="index.html" class="text-white">Blog</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
                         <li><a href="servizi.html" class="text-white">Servizi</a></li>
                         <li><a href="chi-siamo.html" class="text-white">Chi Siamo</a></li>
                         <li><a href="contatti.html" class="text-white">Contatti</a></li>
