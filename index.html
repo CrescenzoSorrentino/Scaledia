@@ -47,15 +47,25 @@
     <!-- Preconnect per risorse di terze parti -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="css/bootstrap.min.css" as="style">
     <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/critical.css" as="style">
     <link rel="preload" href="js/bootstrap.bundle.min.js" as="script">
     <link rel="preload" href="js/main.js" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" as="style">
+
+    <!-- Preload LCP image -->
+    <link rel="preload" href="images/team-working.webp" as="image" fetchpriority="high">
+
+    <!-- Prefetch other pages that might be visited next -->
+    <link rel="prefetch" href="blog.html">
+    <link rel="prefetch" href="servizi.html">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://scaledia.net/">
@@ -451,7 +461,7 @@
                                  class="img-fluid rounded lqip-blur" 
                                  width="600" 
                                  height="400" 
-                                 loading="lazy"
+                                 fetchpriority="high"
                                  onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                         </picture>
                     </div>
@@ -477,6 +487,7 @@
                                      width="800" 
                                      height="450" 
                                      loading="lazy"
+                                     fetchpriority="low"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -501,6 +512,7 @@
                                      width="800" 
                                      height="450" 
                                      loading="lazy"
+                                     fetchpriority="low"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -525,6 +537,7 @@
                                      width="800" 
                                      height="450" 
                                      loading="lazy"
+                                     fetchpriority="low"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -549,6 +562,7 @@
                                      width="800" 
                                      height="450" 
                                      loading="lazy"
+                                     fetchpriority="low"
                                      onerror="this.onerror=null; this.src='images/fallback-image.webp';">
                             </picture>
                             <div class="card-body">
@@ -620,7 +634,7 @@
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
 </body>
 </html>
